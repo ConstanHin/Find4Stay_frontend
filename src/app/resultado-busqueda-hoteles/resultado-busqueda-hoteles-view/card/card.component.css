@@ -1,0 +1,36 @@
+.hotel-card {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.img-container {
+  padding: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+.img-container img {
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-size: 1.4rem;
+}
+
+.btn {
+  display: block;
+  background-color: #77d491;
+  color: white;
+  margin-left: auto;
+}
+
+.btn:hover {
+  background-color: hsl(137, 52%, 58%);
+  border-color: hsl(137, 52%, 58%);
+}
