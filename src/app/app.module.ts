@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SeguridadComponent } from './seguridad/seguridad.component';
 import { AreaAdminReservasListaComponent } from './area-admin-reservas-lista/area-admin-reservas-lista.component';
 import { AreaAdminHotelesListasComponent } from './area-admin-hoteles-listas/area-admin-hoteles-listas.component';
 import { AreaAdminEmpresasListasComponent } from './area-admin-empresas-listas/area-admin-empresas-listas.component';
@@ -27,6 +28,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
+    SeguridadComponent,
     AreaAdminReservasListaComponent,
     AreaAdminHotelesListasComponent,
     AreaAdminEmpresasListasComponent,
