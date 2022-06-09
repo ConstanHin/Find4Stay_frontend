@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FooterComponent } from './footer/footer.component';
 import { AreaempresaComponent } from './areaempresa/areaempresa.component';
 import { BarraLateralEmpresaComponent } from './barra-lateral-empresa/barra-lateral-empresa.component';
 import { AreaAdminClientesComponent } from './area-admin-clientes/area-admin-clientes.component';
@@ -12,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent
     AreaempresaComponent,
     BarraLateralEmpresaComponent,
     AreaAdminClientesComponent,
