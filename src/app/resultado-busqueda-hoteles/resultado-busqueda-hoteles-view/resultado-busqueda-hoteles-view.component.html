@@ -1,0 +1,24 @@
+<section class="container">
+  <div id="view" class="row">
+    <!-- Componentes para filtrar filtro-->
+    <div id="barra-filtro" class="col-md-3">
+      <!-- Buscador -->
+      <app-buscador></app-buscador>
+      <app-filtro></app-filtro>
+      <!-- Google maps -->
+      <div id="mapa-maps" class="d-none d-md-block my-5">
+        <iframe class="w-100" style="border:0" loading="lazy" height="250px" allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=reus&t=&z=13&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Tarjetas para mostrar los hoteles resultanted de la busqueda-->
+    <div id="resultado-busqueda" class="col">
+      <app-card></app-card>
+      <app-card></app-card>
+      <app-card></app-card>
+      <app-card></app-card>
+    </div>
+  </div>
+</section>
