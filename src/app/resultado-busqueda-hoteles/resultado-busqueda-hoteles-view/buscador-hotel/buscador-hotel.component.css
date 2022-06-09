@@ -1,0 +1,14 @@
+
+.grid {
+  text-align: center;
+}
+
+input, select {
+  background-color: #F6FEFF;
+}
+
+.btn-light{
+  background-color: #C652B5;
+  margin-top: 25px;
+  color: #F6FEFF;
+}

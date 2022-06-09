@@ -1,0 +1,21 @@
+#barralateral{
+  background-color: #EBF9F7;
+
+}
+
+a{
+  color: black;
+
+}
+
+a:hover{
+  color: rgb(0, 0, 0);
+}
+
+
+
+.bi{
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+
+}
