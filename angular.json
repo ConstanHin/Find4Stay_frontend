@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "fe8d9d5c-7b86-4693-9afc-528f8503a4ed"
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -105,5 +104,8 @@
       }
     }
   },
-  "defaultProject": "find4stay_frontend"
+  "defaultProject": "find4stay_frontend",
+  "cli": {
+    "analytics": "97f1b961-3498-4c29-a5b6-0629e701bc53"
+  }
 }
