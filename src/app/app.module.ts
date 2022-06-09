@@ -5,14 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AreaempresaComponent } from './areaempresa/areaempresa.component';
 
+import { BarraLateralEmpresaComponent } from './barra-lateral-empresa/barra-lateral-empresa.component';
+import { AreaAdminClientesComponent } from './area-admin-clientes/area-admin-clientes.component';
+import { ResultadoBusquedaHotelesModule } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    AreaempresaComponent
+    AreaempresaComponent,
+    BarraLateralEmpresaComponent,
+    AreaAdminClientesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ResultadoBusquedaHotelesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
