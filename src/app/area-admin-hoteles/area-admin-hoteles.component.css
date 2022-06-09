@@ -13,12 +13,12 @@
   padding-top: 5px;
 }
 
-.linia{
-  width: 50%;
-  border-bottom: 1px #7CDEB4 solid;
-}
-
 h5{
   margin-top: 30px;
   margin-bottom: 60px;
+}
+
+hr {
+  border-width: 2px;
+  border-color: #7cdeb4;
 }
