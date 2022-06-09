@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BarraLateralAdminComponent } from './barra-lateral-admin/barra-lateral-admin.component';
 import { AreaclienteComponent } from './areacliente/areacliente.component';
 import { AreaAdminHotelesComponent } from './area-admin-hoteles/area-admin-hoteles.component';
 import { AreaAdminClientesListaComponent } from './area-admin-clientes-lista/area-admin-clientes-lista.component';
@@ -23,6 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
+    BarraLateralAdminComponent,
     AreaclienteComponent,
     AreaAdminHotelesComponent,
     AreaAdminClientesListaComponent,
