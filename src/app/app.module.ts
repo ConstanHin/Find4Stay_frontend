@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MapComponent } from './map/map.component';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { AreaAdminComponent } from './area-admin/area-admin.component';
 import { LogInComponent } from './log-in/log-in.component';
@@ -17,6 +18,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
+    MapComponent
     BarraLateralComponent,
     AreaAdminComponent,
     LogInComponent,
