@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "find4stay_frontend"
+  "defaultProject": "find4stay_frontend",
+  "cli": {
+    "analytics": "b3bb8644-ad46-41cd-81ed-5c4c9416bda4"
+  }
 }
