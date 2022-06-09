@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AreaAdminClientesComponent } from './area-admin-clientes/area-admin-clientes.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AreaAdminClientesComponent
   ],
   imports: [
     BrowserModule,
