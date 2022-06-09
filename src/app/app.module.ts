@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { RegistroComponent } from './registro/registro.component';
 import { MapComponent } from './map/map.component';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { AreaAdminComponent } from './area-admin/area-admin.component';
@@ -18,7 +20,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    RegistroComponent,
+    MapComponent,
     BarraLateralComponent,
     AreaAdminComponent,
     LogInComponent,
@@ -31,7 +34,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
     ResultadoBusquedaHotelesModule
   ],
   providers: [],
