@@ -1,15 +1,17 @@
 .hotel-card {
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
+  box-shadow: 0px 3px 3px #3333;
 }
 
 .img-container {
   padding: 0.5rem;
   position: relative;
   overflow: hidden;
-  height: 150px;
-  width: 150px;
+  width: 300px;
+  height: 200px;
   margin: auto;
+  border-radius: 10px;
 }
 .img-container img {
   position: absolute;
@@ -33,4 +35,21 @@ h1 {
 .btn:hover {
   background-color: hsl(137, 52%, 58%);
   border-color: hsl(137, 52%, 58%);
+}
+
+.text-tarjeta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.border {
+  border-color: #79c7bb !important;
+}
+
+@media only screen and (max-width: 550px) {
+  .img-container {
+    width: 230px;
+    height: 150px;
+  }
 }
