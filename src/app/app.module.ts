@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MishotelesComponent } from './mishoteles/mishoteles.component';
 import { MisreservasComponent } from './misreservas/misreservas.component';
 import { AreaAdminReservaComponent } from './area-admin-reserva/area-admin-reserva.component';
 import { SeguridadComponent } from './seguridad/seguridad.component';
@@ -30,6 +31,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
+    MishotelesComponent,
     MisreservasComponent,
     AreaAdminReservaComponent,
     SeguridadComponent,
