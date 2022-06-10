@@ -1,0 +1,25 @@
+
+.grid {
+  text-align: center;
+
+}
+
+h3 {
+  text-align: left;
+  font-weight: bold;
+}
+
+input, select {
+  background-color: #F6FEFF;
+}
+
+
+.btn-light{
+  background-color: #C652B5;
+  margin-top: 25px;
+  color: #F6FEFF;
+
+
+
+
+}
