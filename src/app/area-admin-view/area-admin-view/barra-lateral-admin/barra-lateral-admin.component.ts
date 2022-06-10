@@ -14,7 +14,17 @@ export class BarraLateralAdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Accion al clicar los botones de la barra lateral
+   */
   cambiarApartado(apartado: string) {
+    // Modificar la class "selected" del elemento de la barra lateral
+    document.querySelectorAll('ul a').forEach((elem) => {
+      elem.classList.remove('selected');
+    });
+    document.getElementById(apartado)?.classList.add('selected');
+
+    // Enviar evento al componente padre
     this.cambiarApartadoEvent.emit(apartado);
   }
 
