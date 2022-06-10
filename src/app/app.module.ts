@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { MishotelesComponent } from './mishoteles/mishoteles.component';
 import { MisreservasComponent } from './misreservas/misreservas.component';
 import { AreaAdminReservaComponent } from './area-admin-reserva/area-admin-reserva.component';
-import { SeguridadComponent } from './seguridad/seguridad.component';
 import { AreaAdminReservasListaComponent } from './area-admin-reservas-lista/area-admin-reservas-lista.component';
 import { AreaAdminHotelesListasComponent } from './area-admin-hoteles-listas/area-admin-hoteles-listas.component';
 import { AreaAdminEmpresasListasComponent } from './area-admin-empresas-listas/area-admin-empresas-listas.component';
@@ -18,7 +17,6 @@ import { AreaclienteComponent } from './areacliente/areacliente.component';
 import { AreaAdminHotelesComponent } from './area-admin-hoteles/area-admin-hoteles.component';
 import { AreaAdminClientesListaComponent } from './area-admin-clientes-lista/area-admin-clientes-lista.component';
 import { RegistroComponent } from './registro/registro.component';
-import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { AreaAdminComponent } from './area-admin/area-admin.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { FooterComponent } from './footer/footer.component';
@@ -31,6 +29,8 @@ import { RouterModule } from '@angular/router';
 import { ResultadoBusquedaHotelesViewComponent } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles-view/resultado-busqueda-hoteles-view.component';
 import { LandingPageViewModule } from './landing-page-view/landing-page-view.module';
 import { LandingPageViewComponent } from './landing-page-view/landing-page-view/landing-page-view.component';
+import { AreaEmpresaSeguridadViewModule } from './area-empresa-seguridad-view/area-empresa-seguridad-view.module';
+
 
 
 @NgModule({
@@ -39,7 +39,6 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view/
     MishotelesComponent,
     MisreservasComponent,
     AreaAdminReservaComponent,
-    SeguridadComponent,
     AreaAdminReservasListaComponent,
     AreaAdminHotelesListasComponent,
     AreaAdminEmpresasListasComponent,
@@ -49,7 +48,6 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view/
     AreaAdminHotelesComponent,
     AreaAdminClientesListaComponent,
     RegistroComponent,
-    BarraLateralComponent,
     AreaAdminComponent,
     LogInComponent,
     FooterComponent,
@@ -68,6 +66,7 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view/
     FormsModule,
     ResultadoBusquedaHotelesModule,
     LandingPageViewModule,
+    AreaEmpresaSeguridadViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
