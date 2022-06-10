@@ -1,19 +1,31 @@
-#barralateral{
+#barralateral {
   background-color: #EBF9F7;
+  min-height: 100%;
+
 }
 
-a{
+a {
   color: black;
-
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
-a:hover{
+ul li {
+  border-bottom: 1px solid #79c7bb88;
+}
+
+ul li:first-child {
+  border-top: 1px solid #79c7bb88;
+}
+
+a:hover {
+  cursor: pointer;
   color: rgb(0, 0, 0);
 }
 
-
-
-.bi{
+.bi {
   font-size: 1rem;
   color: rgb(0, 0, 0);
 

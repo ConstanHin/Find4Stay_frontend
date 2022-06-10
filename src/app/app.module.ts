@@ -21,8 +21,6 @@ import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { AreaAdminComponent } from './area-admin/area-admin.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { FooterComponent } from './footer/footer.component';
-import { AreaempresaComponent } from './areaempresa/areaempresa.component';
-import { BarraLateralEmpresaComponent } from './barra-lateral-empresa/barra-lateral-empresa.component';
 import { AreaAdminClientesComponent } from './area-admin-clientes/area-admin-clientes.component';
 import { ResultadoBusquedaHotelesModule } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles.module';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -30,6 +28,7 @@ import { RouterModule } from '@angular/router';
 import { ResultadoBusquedaHotelesViewComponent } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles-view/resultado-busqueda-hoteles-view.component';
 import { LandingPageViewModule } from './landing-page-view/landing-page-view.module';
 import { LandingPageViewComponent } from './landing-page-view/landing-page-view/landing-page-view.component';
+import { AreaEmpresaViewModule } from './area-empresa-view/area-empresa-view.module';
 
 @NgModule({
   declarations: [
@@ -51,8 +50,6 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view/
     AreaAdminComponent,
     LogInComponent,
     FooterComponent,
-    AreaempresaComponent,
-    BarraLateralEmpresaComponent,
     AreaAdminClientesComponent,
     NavbarComponent,
   ],
@@ -66,6 +63,7 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view/
     FormsModule,
     ResultadoBusquedaHotelesModule,
     LandingPageViewModule,
+    AreaEmpresaViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
