@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-area-admin-clientes-lista',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaAdminClientesListaComponent implements OnInit {
 
+  @Output() cambiarApartadoEvent = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cambiarApartado(apartado: string) {
+    this.cambiarApartadoEvent.emit(apartado)
   }
 
 }

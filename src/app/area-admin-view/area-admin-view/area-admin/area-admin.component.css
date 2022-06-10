@@ -14,7 +14,11 @@
 
 #linia{
   width: 50%;
+}
+
+.border-b {
   border-bottom: 1px #7CDEB4 solid;
+
 }
 
 h5{
