@@ -13,16 +13,7 @@ a {
   transition: box-shadow 0.25s, background-color 0.25s;
 }
 
-ul li {
-  /* box-shadow: 0px 2px 2px #3333; */
-  /* border-bottom: 1px solid #79c7bb88; */
-}
-
-ul li:first-child {
-  /* border-top: 1px solid #79c7bb88; */
-}
-
-a:hover {
+a:hover, a:focus {
   color: black;
   cursor: pointer;
   background-color: #fff;
@@ -31,6 +22,5 @@ a:hover {
 
 .bi {
   font-size: 1rem;
-  color: rgb(0, 0, 0);
-
+  color: black;
 }

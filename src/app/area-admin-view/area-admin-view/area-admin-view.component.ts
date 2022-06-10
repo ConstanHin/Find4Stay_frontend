@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaAdminViewComponent implements OnInit {
 
-  apartado: string = "clientes";
+  // Determina el componenete que aparece en el contenido
+  apartado: string = "cuenta";
 
   constructor() { }
 
