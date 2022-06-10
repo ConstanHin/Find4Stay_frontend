@@ -1,0 +1,23 @@
+footer {
+  display: block;
+  width: 100%;
+  background-color: #79C7BB;
+  text-align: center;
+
+}
+
+.text {
+  color: aliceblue;
+  text-align: center;
+}
+
+.web {
+  text-align: right;
+  padding-left: 50px;
+  color: aliceblue;
+
+}
+
+
+
+

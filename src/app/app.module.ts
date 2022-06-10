@@ -1,18 +1,75 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { SlidePhotosComponent } from './slide-photos/slide-photos.component';
+import { MishotelesComponent } from './mishoteles/mishoteles.component';
+import { MisreservasComponent } from './misreservas/misreservas.component';
+import { AreaAdminReservaComponent } from './area-admin-reserva/area-admin-reserva.component';
+import { SeguridadComponent } from './seguridad/seguridad.component';
+import { AreaAdminReservasListaComponent } from './area-admin-reservas-lista/area-admin-reservas-lista.component';
+import { AreaAdminHotelesListasComponent } from './area-admin-hoteles-listas/area-admin-hoteles-listas.component';
+import { AreaAdminEmpresasListasComponent } from './area-admin-empresas-listas/area-admin-empresas-listas.component';
+import { AreaAdminEmpresaComponent } from './area-admin-empresa/area-admin-empresa.component';
+import { BarraLateralAdminComponent } from './barra-lateral-admin/barra-lateral-admin.component';
+import { AreaclienteComponent } from './areacliente/areacliente.component';
+import { AreaAdminHotelesComponent } from './area-admin-hoteles/area-admin-hoteles.component';
+import { AreaAdminClientesListaComponent } from './area-admin-clientes-lista/area-admin-clientes-lista.component';
+import { RegistroComponent } from './registro/registro.component';
+import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
+import { AreaAdminComponent } from './area-admin/area-admin.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { FooterComponent } from './footer/footer.component';
+import { AreaempresaComponent } from './areaempresa/areaempresa.component';
+import { BarraLateralEmpresaComponent } from './barra-lateral-empresa/barra-lateral-empresa.component';
+import { AreaAdminClientesComponent } from './area-admin-clientes/area-admin-clientes.component';
+import { ResultadoBusquedaHotelesModule } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import { ResultadoBusquedaHotelesViewComponent } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles-view/resultado-busqueda-hoteles-view.component';
+import { LandingPageViewModule } from './landing-page-view/landing-page-view.module';
+import { LandingPageViewComponent } from './landing-page-view/landing-page-view/landing-page-view.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SlidePhotosComponent
+    SlidePhotosComponent,
+    MishotelesComponent,
+    MisreservasComponent,
+    AreaAdminReservaComponent,
+    SeguridadComponent,
+    AreaAdminReservasListaComponent,
+    AreaAdminHotelesListasComponent,
+    AreaAdminEmpresasListasComponent,
+    AreaAdminEmpresaComponent,
+    BarraLateralAdminComponent,
+    AreaclienteComponent,
+    AreaAdminHotelesComponent,
+    AreaAdminClientesListaComponent,
+    RegistroComponent,
+    BarraLateralComponent,
+    AreaAdminComponent,
+    LogInComponent,
+    FooterComponent,
+    AreaempresaComponent,
+    BarraLateralEmpresaComponent,
+    AreaAdminClientesComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ResultadoBusquedaHotelesModule,
+    LandingPageViewModule,
+    RouterModule.forRoot([
+      {path: '', component: LandingPageViewComponent},
+      {path:'resultado-busqueda', component: ResultadoBusquedaHotelesViewComponent}
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
