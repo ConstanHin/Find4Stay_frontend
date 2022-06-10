@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { MishotelesComponent } from './mishoteles/mishoteles.component';
 import { MisreservasComponent } from './misreservas/misreservas.component';
 import { SeguridadComponent } from './seguridad/seguridad.component';
@@ -21,6 +22,7 @@ import { ResultadoBusquedaHotelesViewComponent } from './resultado-busqueda-hote
 import { LandingPageViewModule } from './landing-page-view/landing-page-view.module';
 import { LandingPageViewComponent } from './landing-page-view/landing-page-view/landing-page-view.component';
 import { AreaAdminViewModule } from './area-admin-view/area-admin-view.module';
+
 
 @NgModule({
   declarations: [
