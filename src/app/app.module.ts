@@ -20,7 +20,6 @@ import { AreaAdminClientesListaComponent } from './area-admin-clientes-lista/are
 import { RegistroComponent } from './registro/registro.component';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { AreaAdminComponent } from './area-admin/area-admin.component';
-import { LogInComponent } from './log-in/log-in.component';
 import { FooterComponent } from './footer/footer.component';
 import { AreaempresaComponent } from './areaempresa/areaempresa.component';
 import { BarraLateralEmpresaComponent } from './barra-lateral-empresa/barra-lateral-empresa.component';
@@ -31,6 +30,7 @@ import { RouterModule } from '@angular/router';
 import { ResultadoBusquedaHotelesViewComponent } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles-view/resultado-busqueda-hoteles-view.component';
 import { LandingPageViewModule } from './landing-page-view/landing-page-view.module';
 import { LandingPageViewComponent } from './landing-page-view/landing-page-view/landing-page-view.component';
+import { LogInViewModule } from './log-in-view/log-in-view.module';
 
 
 @NgModule({
@@ -51,7 +51,6 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view/
     RegistroComponent,
     BarraLateralComponent,
     AreaAdminComponent,
-    LogInComponent,
     FooterComponent,
     AreaempresaComponent,
     BarraLateralEmpresaComponent,
@@ -68,6 +67,8 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view/
     FormsModule,
     ResultadoBusquedaHotelesModule,
     LandingPageViewModule,
+    LogInViewModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
