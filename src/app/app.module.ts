@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { SlidePhotosComponent } from './slide-photos/slide-photos.component';
 import { MishotelesComponent } from './mishoteles/mishoteles.component';
 import { MisreservasComponent } from './misreservas/misreservas.component';
 import { AreaAdminReservaComponent } from './area-admin-reserva/area-admin-reserva.component';
@@ -37,7 +36,6 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view/
 @NgModule({
   declarations: [
     AppComponent,
-    SlidePhotosComponent,
     MishotelesComponent,
     MisreservasComponent,
     AreaAdminReservaComponent,
