@@ -58,14 +58,14 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ResultadoBusquedaHotelesModule,
-    LandingPageViewModule,
     RouterModule.forRoot([
       {path: '', component: LandingPageViewComponent},
       {path:'resultado-busqueda', component: ResultadoBusquedaHotelesViewComponent}
     ]),
+    AppRoutingModule,
+    FormsModule,
+    ResultadoBusquedaHotelesModule,
+    LandingPageViewModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
