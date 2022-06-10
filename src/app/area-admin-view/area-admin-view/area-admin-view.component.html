@@ -7,6 +7,7 @@
       <div class="col">
         <app-area-admin *ngIf="apartado === 'cuenta'"></app-area-admin>
         <app-area-admin-clientes-lista *ngIf="apartado === 'clientes'"></app-area-admin-clientes-lista>
+        <app-area-admin-clientes *ngIf="apartado === 'cliente'"></app-area-admin-clientes>
         <app-area-admin-empresas-listas *ngIf="apartado === 'empresas'"></app-area-admin-empresas-listas>
         <app-area-admin-hoteles-listas *ngIf="apartado === 'hoteles'"></app-area-admin-hoteles-listas>
         <app-area-admin-reservas-lista *ngIf="apartado === 'reservas'"></app-area-admin-reservas-lista>
