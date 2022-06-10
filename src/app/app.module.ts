@@ -17,7 +17,6 @@ import { AreaclienteComponent } from './areacliente/areacliente.component';
 import { AreaAdminHotelesComponent } from './area-admin-hoteles/area-admin-hoteles.component';
 import { AreaAdminClientesListaComponent } from './area-admin-clientes-lista/area-admin-clientes-lista.component';
 import { RegistroComponent } from './registro/registro.component';
-import { MapComponent } from './map/map.component';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { AreaAdminComponent } from './area-admin/area-admin.component';
 import { LogInComponent } from './log-in/log-in.component';
@@ -27,6 +26,10 @@ import { BarraLateralEmpresaComponent } from './barra-lateral-empresa/barra-late
 import { AreaAdminClientesComponent } from './area-admin-clientes/area-admin-clientes.component';
 import { ResultadoBusquedaHotelesModule } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import { ResultadoBusquedaHotelesViewComponent } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles-view/resultado-busqueda-hoteles-view.component';
+import { LandingPageViewModule } from './landing-page-view/landing-page-view.module';
+import { LandingPageViewComponent } from './landing-page-view/landing-page-view/landing-page-view.component';
 
 @NgModule({
   declarations: [
@@ -44,21 +47,25 @@ import { NavbarComponent } from './navbar/navbar.component';
     AreaAdminHotelesComponent,
     AreaAdminClientesListaComponent,
     RegistroComponent,
-    MapComponent,
     BarraLateralComponent,
     AreaAdminComponent,
     LogInComponent,
-    FooterComponent
+    FooterComponent,
     AreaempresaComponent,
     BarraLateralEmpresaComponent,
     AreaAdminClientesComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ResultadoBusquedaHotelesModule
+    ResultadoBusquedaHotelesModule,
+    LandingPageViewModule,
+    RouterModule.forRoot([
+      {path: '', component: LandingPageViewComponent},
+      {path:'resultado-busqueda', component: ResultadoBusquedaHotelesViewComponent}
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
