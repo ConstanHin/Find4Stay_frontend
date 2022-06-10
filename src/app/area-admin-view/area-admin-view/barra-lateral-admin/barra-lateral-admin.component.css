@@ -1,7 +1,7 @@
 #barralateral {
   background-color: #EBF9F7;
   min-height: 100%;
-
+  overflow: hidden;
 }
 
 a {
@@ -10,19 +10,23 @@ a {
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  transition: box-shadow 0.25s, background-color 0.25s;
 }
 
 ul li {
-  border-bottom: 1px solid #79c7bb88;
+  /* box-shadow: 0px 2px 2px #3333; */
+  /* border-bottom: 1px solid #79c7bb88; */
 }
 
 ul li:first-child {
-  border-top: 1px solid #79c7bb88;
+  /* border-top: 1px solid #79c7bb88; */
 }
 
 a:hover {
+  color: black;
   cursor: pointer;
-  color: rgb(0, 0, 0);
+  background-color: #fff;
+  box-shadow: 0px 2px 2px #3333;
 }
 
 .bi {
