@@ -4,6 +4,9 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view.
 import { DescubreComponent } from './landing-page-view/descubre/descubre.component';
 import { BuscadorComponent } from './landing-page-view/buscador/buscador.component';
 import { MapComponent } from './landing-page-view/map/map.component';
+import { AppRoutingModule } from '../app-routing.module';
+import { SlidePhotosComponent } from './landing-page-view/slide-photos/slide-photos.component';
+
 
 
 
@@ -12,10 +15,12 @@ import { MapComponent } from './landing-page-view/map/map.component';
     LandingPageViewComponent,
     DescubreComponent,
     BuscadorComponent,
-    MapComponent
+    MapComponent,
+    SlidePhotosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   exports:[
     LandingPageViewComponent
