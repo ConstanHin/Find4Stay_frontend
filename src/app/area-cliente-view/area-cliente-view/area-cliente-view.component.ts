@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaClienteViewComponent implements OnInit {
 
+  apartado: string = "cliente";
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  cambiarApartado(apartado: string) {
+    this.apartado = apartado;
+  }
 }

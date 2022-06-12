@@ -6,6 +6,7 @@ import { ResultadoBusquedaHotelesViewComponent } from './resultado-busqueda-hote
 import { RegistroComponent } from './registro/registro.component';
 import { AreaAdminViewComponent } from './area-admin-view/area-admin-view/area-admin-view.component';
 import { LogInViewComponent } from './log-in-view/log-in-view/log-in-view.component';
+import { AreaClienteViewComponent } from './area-cliente-view/area-cliente-view/area-cliente-view.component';
 
 const routes: Routes = [
 
@@ -27,6 +28,10 @@ const routes: Routes = [
     path:'area-admin',
     component: AreaAdminViewComponent
   },
+  {
+    path:'area-cliente',
+    component: AreaClienteViewComponent
+  }
 
 ];
 

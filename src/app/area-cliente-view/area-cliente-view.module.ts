@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AreaClienteViewComponent } from './area-cliente-view/area-cliente-view.component';
 import { BarraLateralComponent } from './area-cliente-view/barra-lateral/barra-lateral.component';
 import { AreaclienteComponent } from './area-cliente-view/areacliente/areacliente.component';
+import { SeguridadComponent } from './area-cliente-view/seguridad/seguridad.component';
+import { MisreservasComponent } from './area-cliente-view/misreservas/misreservas.component';
 
 
 
@@ -10,12 +12,16 @@ import { AreaclienteComponent } from './area-cliente-view/areacliente/areaclient
   declarations: [
     AreaClienteViewComponent,
     BarraLateralComponent,
-    AreaclienteComponent
+    AreaclienteComponent,
+    SeguridadComponent,
+    MisreservasComponent
+
   ],
   imports: [
     CommonModule
   ],
-  exports:[AreaClienteViewComponent
+  exports:[
+    AreaClienteViewComponent
 
   ]
 })

@@ -14,8 +14,9 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view/
 import { LogInViewModule } from './log-in-view/log-in-view.module';
 import { AreaEmpresaViewModule } from './area-empresa-view/area-empresa-view.module';
 import { AreaAdminViewModule } from './area-admin-view/area-admin-view.module';
-import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.module';
 import { FooterComponent } from './footer/footer.component';
+import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.module';
+
 
 
 @NgModule({

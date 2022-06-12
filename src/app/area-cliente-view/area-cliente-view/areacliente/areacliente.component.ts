@@ -11,5 +11,4 @@ export class AreaclienteComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
