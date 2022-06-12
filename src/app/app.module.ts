@@ -49,6 +49,7 @@ import { AreaAdminViewModule } from './area-admin-view/area-admin-view.module';
     FormsModule,
     ResultadoBusquedaHotelesModule,
     LandingPageViewModule,
+    AreaClienteViewModule,
     AreaAdminViewModule
   ],
   providers: [],
