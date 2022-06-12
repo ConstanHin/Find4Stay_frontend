@@ -21,6 +21,7 @@ import { RouterModule } from '@angular/router';
 import { ResultadoBusquedaHotelesViewComponent } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles-view/resultado-busqueda-hoteles-view.component';
 import { LandingPageViewModule } from './landing-page-view/landing-page-view.module';
 import { LandingPageViewComponent } from './landing-page-view/landing-page-view/landing-page-view.component';
+import { AreaEmpresaViewModule } from './area-empresa-view/area-empresa-view.module';
 import { AreaAdminViewModule } from './area-admin-view/area-admin-view.module';
 
 
@@ -49,6 +50,7 @@ import { AreaAdminViewModule } from './area-admin-view/area-admin-view.module';
     FormsModule,
     ResultadoBusquedaHotelesModule,
     LandingPageViewModule,
+    AreaEmpresaViewModule
     AreaClienteViewModule,
     AreaAdminViewModule
   ],
