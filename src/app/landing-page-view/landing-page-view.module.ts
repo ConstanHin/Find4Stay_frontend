@@ -5,6 +5,8 @@ import { DescubreComponent } from './landing-page-view/descubre/descubre.compone
 import { BuscadorComponent } from './landing-page-view/buscador/buscador.component';
 import { MapComponent } from './landing-page-view/map/map.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { SlidePhotosComponent } from './landing-page-view/slide-photos/slide-photos.component';
+
 
 
 
@@ -13,7 +15,8 @@ import { AppRoutingModule } from '../app-routing.module';
     LandingPageViewComponent,
     DescubreComponent,
     BuscadorComponent,
-    MapComponent
+    MapComponent,
+    SlidePhotosComponent
   ],
   imports: [
     CommonModule,

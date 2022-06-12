@@ -1,0 +1,28 @@
+.titulo{
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.bi{
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+  margin-left: 20px;
+}
+
+#ex1{
+  padding-top: 5px;
+}
+
+#linia{
+  width: 50%;
+  border-bottom: 1px #7CDEB4 solid;
+}
+
+h5{
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+hr {
+  border-color: #7cdeb4;
+}
