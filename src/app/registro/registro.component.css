@@ -1,7 +1,8 @@
 .card-body{
 
-  box-shadow: 13px 13px 20px #535353;
+  box-shadow: 13px 13px 5px #3333;
   color: black;
+  border-radius: 0.5rem;
 
 
 
@@ -29,6 +30,7 @@
    height: 70px;
    border-radius: 0.5rem;
    margin: auto;
+   font-size: 23px;
 
 
  }
