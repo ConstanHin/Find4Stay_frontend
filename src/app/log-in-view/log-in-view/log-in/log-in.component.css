@@ -1,9 +1,10 @@
+
+
 .card-body{
 
   box-shadow: 13px 13px 5px #3333;
   color: black;
   border-radius: 0.5rem;
-
 
 
 }
@@ -19,7 +20,7 @@
 
 
 }
- .button{
+ .btn{
    letter-spacing: 0.1em;
    border: none;
    color: white;
@@ -30,7 +31,6 @@
    height: 70px;
    border-radius: 0.5rem;
    margin: auto;
-   font-size: 23px;
 
 
  }
@@ -44,25 +44,4 @@
 .mb-0{
   color:#79C7BB
 }
-.btn-group{
-   letter-spacing: 0.2em;
-   color: rgb(255, 255, 255) !important;
-   background-color: #77B0D4;
-    text-align: center;
-   box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
 
-   width: 80%;
-   height: 60px;
-   border-radius: 0.5rem;
-   margin: auto;
-}
-
-.btncolor1{
-
-  background-color: #c0c0c0;
-  padding-top: 5%;
-  border: none;
-
-
-
-}
