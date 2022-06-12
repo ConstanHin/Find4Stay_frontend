@@ -4,56 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { MisreservasComponent } from './misreservas/misreservas.component';
-import { AreaAdminReservaComponent } from './area-admin-reserva/area-admin-reserva.component';
-import { SeguridadComponent } from './seguridad/seguridad.component';
-import { AreaAdminReservasListaComponent } from './area-admin-reservas-lista/area-admin-reservas-lista.component';
-import { AreaAdminHotelesListasComponent } from './area-admin-hoteles-listas/area-admin-hoteles-listas.component';
-import { AreaAdminEmpresasListasComponent } from './area-admin-empresas-listas/area-admin-empresas-listas.component';
-import { AreaAdminEmpresaComponent } from './area-admin-empresa/area-admin-empresa.component';
-import { BarraLateralAdminComponent } from './barra-lateral-admin/barra-lateral-admin.component';
-import { AreaclienteComponent } from './areacliente/areacliente.component';
-import { AreaAdminHotelesComponent } from './area-admin-hoteles/area-admin-hoteles.component';
-import { AreaAdminClientesListaComponent } from './area-admin-clientes-lista/area-admin-clientes-lista.component';
 import { RegistroComponent } from './registro/registro.component';
-import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
-import { AreaAdminComponent } from './area-admin/area-admin.component';
-import { LogInComponent } from './log-in/log-in.component';
-import { FooterComponent } from './footer/footer.component';
-import { AreaempresaComponent } from './areaempresa/areaempresa.component';
-import { AreaAdminClientesComponent } from './area-admin-clientes/area-admin-clientes.component';
 import { ResultadoBusquedaHotelesModule } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { ResultadoBusquedaHotelesViewComponent } from './resultado-busqueda-hoteles/resultado-busqueda-hoteles-view/resultado-busqueda-hoteles-view.component';
 import { LandingPageViewModule } from './landing-page-view/landing-page-view.module';
 import { LandingPageViewComponent } from './landing-page-view/landing-page-view/landing-page-view.component';
-import { AreaHotelesReservasViewModule } from './area-hoteles-reservas-view/area-hoteles-reservas-view.module';
+import { LogInViewModule } from './log-in-view/log-in-view.module';
+import { AreaEmpresaViewModule } from './area-empresa-view/area-empresa-view.module';
+import { AreaAdminViewModule } from './area-admin-view/area-admin-view.module';
+import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.module';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MisreservasComponent,
-    AreaAdminReservaComponent,
-    SeguridadComponent,
-    AreaAdminReservasListaComponent,
-    AreaAdminHotelesListasComponent,
-    AreaAdminEmpresasListasComponent,
-    AreaAdminEmpresaComponent,
-    BarraLateralAdminComponent,
-    AreaclienteComponent,
-    AreaAdminHotelesComponent,
-    AreaAdminClientesListaComponent,
     RegistroComponent,
-    BarraLateralComponent,
-    AreaAdminComponent,
-    LogInComponent,
-    FooterComponent,
-    AreaempresaComponent,
-    AreaAdminClientesComponent,
     NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +35,10 @@ import { AreaHotelesReservasViewModule } from './area-hoteles-reservas-view/area
     FormsModule,
     ResultadoBusquedaHotelesModule,
     LandingPageViewModule,
-    AreaHotelesReservasViewModule
+    LogInViewModule,
+    AreaEmpresaViewModule,
+    AreaClienteViewModule,
+    AreaAdminViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
