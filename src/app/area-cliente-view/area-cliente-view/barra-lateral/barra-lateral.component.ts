@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-barra-lateral',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarraLateralComponent implements OnInit {
 
+  @Output() cambiarApartadoEvent = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cambiarApartado(apartado: string) {
+    this.cambiarApartadoEvent.emit(apartado)
   }
 
 }
