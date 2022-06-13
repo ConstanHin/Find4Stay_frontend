@@ -7,6 +7,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { AreaAdminViewComponent } from './area-admin-view/area-admin-view/area-admin-view.component';
 import { LogInViewComponent } from './log-in-view/log-in-view/log-in-view.component';
 import { AreaClienteViewComponent } from './area-cliente-view/area-cliente-view/area-cliente-view.component';
+import { AreaEmpresaViewComponent } from './area-empresa-view/area-empresa-view/area-empresa-view.component';
 
 const routes: Routes = [
 
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path:'area-cliente',
     component: AreaClienteViewComponent
+  },
+  {
+    path:'area-empresa',
+    component:AreaEmpresaViewComponent
   }
 
 ];
