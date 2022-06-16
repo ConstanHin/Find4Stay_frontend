@@ -1,59 +1,55 @@
 <div id="barralateral">
 
-  <!-- Admin -->
-  <ul *ngIf="role === 'admin'" class="nav align-items-center w-100 mt-4">
+  <ul class="nav align-items-center w-100 mt-4">
     <li class="d-block w-100">
       <a id="cuenta" class="nav-link px-0 align-items-center selected" (click)="cambiarApartado('cuenta')">
         <i class="bi bi-shield-check"></i><span class="ms-1 d-none d-md-inline">Cuenta</span> </a>
     </li>
-    <li class="d-block w-100">
-      <a id="clientes" class="nav-link px-0 align-items-center" (click)="cambiarApartado('clientes')">
-        <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Cliente</span> </a>
-    </li>
-    <li class="d-block w-100">
-      <a id="hoteles" class="nav-link px-0 align-items-center" (click)="cambiarApartado('hoteles')">
-        <i class="bi bi-star"></i><span class="ms-1 d-none d-md-inline">Hotel</span></a>
-    </li>
-    <li class="d-block w-100">
-      <a id="reservas" class="nav-link px-0 align-items-center" (click)="cambiarApartado('reservas')">
-        <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Reserva</span></a>
-    </li>
-    <li class="d-block w-100">
-      <a id="empresas" class="nav-link px-0 align-items-center" (click)="cambiarApartado('empresas')">
-        <i class="bi bi-briefcase"></i><span class="ms-1 d-none d-md-inline">Empresa</span></a>
-    </li>
-  </ul>
+    <!-- Admin -->
+    <div id="barra-lateral-admin-items" class="w-100" *ngIf="role === 'admin'">
+      <li class="d-block w-100">
+        <a id="clientes" class="nav-link px-0 align-items-center" (click)="cambiarApartado('clientes')">
+          <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Cliente</span> </a>
+      </li>
+      <li class="d-block w-100">
+        <a id="hoteles" class="nav-link px-0 align-items-center" (click)="cambiarApartado('hoteles')">
+          <i class="bi bi-star"></i><span class="ms-1 d-none d-md-inline">Hotel</span></a>
+      </li>
+      <li class="d-block w-100">
+        <a id="reservas" class="nav-link px-0 align-items-center" (click)="cambiarApartado('reservas')">
+          <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Reserva</span></a>
+      </li>
+      <li class="d-block w-100">
+        <a id="empresas" class="nav-link px-0 align-items-center" (click)="cambiarApartado('empresas')">
+          <i class="bi bi-briefcase"></i><span class="ms-1 d-none d-md-inline">Empresa</span></a>
+      </li>
+    </div>
 
-  <!-- Cliente -->
-  <ul *ngIf="role === 'cliente'" class="nav align-items-center w-100">
-    <li class="d-block w-100 mt-4">
-      <a id="cuenta" class="nav-link px-0 align-items-center selected" (click)="cambiarApartado('seguridad')">
-        <i class="bi bi-shield-check"></i><span class="ms-1 d-none d-md-inline">Cuenta</span> </a>
-    </li>
-    <li class="d-block w-100" (click)="cambiarApartado('cliente')">
-      <a class="nav-link px-0 align-items-center">
-        <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Mis datos</span></a>
-    </li>
-    <li class="d-block w-100" (click)="cambiarApartado('misreservas')">
-      <a class="nav-link px-0 align-items-center">
-        <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Mis Reservas</span></a>
-    </li>
-  </ul>
+    <!-- Cliente -->
 
-  <!-- Empresa -->
-  <ul *ngIf="role === 'empresa'"class="nav align-items-center w-100">
-    <li class="d-block w-100 mt-4">
-      <a id="cuenta" class="nav-link px-0 align-items-center selected" (click)="cambiarApartado('seguridad')">
-        <i class="bi bi-shield-check"></i><span class="ms-1 d-none d-md-inline">Cuenta</span> </a>
-    </li>
-    <li class="d-block w-100" (click)="cambiarApartado('empresa')">
-      <a class="nav-link px-0 align-items-center">
-        <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Datos Empresa</span> </a>
-    </li>
-    <li class="d-block w-100">
-      <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('mishoteles')">
-        <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Mis Hoteles</span></a>
-    </li>
+    <div id="barra-lateral-cliente-items" class="w-100" *ngIf="role === 'cliente'">
+      <li class="d-block w-100">
+        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('cliente')">
+          <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Mis datos</span></a>
+      </li>
+      <li class="d-block w-100">
+        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('misreservas')">
+          <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Mis Reservas</span></a>
+      </li>
+    </div>
+
+    <!-- Empresa -->
+    <div id="barra-lateral-empresa-items" class="w-100" *ngIf="role === 'empresa'">
+      <li class="d-block w-100">
+        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('empresa')">
+          <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Datos Empresa</span> </a>
+      </li>
+      <li class="d-block w-100">
+        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('mishoteles')">
+          <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Mis Hoteles</span></a>
+      </li>
+    </div>
+
   </ul>
 
 </div>
