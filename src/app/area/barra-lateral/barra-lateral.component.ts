@@ -9,6 +9,8 @@ export class BarraLateralComponent implements OnInit {
 
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
 
+  role : string = "admin" //admin/cliente/empresa
+
   constructor() { }
 
   ngOnInit(): void {
