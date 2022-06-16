@@ -4,8 +4,8 @@
       <app-barra-lateral (cambiarApartadoEvent)="cambiarApartado($event)"></app-barra-lateral>
     </div>
     <div class="col">
+      <app-area-cuenta *ngIf="apartado === 'cuenta'"></app-area-cuenta>
       <app-areaempresa *ngIf="apartado === 'empresa'"></app-areaempresa>
-      <app-seguridad *ngIf="apartado === 'seguridad'"></app-seguridad>
       <app-mishoteles *ngIf="apartado === 'mishoteles'"></app-mishoteles>
     </div>
   </div>

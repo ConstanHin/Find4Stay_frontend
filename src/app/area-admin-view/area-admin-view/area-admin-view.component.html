@@ -6,7 +6,7 @@
     </div>
     <div class="col">
 
-      <app-area-admin *ngIf="apartado === 'cuenta'"></app-area-admin>
+      <app-area-cuenta *ngIf="apartado === 'cuenta'"></app-area-cuenta>
       <app-area-admin-clientes-lista *ngIf="apartado === 'clientes'" (cambiarApartadoEvent)="cambiarApartado($event)">
       </app-area-admin-clientes-lista>
       <app-area-admin-clientes *ngIf="apartado === 'cliente'"></app-area-admin-clientes>

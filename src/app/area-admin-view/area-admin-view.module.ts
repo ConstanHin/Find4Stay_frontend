@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AreaAdminViewComponent } from './area-admin-view/area-admin-view.component';
-import { AreaAdminComponent } from './area-admin-view/area-admin/area-admin.component';
 import { AreaAdminClientesComponent } from './area-admin-view/area-admin-clientes/area-admin-clientes.component';
 import { AreaAdminClientesListaComponent } from './area-admin-view/clientes-lista/area-admin-clientes-lista.component';
 import { AreaAdminEmpresaComponent } from './area-admin-view/area-admin-empresa/area-admin-empresa.component';
@@ -17,7 +16,6 @@ import { AreaModule } from '../area/area.module';
 @NgModule({
   declarations: [
     AreaAdminViewComponent,
-    AreaAdminComponent,
     AreaAdminClientesComponent,
     AreaAdminClientesListaComponent,
     AreaAdminEmpresaComponent,

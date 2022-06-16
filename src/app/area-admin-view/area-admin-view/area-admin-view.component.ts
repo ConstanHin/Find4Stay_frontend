@@ -10,7 +10,7 @@ export class AreaAdminViewComponent implements OnInit {
 
   // Determina el componenete que aparece en el contenido
   apartado: string = "cuenta";
-  role: string = "";
+  // role: string = "";
 
   constructor(private areaService: AreaService) {
     // this.role = new AreaService().getRole();
@@ -21,6 +21,8 @@ export class AreaAdminViewComponent implements OnInit {
 
   cambiarApartado(apartado: string) {
     this.apartado = apartado;
+    console.log(apartado, ":apartado");
+
   }
 
 }

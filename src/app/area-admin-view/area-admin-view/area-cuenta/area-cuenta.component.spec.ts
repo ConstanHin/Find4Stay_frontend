@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AreaAdminComponent } from './area-admin.component';
+import { AreaAdminComponent } from './area-cuenta.component';
 
 describe('AreaAdminComponent', () => {
   let component: AreaAdminComponent;
