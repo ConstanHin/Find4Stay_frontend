@@ -5,13 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class AreaService {
 
-  role: string = "cliente";
+  role: string = "admin";
 
   constructor() {
   }
 
-  getRole() {
-    return this.role
+  getRoleArea() {
+    return this.role;
+  }
+
+  setRoleArea(role: string) {
+    this.role = role;
   }
 
 }

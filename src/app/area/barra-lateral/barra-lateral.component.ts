@@ -15,7 +15,7 @@ export class BarraLateralComponent implements OnInit {
   constructor(private areaService: AreaService) { }
 
   ngOnInit(): void {
-    this.role = this.areaService.getRole()
+    this.role = this.areaService.getRoleArea()
   }
 
   /**
