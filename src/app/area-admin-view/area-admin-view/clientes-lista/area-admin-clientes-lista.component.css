@@ -1,4 +1,4 @@
-.titulo{
+f.titulo{
   margin-top: 30px;
   font-weight: bold;
 }
@@ -13,12 +13,12 @@
   padding-top: 5px;
 }
 
-#info{
+.info-header{
   font-weight: bold;
   text-align: left;
 }
 
-#datos{
+.datos{
   border-bottom: 1px #7CDEB4 solid;
 
 }
@@ -26,4 +26,8 @@
 h5{
   margin-top: 30px;
   margin-bottom: 60px;
+}
+
+.table>div:nth-child(even) {
+  background-color: #F1F9F8;
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Cliente } from 'src/app/models/cliente';
 
 @Component({
   selector: 'app-area-admin-clientes-lista',
@@ -8,6 +9,23 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class AreaAdminClientesListaComponent implements OnInit {
 
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
+  listaClientes: Cliente[] = [
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+    {nombre:"pepe", apellido: "pepito", dni: "123", email: "asd" },
+  ];
+  page: number = 1;
 
   constructor() { }
 

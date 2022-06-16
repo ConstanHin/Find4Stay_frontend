@@ -38,7 +38,7 @@ import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.mod
     LogInViewModule,
     AreaEmpresaViewModule,
     AreaClienteViewModule,
-    AreaAdminViewModule
+    AreaAdminViewModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
