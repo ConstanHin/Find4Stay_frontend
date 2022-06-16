@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BarraLateralAdminComponent } from './barra-lateral-admin.component';
+import { BarraLateralComponent } from './barra-lateral.component';
 
-describe('BarraLateralAdminComponent', () => {
-  let component: BarraLateralAdminComponent;
-  let fixture: ComponentFixture<BarraLateralAdminComponent>;
+describe('BarraLateralComponent', () => {
+  let component: BarraLateralComponent;
+  let fixture: ComponentFixture<BarraLateralComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BarraLateralAdminComponent ]
+      declarations: [ BarraLateralComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BarraLateralAdminComponent);
+    fixture = TestBed.createComponent(BarraLateralComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

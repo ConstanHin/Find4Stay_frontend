@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-barra-lateral-admin',
-  templateUrl: './barra-lateral-admin.component.html',
-  styleUrls: ['./barra-lateral-admin.component.css']
+  selector: 'app-barra-lateral',
+  templateUrl: './barra-lateral.component.html',
+  styleUrls: ['./barra-lateral.component.css']
 })
-export class BarraLateralAdminComponent implements OnInit {
+export class BarraLateralComponent implements OnInit {
 
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
 
