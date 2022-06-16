@@ -35,4 +35,4 @@ import { AreaModule } from '../area/area.module';
     AreaAdminViewComponent
   ]
 })
-export class AreaAdminViewModule { }
+export class AreaAdminViewModule {}

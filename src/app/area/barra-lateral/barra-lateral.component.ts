@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { AreaService } from '../area.service';
 
 @Component({
   selector: 'app-barra-lateral',
@@ -8,12 +9,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class BarraLateralComponent implements OnInit {
 
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
+  // @Input() role : string = "" //admin/cliente/empresa
+  role: string = ""
 
-  role : string = "admin" //admin/cliente/empresa
-
-  constructor() { }
+  constructor(private areaService: AreaService) { }
 
   ngOnInit(): void {
+    this.role = this.areaService.getRole()
   }
 
   /**

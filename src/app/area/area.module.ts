@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 
 
-
 @NgModule({
   declarations: [
     BarraLateralComponent
@@ -12,7 +11,7 @@ import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
     CommonModule
   ],
   exports: [
-    BarraLateralComponent
+    BarraLateralComponent,
   ]
 })
 export class AreaModule { }

@@ -43,4 +43,4 @@ import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.mod
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
