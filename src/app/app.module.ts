@@ -16,6 +16,7 @@ import { AreaEmpresaViewModule } from './area-empresa-view/area-empresa-view.mod
 import { AreaAdminViewModule } from './area-admin-view/area-admin-view.module';
 import { FooterComponent } from './footer/footer.component';
 import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -39,7 +40,9 @@ import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.mod
     LogInViewModule,
     AreaEmpresaViewModule,
     AreaClienteViewModule,
-    AreaAdminViewModule
+    AreaAdminViewModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
