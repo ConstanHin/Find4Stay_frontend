@@ -19,7 +19,6 @@ import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.mod
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AreaClienteViewModule,
     AreaAdminViewModule,
     BrowserAnimationsModule,
+
 
   ],
   providers: [],

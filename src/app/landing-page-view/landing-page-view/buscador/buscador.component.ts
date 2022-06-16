@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-buscador',
@@ -12,6 +14,8 @@ export class BuscadorComponent implements OnInit {
 
 
 maxDate = new Date();
+selectDate = new Date();
+
 
 
   constructor() { }
@@ -19,8 +23,14 @@ maxDate = new Date();
   ngOnInit(): void {
   }
 
-  guardarFechaEntrada(fecha:Date) {
-    console.log(fecha);
+  guardarFechaEntrada(event: any) {
+    console.log(event.target.value);
+    this.selectDate = event.target.value;
+
+  }
+
+  onClick() {
+    
   }
 
 

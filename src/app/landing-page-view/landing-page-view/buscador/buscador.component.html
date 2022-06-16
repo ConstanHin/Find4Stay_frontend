@@ -16,13 +16,14 @@
       </div>
 
       <div class="col-md">
-        <input matInput [matDatepicker]="pickerEntrada" class="form-control" [min]="maxDate" (change)="guardarFechaEntrada(maxDate)" placeholder="Fecha Entrada">
+        <!-- <input matInput [matDatepicker]="pickerEntrada" class="form-control" [min]="maxDate" placeholder="Fecha Entrada" type="date" (change)="guardarFechaEntrada($event)"> -->
+        <input matInput [matDatepicker]="pickerEntrada" class="form-control" [min]="maxDate" placeholder="Fecha Entrada" type="date" (change)="guardarFechaEntrada($event)">
         <mat-datepicker-toggle matSuffix [for]="pickerEntrada"></mat-datepicker-toggle>
         <mat-datepicker #pickerEntrada></mat-datepicker>
       </div>
 
       <div class="col-md">
-        <input [matDatepicker]="pickerSalida" class="form-control" [min]="maxDate" placeholder="Fecha Salida">
+        <input matInput [matDatepicker]="pickerSalida" class="form-control" [min]="selectDate" placeholder="Fecha Salida" type="date">
         <mat-datepicker-toggle matSuffix [for]="pickerSalida"></mat-datepicker-toggle>
         <mat-datepicker #pickerSalida></mat-datepicker>
       </div>
