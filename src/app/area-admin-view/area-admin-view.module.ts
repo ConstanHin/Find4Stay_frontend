@@ -10,7 +10,7 @@ import { AreaAdminHotelesComponent } from './area-admin-view/area-admin-hoteles/
 import { AreaAdminHotelesListasComponent } from './area-admin-view/area-admin-hoteles-listas/area-admin-hoteles-listas.component';
 import { AreaAdminReservaComponent } from './area-admin-view/area-admin-reserva/area-admin-reserva.component';
 import { AreaAdminReservasListaComponent } from './area-admin-view/area-admin-reservas-lista/area-admin-reservas-lista.component';
-import { BarraLateralComponent } from '../area/barra-lateral/barra-lateral.component';
+import { AreaModule } from '../area/area.module';
 
 
 
@@ -26,10 +26,10 @@ import { BarraLateralComponent } from '../area/barra-lateral/barra-lateral.compo
     AreaAdminHotelesListasComponent,
     AreaAdminReservaComponent,
     AreaAdminReservasListaComponent,
-    BarraLateralComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AreaModule
   ],
   exports: [
     AreaAdminViewComponent
