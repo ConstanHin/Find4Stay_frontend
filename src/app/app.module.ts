@@ -18,13 +18,12 @@ import { FooterComponent } from './footer/footer.component';
 import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.module';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     RegistroComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,4 +43,4 @@ import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.mod
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeguridadComponent } from './seguridad.component';
+import { AreaAdminComponent } from './area-cuenta.component';
 
-describe('SeguridadComponent', () => {
-  let component: SeguridadComponent;
-  let fixture: ComponentFixture<SeguridadComponent>;
+describe('AreaAdminComponent', () => {
+  let component: AreaAdminComponent;
+  let fixture: ComponentFixture<AreaAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SeguridadComponent ]
+      declarations: [ AreaAdminComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SeguridadComponent);
+    fixture = TestBed.createComponent(AreaAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

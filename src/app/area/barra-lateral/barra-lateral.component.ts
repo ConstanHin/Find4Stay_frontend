@@ -1,17 +1,21 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { AreaService } from '../area.service';
 
 @Component({
-  selector: 'app-barra-lateral-admin',
-  templateUrl: './barra-lateral-admin.component.html',
-  styleUrls: ['./barra-lateral-admin.component.css']
+  selector: 'app-barra-lateral',
+  templateUrl: './barra-lateral.component.html',
+  styleUrls: ['./barra-lateral.component.css']
 })
-export class BarraLateralAdminComponent implements OnInit {
+export class BarraLateralComponent implements OnInit {
 
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
+  // @Input() role : string = "" //admin/cliente/empresa
+  role: string = ""
 
-  constructor() { }
+  constructor(private areaService: AreaService) { }
 
   ngOnInit(): void {
+    this.role = this.areaService.getRoleArea()
   }
 
   /**

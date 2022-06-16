@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AreaService } from 'src/app/area/area.service';
 
 @Component({
   selector: 'app-area-admin-view',
@@ -9,14 +10,19 @@ export class AreaAdminViewComponent implements OnInit {
 
   // Determina el componenete que aparece en el contenido
   apartado: string = "cuenta";
+  // role: string = "";
 
-  constructor() { }
+  constructor(private areaService: AreaService) {
+    // this.role = new AreaService().getRole();
+   }
 
   ngOnInit(): void {
   }
 
   cambiarApartado(apartado: string) {
     this.apartado = apartado;
+    console.log(apartado, ":apartado");
+
   }
 
 }
