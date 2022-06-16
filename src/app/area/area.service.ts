@@ -8,9 +8,10 @@ export class AreaService {
   role: string = "cliente";
 
   constructor() {
-   }
+  }
 
-   getRole(){
+  getRole() {
     return this.role
-   }
+  }
+
 }
