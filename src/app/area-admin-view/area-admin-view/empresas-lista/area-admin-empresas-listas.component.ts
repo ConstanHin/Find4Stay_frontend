@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Empresa } from 'src/app/models/empresa';
 
 @Component({
   selector: 'app-area-admin-empresas-listas',
@@ -8,6 +9,20 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class AreaAdminEmpresasListasComponent implements OnInit {
 
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
+  listaEmpresas: Empresa[] = [
+    {codigo:"ab123", nombre: "KH"},
+    {codigo:"ab123", nombre: "KH"},
+    {codigo:"ab123", nombre: "KH"},
+    {codigo:"ab123", nombre: "KH"},
+    {codigo:"ab123", nombre: "KH"},
+    {codigo:"ab123", nombre: "KH"},
+    {codigo:"ab123", nombre: "KH"},
+    {codigo:"ab123", nombre: "KH"},
+    {codigo:"ab123", nombre: "KH"},
+    {codigo:"ab123", nombre: "KH"},
+    {codigo:"ab123", nombre: "KH"},
+  ]
+  page: number = 1;
 
   constructor() { }
 

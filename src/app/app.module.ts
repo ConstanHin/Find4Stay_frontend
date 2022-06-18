@@ -23,7 +23,7 @@ import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.mod
     AppComponent,
     RegistroComponent,
     NavbarComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
