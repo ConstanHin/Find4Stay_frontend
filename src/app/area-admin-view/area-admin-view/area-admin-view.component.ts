@@ -9,7 +9,7 @@ import { AreaService } from 'src/app/area/area.service';
 export class AreaAdminViewComponent implements OnInit {
 
   // Determina el componenete que aparece en el contenido
-  apartado: string = "cuenta";
+  apartado: string = "reservas";
   // role: string = "";
 
   constructor(private areaService: AreaService) {

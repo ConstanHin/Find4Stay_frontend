@@ -10,6 +10,9 @@ import { AreaAdminHotelesListasComponent } from './area-admin-view/hoteles-lista
 import { AreaAdminReservaComponent } from './area-admin-view/area-admin-reserva/area-admin-reserva.component';
 import { AreaAdminReservasListaComponent } from './area-admin-view/reservas-lista/area-admin-reservas-lista.component';
 import { AreaModule } from '../area/area.module';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { NumberToStarsPipe } from '../pipes/number-to-stars.pipe';
+
 
 
 
@@ -24,10 +27,12 @@ import { AreaModule } from '../area/area.module';
     AreaAdminHotelesListasComponent,
     AreaAdminReservaComponent,
     AreaAdminReservasListaComponent,
+    NumberToStarsPipe
   ],
   imports: [
     CommonModule,
-    AreaModule
+    AreaModule,
+    NgxPaginationModule,
   ],
   exports: [
     AreaAdminViewComponent

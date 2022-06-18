@@ -1,132 +1,57 @@
 <div class="container">
   <h5>Lista Hoteles</h5>
 
-  <form>
-    <div class="form-group row" id="info">
-      <div class="col-sm">
-        <label for="ex1" id="ex1">Nombre</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" id="ex1">Categoria</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" id="ex1">Población</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" id="ex1">Ubicación</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" id="ex1">Precio</label>
-      </div>
-      <div class="col-sm-1">
-      </div>
-      <div class="col-sm-1">
-      </div>
-    </div>
+    <!-- Table -->
+    <ul role="table" class="ps-0 table">
 
-    <br>
+      <!-- Data header -->
+      <div class="row info-header d-none d-sm-flex">
+        <div class="col-md-2">
+          <div class="ex1">Nombre</div>
+        </div>
+        <div class="col-md-2">
+          <div class="ex1">Categoría</div>
+        </div>
+        <div class="col-md-2">
+          <div class="ex1">Población</div>
+        </div>
+        <div class="col-md-2">
+          <div class="ex1">Ubicación</div>
+        </div>
+        <div class="col-md-2">
+          <div class="ex1">Precio</div>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-1">
+        </div>
+      </div>
 
-    <div class="form-group row" id="datos">
-      <div class="col-sm">
-        <label for="ex1" class="ex1" >NH</label>
+      <!-- Data row-->
+      <div class="row datos" *ngFor="let hotel of listaHoteles | paginate: {itemsPerPage:10, currentPage: page}">
+        <div class="col-md-2">
+          <div class="ex1">{{hotel.nombre}}</div>
+        </div>
+        <div class="col-md-2">
+          <div class="ex1">{{hotel.categoria | numberToStars}}</div>
+        </div>
+        <div class="col-md-2">
+          <div class="ex1">{{hotel.poblacion}}</div>
+        </div>
+        <div class="col-md-2">
+          <div class="ex1">{{hotel.ubicacion}}</div>
+        </div>
+        <div class="col-md-2">
+          <div class="ex1">{{hotel.precio | currency:'EUR':'symbol':'1.2-2' : 'es'}}</div>
+        </div>
+        <div class="col-md-1">
+          <a role="button" (click)="cambiarApartado('hotel')"><i class="bi bi-pencil-square"></i></a>
+        </div>
+        <div class="col-md-1">
+          <a role="button"><i class="bi bi-trash3"></i></a>
+        </div>
       </div>
-      <div class="col-sm">
-        <label for="ex1">⭐⭐⭐</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">Reus</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">41.1444,1.1106272</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">50€</label>
-      </div>
-      <div class="col-sm-1">
-        <a role="button" (click)="cambiarApartado('hotel')"><i class="bi bi-pencil-square"></i></a>
-      </div>
-      <div class="col-sm-1">
-        <a role="button"><i class="bi bi-trash3"></i></a>
-      </div>
-    </div>
 
-    <br>
-
-    <div class="form-group row" id="datos">
-      <div class="col-sm">
-        <label for="ex1" class="ex1" >CG</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">⭐⭐</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">Reus</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">41.1590166,1.1132131</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">30€</label>
-      </div>
-      <div class="col-sm-1">
-        <label for="ex3"><i class="bi bi-pencil-square"></i></label>
-      </div>
-      <div class="col-sm-1">
-        <label for="ex3"><i class="bi bi-trash3"></i></label>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="form-group row" id="datos">
-      <div class="col-sm">
-        <label for="ex1" class="ex1" >SB</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">⭐⭐⭐⭐</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">Tarragona</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">41.1229899,1.234048</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">100€</label>
-      </div>
-      <div class="col-sm-1">
-        <label for="ex3"><i class="bi bi-pencil-square"></i></label>
-      </div>
-      <div class="col-sm-1">
-        <label for="ex3"><i class="bi bi-trash3"></i></label>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="form-group row" id="datos">
-      <div class="col-sm">
-        <label for="ex1" class="ex1" >W</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">⭐⭐⭐⭐⭐</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">Barcelona</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">41.3926466,2.069978</label>
-      </div>
-      <div class="col-sm">
-        <label for="ex1" class="ex1">500€</label>
-      </div>
-      <div class="col-sm-1">
-        <label for="ex3"><i class="bi bi-pencil-square"></i></label>
-      </div>
-      <div class="col-sm-1">
-        <label for="ex3"><i class="bi bi-trash3"></i></label>
-      </div>
-    </div>
-
-  </form>
+    </ul>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
