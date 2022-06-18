@@ -6,6 +6,7 @@ import { BuscadorComponent } from './landing-page-view/buscador/buscador.compone
 import { MapComponent } from './landing-page-view/map/map.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SlidePhotosComponent } from './landing-page-view/slide-photos/slide-photos.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,11 +17,13 @@ import { SlidePhotosComponent } from './landing-page-view/slide-photos/slide-pho
     DescubreComponent,
     BuscadorComponent,
     MapComponent,
-    SlidePhotosComponent
+    SlidePhotosComponent,
+
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   exports:[
     LandingPageViewComponent
