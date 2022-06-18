@@ -34,10 +34,14 @@
         <mat-date-range-input [rangePicker]="picker" [min]="maxDate" >
           <input matStartDate placeholder="Fecha Entrada" >
           <input matEndDate placeholder="Fecha Salida">
+          <mat-hint> {{getDateFormatString()}} </mat-hint>
         </mat-date-range-input>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-date-range-picker #picker></mat-date-range-picker>
 
+        <!-- <div class="d-flex justify-content-center mt-3">
+          <button type="submit" id="change" class="btn px-4 text-white">¡Enviar reserva!</button>
+        </div> -->
       </mat-form-field>
 
 

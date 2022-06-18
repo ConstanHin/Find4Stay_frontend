@@ -13,7 +13,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 
 
-
 @NgModule({
   declarations: [
     LandingPageViewComponent,
@@ -31,8 +30,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatNativeDateModule,
-    FormsModule,
-
+    FormsModule
 
   ],
   exports:[

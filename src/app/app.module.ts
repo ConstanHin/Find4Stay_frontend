@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 @NgModule({
@@ -45,7 +46,9 @@ import { DatePipe } from '@angular/common';
 
 
   ],
-  providers: [ ],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
