@@ -15,18 +15,35 @@
         </select>
       </div>
 
-      <div class="col-md">
-        <!-- <input matInput [matDatepicker]="pickerEntrada" class="form-control" [min]="maxDate" placeholder="Fecha Entrada" type="date" (change)="guardarFechaEntrada($event)"> -->
+     <!-- <div class="col-md">
         <input matInput [matDatepicker]="pickerEntrada" class="form-control" [min]="maxDate" placeholder="Fecha Entrada" type="date" (change)="guardarFechaEntrada($event)">
+        <input matInput [matDatepicker]="pickerEntrada" class="form-control" [min]="maxDate" placeholder="Fecha Entrada" (change)="guardarFechaEntrada($event)" >
         <mat-datepicker-toggle matSuffix [for]="pickerEntrada"></mat-datepicker-toggle>
         <mat-datepicker #pickerEntrada></mat-datepicker>
-      </div>
+      </div> -->
 
-      <div class="col-md">
-        <input matInput [matDatepicker]="pickerSalida" class="form-control" [min]="selectDate" placeholder="Fecha Salida" type="date">
+
+      <!-- <div class="col-md">
+        <input matInput [matDatepicker]="pickerSalida" class="form-control" [min]="selectDate" placeholder="Fecha Salida"  (click)="guardarFechaSalida($event)" (change)="guardarFechaSalida($event)">
         <mat-datepicker-toggle matSuffix [for]="pickerSalida"></mat-datepicker-toggle>
         <mat-datepicker #pickerSalida></mat-datepicker>
-      </div>
+      </div> -->
+
+      <mat-form-field  [color]= "'accent'"appearance="fill">
+        <mat-label >Introduce el rango de fechas:</mat-label>
+        <mat-date-range-input [rangePicker]="picker" [min]="maxDate" >
+          <input matStartDate placeholder="Fecha Entrada" >
+          <input matEndDate placeholder="Fecha Salida">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+
+      </mat-form-field>
+
+
+
+
+
 
       <div class="col-md">
         <label for="personas"></label>

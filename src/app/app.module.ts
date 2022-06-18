@@ -17,6 +17,7 @@ import { AreaAdminViewModule } from './area-admin-view/area-admin-view.module';
 import { FooterComponent } from './footer/footer.component';
 import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
