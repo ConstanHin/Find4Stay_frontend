@@ -15,6 +15,7 @@ import { NumberToStarsPipe } from '../pipes/number-to-stars.pipe';
 
 
 
+
 @NgModule({
   declarations: [
     AreaAdminViewComponent,
