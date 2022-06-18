@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,10 @@ import { AreaEmpresaViewModule } from './area-empresa-view/area-empresa-view.mod
 import { AreaAdminViewModule } from './area-admin-view/area-admin-view.module';
 import { FooterComponent } from './footer/footer.component';
 import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.module';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es'
 
+registerLocaleData(localeEs)
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.mod
     AreaClienteViewModule,
     AreaAdminViewModule,
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'es-ES'
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

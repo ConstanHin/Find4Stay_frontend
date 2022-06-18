@@ -3,5 +3,5 @@ export class Hotel {
   categoria: number = 1; // valor 1-5
   poblacion: string = "";
   ubicacion: string = "";
-  precio: string = ""; // cambiar a numero representando el precio en centimos(para mejor conversion)?
+  precio: number = 0; // cambiar a numero representando el precio en centimos(para mejor conversion)?
 }
