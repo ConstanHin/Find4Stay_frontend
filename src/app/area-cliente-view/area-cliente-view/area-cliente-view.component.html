@@ -1,0 +1,15 @@
+<div class="container-fluid g-0">
+    <div class="row vh100">
+      <div class="col-2">
+        <app-barra-lateral (cambiarApartadoEvent)="cambiarApartado($event)"></app-barra-lateral>
+      </div>
+      <div class="col">
+        <app-area-cuenta *ngIf="apartado === 'cuenta'"></app-area-cuenta>
+        <app-areacliente *ngIf="apartado === 'cliente'"></app-areacliente>
+        <app-misreservas *ngIf="apartado === 'misreservas'"></app-misreservas>
+    </div>
+  </div>
+ </div>
+
+
+
