@@ -9,6 +9,7 @@ export class RegistroComponent implements OnInit {
   usuario: string="";
   password: string="";
   email: string="";
+  tipo: string= "Cliente"
 
   login(){
     console.log(this.usuario);
@@ -18,6 +19,10 @@ export class RegistroComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cambioTipo(tipo: string) {
+    this.tipo = tipo;
   }
 
 }

@@ -1,6 +1,5 @@
-.card-body{
-  box-shadow: 10px 10px 25px #535353;
-  color: black;
+.card{
+  box-shadow: 15px 15px 3px #3335;
 }
 
 .form-outline input{
@@ -52,8 +51,11 @@
 }
 
 .btncolor1{
-  background-color: #c0c0c0;
+  background-color: #eee;
   padding-top: 5%;
   border: none;
+}
 
+#main-registro-section {
+  min-height: 100vh;
 }
