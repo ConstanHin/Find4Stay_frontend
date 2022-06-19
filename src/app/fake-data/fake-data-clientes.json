@@ -1,0 +1,144 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Mittie",
+      "apellido": "Carter",
+      "dni": "70484L",
+      "email": "Roma.Hintz@hotmail.com"
+    },
+    {
+      "id": 2,
+      "nombre": "Rosalia",
+      "apellido": "Toy",
+      "dni": "22636Y",
+      "email": "Isaias.Trantow95@hotmail.com"
+    },
+    {
+      "id": 3,
+      "nombre": "Brittany",
+      "apellido": "Kunze",
+      "dni": "21507K",
+      "email": "Kristina97@gmail.com"
+    },
+    {
+      "id": 4,
+      "nombre": "George",
+      "apellido": "Mueller",
+      "dni": "550U",
+      "email": "Jeffrey74@yahoo.com"
+    },
+    {
+      "id": 5,
+      "nombre": "Shany",
+      "apellido": "Schuster",
+      "dni": "15663V",
+      "email": "Macie_Auer@gmail.com"
+    },
+    {
+      "id": 6,
+      "nombre": "Gaetano",
+      "apellido": "Swaniawski",
+      "dni": "67701Q",
+      "email": "Elta60@yahoo.com"
+    },
+    {
+      "id": 7,
+      "nombre": "Verda",
+      "apellido": "Fisher",
+      "dni": "14436C",
+      "email": "Ludie70@hotmail.com"
+    },
+    {
+      "id": 8,
+      "nombre": "Anissa",
+      "apellido": "Harris",
+      "dni": "77238P",
+      "email": "Christ.Hansen72@gmail.com"
+    },
+    {
+      "id": 9,
+      "nombre": "Grover",
+      "apellido": "Blick",
+      "dni": "42672V",
+      "email": "Kailey_Medhurst@hotmail.com"
+    },
+    {
+      "id": 10,
+      "nombre": "Makayla",
+      "apellido": "Skiles",
+      "dni": "55758K",
+      "email": "Westley.Hamill@gmail.com"
+    },
+    {
+      "id": 11,
+      "nombre": "Myrtie",
+      "apellido": "Romaguera",
+      "dni": "58365N",
+      "email": "Irma48@yahoo.com"
+    },
+    {
+      "id": 12,
+      "nombre": "Jamil",
+      "apellido": "Zboncak",
+      "dni": "96027J",
+      "email": "Darrel0@hotmail.com"
+    },
+    {
+      "id": 13,
+      "nombre": "Joshuah",
+      "apellido": "Aufderhar",
+      "dni": "95948G",
+      "email": "Dewitt_Ratke@hotmail.com"
+    },
+    {
+      "id": 14,
+      "nombre": "Daija",
+      "apellido": "McKenzie",
+      "dni": "1846R",
+      "email": "Kayley39@yahoo.com"
+    },
+    {
+      "id": 15,
+      "nombre": "Kamron",
+      "apellido": "Aufderhar",
+      "dni": "15090R",
+      "email": "Lorine_Tromp@gmail.com"
+    },
+    {
+      "id": 16,
+      "nombre": "Jameson",
+      "apellido": "Quitzon",
+      "dni": "62774D",
+      "email": "Gladys6@hotmail.com"
+    },
+    {
+      "id": 17,
+      "nombre": "Gladys",
+      "apellido": "Cormier",
+      "dni": "60699F",
+      "email": "Alysa_Morar44@hotmail.com"
+    },
+    {
+      "id": 18,
+      "nombre": "Roy",
+      "apellido": "Vandervort",
+      "dni": "11414H",
+      "email": "Sebastian_Doyle96@yahoo.com"
+    },
+    {
+      "id": 19,
+      "nombre": "Ericka",
+      "apellido": "Mayert",
+      "dni": "54606I",
+      "email": "Nettie_Kovacek@yahoo.com"
+    },
+    {
+      "id": 20,
+      "nombre": "Randall",
+      "apellido": "Schumm",
+      "dni": "99809E",
+      "email": "Noah.Wuckert45@hotmail.com"
+    }
+  ]
+}
