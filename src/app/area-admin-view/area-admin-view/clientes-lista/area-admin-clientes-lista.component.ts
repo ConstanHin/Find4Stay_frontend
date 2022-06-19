@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Cliente } from 'src/app/models/cliente';
+import { AreaService } from 'src/app/area/area.service';
 import data from '../../../fake-data/fake-data-clientes.json';
 
 @Component({
@@ -21,7 +22,9 @@ export class AreaAdminClientesListaComponent implements OnInit {
   ];
   page: number = 1;
 
-  constructor() { }
+  constructor(
+    private areaService: AreaService,
+  ) { }
 
   ngOnInit(): void {
     this.listaClientes = data.clientes;
@@ -29,6 +32,10 @@ export class AreaAdminClientesListaComponent implements OnInit {
 
   cambiarApartado(apartado: string) {
     this.cambiarApartadoEvent.emit(apartado)
+  }
+
+  setCliente(cliente: Cliente) {
+    this.areaService.setCliente(cliente)
   }
 
 }

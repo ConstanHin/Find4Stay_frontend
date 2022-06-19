@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AreaService } from 'src/app/area/area.service';
+import { Cliente } from 'src/app/models/cliente';
 
 @Component({
   selector: 'app-area-admin-cliente',
@@ -8,14 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AreaAdminClienteComponent implements OnInit {
 
+  cliente: Cliente | undefined;
 
-  constructor(private route: ActivatedRoute) {}
+  // Inject AreaService and ActivateRoute
+  constructor(
+    private route: ActivatedRoute,
+    private areaService: AreaService,
+  ) { }
 
   ngOnInit(): void {
-  this.getCliente(Number(this.route.snapshot.paramMap.get('id')))
+    // Obtener el id desde el parametro de la ruta
+    // this.getCliente(Number(this.route.snapshot.paramMap.get('id')))
+    this.cliente = this.areaService.getCliente();
   }
 
   getCliente(id: number) {
+    // utilizar area service para obtener los datos del cliente segun id?
     console.log('id:', id);
 
   }
