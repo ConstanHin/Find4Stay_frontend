@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AreaAdminViewComponent } from './area-admin-view/area-admin-view.component';
-import { AreaAdminClientesComponent } from './area-admin-view/area-admin-clientes/area-admin-clientes.component';
+import { AreaAdminClienteComponent } from './area-admin-view/area-admin-cliente/area-admin-cliente.component';
 import { AreaAdminClientesListaComponent } from './area-admin-view/clientes-lista/area-admin-clientes-lista.component';
 import { AreaAdminEmpresaComponent } from './area-admin-view/area-admin-empresa/area-admin-empresa.component';
 import { AreaAdminEmpresasListasComponent } from './area-admin-view/empresas-lista/area-admin-empresas-listas.component';
@@ -19,7 +19,7 @@ import { NumberToStarsPipe } from '../pipes/number-to-stars.pipe';
 @NgModule({
   declarations: [
     AreaAdminViewComponent,
-    AreaAdminClientesComponent,
+    AreaAdminClienteComponent,
     AreaAdminClientesListaComponent,
     AreaAdminEmpresaComponent,
     AreaAdminEmpresasListasComponent,
