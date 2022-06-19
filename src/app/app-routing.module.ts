@@ -14,6 +14,10 @@ import { AreaAdminEmpresasListasComponent } from './area-admin-view/area-admin-v
 import { AreaAdminHotelesListasComponent } from './area-admin-view/area-admin-view/hoteles-lista/area-admin-hoteles-listas.component';
 import { LandingPageViewComponent } from './landing-page-view/landing-page-view/landing-page-view.component';
 import { AreaAdminReservasListaComponent } from './area-admin-view/area-admin-view/reservas-lista/area-admin-reservas-lista.component';
+import { AreaAdminClienteComponent } from './area-admin-view/area-admin-view/area-admin-cliente/area-admin-cliente.component';
+import { AreaAdminReservaComponent } from './area-admin-view/area-admin-view/area-admin-reserva/area-admin-reserva.component';
+import { AreaAdminEmpresaComponent } from './area-admin-view/area-admin-view/area-admin-empresa/area-admin-empresa.component';
+import { AreaAdminHotelComponent } from './area-admin-view/area-admin-view/area-admin-hotel/area-admin-hotel.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageViewComponent},
@@ -33,19 +37,29 @@ const routes: Routes = [
     path:'resultado-busqueda',
     component: ResultadoBusquedaHotelesViewComponent
   },
-  // {
-  //   path:'area-admin',
-  //   component: AreaAdminViewComponent
-  // },
+
+
+  // Area Admin Routes
+  // ------------------
+
+
+  {
+    path:'area-admin',
+    redirectTo: 'area-admin/cuenta',
+  },
   {
     path:'area-admin',
     component: AreaAdminViewComponent,
     children: [
       {path: 'cuenta', component: AreaCuentaComponent},
       {path: 'clientes', component: AreaAdminClientesListaComponent},
+      {path: 'clientes/:id', component: AreaAdminClienteComponent},
       {path: 'empresas', component: AreaAdminEmpresasListasComponent},
+      {path: 'empresas/:id', component: AreaAdminEmpresaComponent},
       {path: 'hoteles', component: AreaAdminHotelesListasComponent},
+      {path: 'hoteles/:id', component: AreaAdminHotelComponent},
       {path: 'reservas', component: AreaAdminReservasListaComponent},
+      {path: 'reservas/:id', component: AreaAdminReservaComponent},
     ]
   },
   {

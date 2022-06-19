@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-area-admin-cliente',
@@ -8,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class AreaAdminClienteComponent implements OnInit {
 
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+  this.getCliente(Number(this.route.snapshot.paramMap.get('id')))
   }
 
+  getCliente(id: number) {
+    console.log('id:', id);
+
+  }
 
 
 }

@@ -3,14 +3,14 @@
   <ul class="nav align-items-center w-100 mt-4">
     <!-- Comun -->
     <li class="d-block w-100">
-      <a id="cuenta" class="nav-link px-0 align-items-center selected" routerLink="./cuenta">
+      <a id="cuenta" class="nav-link px-0 align-items-center" (click)="cambiarApartado('cuenta')">
         <i class="bi bi-shield-check"></i><span class="ms-1 d-none d-md-inline">Cuenta</span> </a>
     </li>
 
     <!-- Admin buttons -->
     <div id="barra-lateral-admin-items" class="w-100" *ngIf="role === 'admin'">
       <li class="d-block w-100">
-        <a id="clientes" class="nav-link px-0 align-items-center" routerLink="./clientes">
+        <a id="clientes" class="nav-link px-0 align-items-center" (click)="cambiarApartado('clientes')">
           <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Clientes</span> </a>
       </li>
       <!-- <li class="d-block w-100">
@@ -18,15 +18,15 @@
           <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Clientes</span> </a>
       </li> -->
       <li class="d-block w-100">
-        <a id="empresas" class="nav-link px-0 align-items-center" routerLink="./empresas">
+        <a id="empresas" class="nav-link px-0 align-items-center" (click)="cambiarApartado('empresas')">
           <i class="bi bi-briefcase"></i><span class="ms-1 d-none d-md-inline">Empresas</span></a>
       </li>
       <li class="d-block w-100">
-        <a id="hoteles" class="nav-link px-0 align-items-center" routerLink="./hoteles">
+        <a id="hoteles" class="nav-link px-0 align-items-center" (click)="cambiarApartado('hoteles')">
           <i class="bi bi-star"></i><span class="ms-1 d-none d-md-inline">Hoteles</span></a>
       </li>
       <li class="d-block w-100">
-        <a id="reservas" class="nav-link px-0 align-items-center" routerLink="./reservas">
+        <a id="reservas" class="nav-link px-0 align-items-center" (click)="cambiarApartado('reservas')">
           <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Reservas</span></a>
       </li>
     </div>

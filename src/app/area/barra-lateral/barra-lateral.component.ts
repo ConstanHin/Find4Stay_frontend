@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AreaService } from '../area.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-barra-lateral',
@@ -12,10 +13,15 @@ export class BarraLateralComponent implements OnInit {
   // @Input() role : string = "" //admin/cliente/empresa
   role: string = ""
 
-  constructor(private areaService: AreaService) { }
+  constructor(
+    private areaService: AreaService,
+    private activatedRoute: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
     this.role = this.areaService.getRoleArea()
+    this.activatedRoute.paramMap.subscribe((param) => console.log(param))
+
   }
 
   /**
