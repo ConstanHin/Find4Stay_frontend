@@ -15,7 +15,7 @@
       <app-area-admin-empresa *ngIf="apartado === 'empresa'"></app-area-admin-empresa>
       <app-area-admin-hoteles-listas *ngIf="apartado === 'hoteles'" (cambiarApartadoEvent)="cambiarApartado($event)">
       </app-area-admin-hoteles-listas>
-      <app-area-admin-hoteles *ngIf="apartado === 'hotel'"></app-area-admin-hoteles>
+      <app-area-admin-hotel *ngIf="apartado === 'hotel'"></app-area-admin-hotel>
       <app-area-admin-reservas-lista *ngIf="apartado === 'reservas'" (cambiarApartadoEvent)="cambiarApartado($event)">
       </app-area-admin-reservas-lista>
       <app-area-admin-reserva *ngIf="apartado === 'reserva'"></app-area-admin-reserva>

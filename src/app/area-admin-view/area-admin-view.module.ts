@@ -5,7 +5,7 @@ import { AreaAdminClienteComponent } from './area-admin-view/area-admin-cliente/
 import { AreaAdminClientesListaComponent } from './area-admin-view/clientes-lista/area-admin-clientes-lista.component';
 import { AreaAdminEmpresaComponent } from './area-admin-view/area-admin-empresa/area-admin-empresa.component';
 import { AreaAdminEmpresasListasComponent } from './area-admin-view/empresas-lista/area-admin-empresas-listas.component';
-import { AreaAdminHotelesComponent } from './area-admin-view/area-admin-hoteles/area-admin-hoteles.component';
+import { AreaAdminHotelComponent } from './area-admin-view/area-admin-hotel/area-admin-hotel.component';
 import { AreaAdminHotelesListasComponent } from './area-admin-view/hoteles-lista/area-admin-hoteles-listas.component';
 import { AreaAdminReservaComponent } from './area-admin-view/area-admin-reserva/area-admin-reserva.component';
 import { AreaAdminReservasListaComponent } from './area-admin-view/reservas-lista/area-admin-reservas-lista.component';
@@ -23,7 +23,7 @@ import { NumberToStarsPipe } from '../pipes/number-to-stars.pipe';
     AreaAdminClientesListaComponent,
     AreaAdminEmpresaComponent,
     AreaAdminEmpresasListasComponent,
-    AreaAdminHotelesComponent,
+    AreaAdminHotelComponent,
     AreaAdminHotelesListasComponent,
     AreaAdminReservaComponent,
     AreaAdminReservasListaComponent,
