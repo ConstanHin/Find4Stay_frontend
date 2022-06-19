@@ -12,6 +12,8 @@ import { AreaAdminReservasListaComponent } from './area-admin-view/reservas-list
 import { AreaModule } from '../area/area.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NumberToStarsPipe } from '../pipes/number-to-stars.pipe';
+import { AppRoutingModule } from '../app-routing.module';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -27,12 +29,13 @@ import { NumberToStarsPipe } from '../pipes/number-to-stars.pipe';
     AreaAdminHotelesListasComponent,
     AreaAdminReservaComponent,
     AreaAdminReservasListaComponent,
-    NumberToStarsPipe
+    NumberToStarsPipe,
   ],
   imports: [
     CommonModule,
     AreaModule,
     NgxPaginationModule,
+    AppRoutingModule,
   ],
   exports: [
     AreaAdminViewComponent

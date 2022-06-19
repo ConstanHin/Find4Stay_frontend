@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Cliente } from 'src/app/models/cliente';
+import { NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-area-admin-clientes-lista',
