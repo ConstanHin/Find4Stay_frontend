@@ -15,7 +15,8 @@ img {
   height: 200px;
 }
 
-a {
+.btn-light{
   background-color: #77b0d4;
-  color: aliceblue;
+  margin-top: 25px;
+  color: #F6FEFF;
 }

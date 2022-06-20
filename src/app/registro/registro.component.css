@@ -1,12 +1,7 @@
-.card-body{
-
-  box-shadow: 13px 13px 5px #3333;
-  color: black;
-  border-radius: 0.5rem;
-
-
-
+.card{
+  box-shadow: 15px 15px 3px #3335;
 }
+
 .form-outline input{
   display: block;
   margin: auto;
@@ -15,54 +10,52 @@
   padding: 1rem;
   background-color: #F1EAEA;
   border: none;
-  box-shadow: inset -5px -5px 15px rgba(212, 207, 207, 0.8)
-
-
+  box-shadow: inset 2px 2px 2px #999;
 }
+
  .button{
    letter-spacing: 0.1em;
    border: none;
    color: white;
    background: #79C7BB;
-   box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+   box-shadow: 4px 4px 2px #4c857c;
    display: block;
    width: 80%;
    height: 70px;
    border-radius: 0.5rem;
    margin: auto;
-   font-size: 23px;
-
-
  }
 
 .gradient-custom{
   background: #6EA5C9 ;
 }
+
 .text-uppercase {
   color:#79C7BB
 }
+
 .mb-0{
   color:#79C7BB
 }
-.btn-group{
-   letter-spacing: 0.2em;
-   color: rgb(255, 255, 255) !important;
-   background-color: #77B0D4;
-    text-align: center;
-   box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
 
-   width: 80%;
-   height: 60px;
-   border-radius: 0.5rem;
-   margin: auto;
+.btn-group{
+  letter-spacing: 0.2em;
+  color: rgb(255, 255, 255) !important;
+  background-color: #77B0D4;
+  text-align: center;
+  box-shadow: 4px 4px 2px #707d86;
+  width: 80%;
+  height: 60px;
+  border-radius: 0.5rem;
+  margin: auto;
 }
 
 .btncolor1{
-
-  background-color: #c0c0c0;
+  background-color: #eee;
   padding-top: 5%;
   border: none;
+}
 
-
-
+#main-registro-section {
+  min-height: 100vh;
 }
