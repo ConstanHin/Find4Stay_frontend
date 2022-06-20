@@ -9,17 +9,41 @@ h3 {
   font-weight: bold;
 }
 
-input, select {
+.form-select, .form-control {
   background-color: #F6FEFF;
 }
+
 
 
 .btn-light{
   background-color: #C652B5;
   margin-top: 25px;
   color: #F6FEFF;
-
-
-
-
 }
+
+::ng-deep  .mat-form-field-label {
+  /*change color of label*/
+  color: rgb(17, 15, 15) !important;
+
+ }
+
+ /*::ng-deep.mat-form-field {
+  /*change color of underline*/
+
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #C652B5 !important;
+ }
+
+ ::ng-deep .mat-form-field-label {
+   /*change color of label*/
+   color: rgb(24, 22, 22) !important;
+  }
+
+
+ mat-datepicker-toggle {  /*Icono Fecha*/
+   color: #C652B5 !important;
+
+
+ }

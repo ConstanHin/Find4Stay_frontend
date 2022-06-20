@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Injectable } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { MapComponent } from '../map/map.component';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit} from '@angular/core';
+import {Inject} from '@angular/core';
+import {DateAdapter, MAT_DATE_LOCALE} from '@angular/material/core';
+import 'moment/locale/ja';
+import 'moment/locale/fr';
 
 
 @Injectable({
@@ -11,8 +11,11 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-buscador',
   templateUrl: './buscador.component.html',
-  styleUrls: ['./buscador.component.css']
+  styleUrls: ['./buscador.component.css'],
 })
+
+
+
 export class BuscadorComponent implements OnInit {
   mapComponent: MapComponent;
 
@@ -20,29 +23,54 @@ export class BuscadorComponent implements OnInit {
   seleccionado: any = '';
   ciudadSelect: any ='';
 
-  formCity = new FormGroup({
-    city: new FormControl()
-  });
+maxDate = new Date();
+selectDate = new Date();
+fechasalida: Date | undefined;
 
-  constructor(private mapcomponent:MapComponent) {
-    this.mapComponent = mapcomponent;
-    this.cuidades = ['Reus', 'Tarragona', 'Barcelona'];
-    this.seleccionado = sessionStorage.getItem('ciudadKey');
 
-  }
+  constructor(  private _adapter: DateAdapter<any>,
+    @Inject(MAT_DATE_LOCALE) private _locale: string,) { }
 
-  capturar() {
-    this.ciudadSelect = this.seleccionado;
-    console.log(this.seleccionado + "capturar");
-    this.mapComponent.changeCity(this.ciudadSelect);
-
-  }
 
   ngOnInit(): void {
+
   }
 
-  getSeleccionado() {
-    return this.ciudadSelect;
+  getDateFormatString(): string {
+    if (this._locale === 'ja-JP') {
+      return 'YYYY/MM/DD';
+    } else if (this._locale === 'fr') {
+      return 'DD/MM/YYYY';
+    }
+    return '';
   }
+
+
+  guardarFechaEntrada(event: any) {
+    console.log(event.target.value);
+    this.selectDate = event.target.value;
+    return this.selectDate;
+
+  }
+
+  guardarFechaSalida(event: any) {
+    console.log(event.target.value);
+    this.fechasalida = event.target.value;
+    return this.fechasalida;
+  }
+
+
+  saveCheckOut () {
+    this.selectDate = new Date(this.maxDate);
+    return this.selectDate;
+  }
+
+
+
+  getFecha() {
+    return this.maxDate;
+
+  }
+
 
 }
