@@ -1,4 +1,8 @@
 
+.form-group {
+  display: grid;
+
+}
 .grid {
   text-align: center;
 
@@ -27,12 +31,12 @@ h3 {
 
  }
 
- ::ng-deep.mat-form-field {
+ /*::ng-deep.mat-form-field {
   /*change color of underline*/
-  padding-top: 22px;
-  
 
- }
+
+
+
 
 
 ::ng-deep.mat-form-field-ripple {
@@ -52,10 +56,6 @@ h3 {
 
  }
 
- span {
-  font-size: 8px;
- }
 
- #buscadorPeople {
-  padding-top: 23px;
- }
+
+

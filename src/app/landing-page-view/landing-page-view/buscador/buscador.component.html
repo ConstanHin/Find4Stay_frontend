@@ -2,60 +2,67 @@
 
 <h3 class="mt-5">Buscador alojamiento</h3>
 
-  <form [formGroup]="formularioContacto" (ngSubmit)="submit()" required>
-      <div class="form">
-
+<div class="register-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
               <label for="entrada"></label>
-              <select class="form-select" aria-label="Destino" formControlName="destino" required>
+              <select class="form-control" aria-label="Destino" formControlName="destino" [ngClass]="{ 'is-invalid': submitted && f['destino'].errors }" required>
                 <option value="1">Reus</option>
                 <option value="2">Tarragona</option>
                 <option value="3">Barcelona</option>
               </select>
-              <span *ngIf="this.formularioContacto.get('destino')?.errors?.['required']">
-                Debe elegir un destino
-              </span>
+              <div *ngIf="submitted && f['destino'].errors" class="invalid-feedback">
+                <div *ngIf="f['destino'].errors['required']">Elige un destino</div>
+              </div>
             </div>
 
-            <div id="buscadorPeople"class="col-md-2">
+            <div class="form-group">
+            <div id="buscadorPeople"class="col-md-3">
               <label for="personas">
-              <input  type="number" class="form-control" formControlName="personas" aria-label="Personas" required>
-              <span *ngIf="this.formularioContacto.get('personas')?.errors?.['required']">
-                Elige la cantidad de personas
-              </span>
-              <span *ngIf="this.formularioContacto.get('personas')?.errors?.['maxlength']">
-                Máximo 30 personas
-              </span>
-
+              <input  type="number" class="form-control" formControlName="personas" aria-label="Personas"  [ngClass]="{ 'is-invalid': submitted && f['username'].errors }">
+              <div *ngIf="submitted && f['personas'].errors" class="invalid-feedback">
+                <div *ngIf="f['personas'].errors['required']">Elige número de personas</div>
+                <div *ngIf="f['personas'].errors['minlength']">
+                  Minimo 1 persona
+                </div>
+                <div *ngIf="f['personas'].errors['maxlength']">
+                  Máximo 30 personas
+                </div>
+              </div>
             </label>
             </div>
+          </div>
 
-
+          <div class="form-group"></div>
             <div class="col-md">
                 <mat-form-field [color]="'accent'" appearance="fill" >
                   <mat-date-range-input [rangePicker]="picker" [min]="maxDate">
-                    <input matStartDate placeholder="CheckIn" formControlName="fechaEntrada" required>
-                    <input matEndDate placeholder="CheckOut" formControlName="fechaSalida" required>
+                    <input matStartDate placeholder="CheckIn" formControlName="fechaEntrada" [ngClass]="{ 'is-invalid': submitted && f['fechaEntrada'].errors }">
+                    <input matEndDate placeholder="CheckOut" formControlName="fechaSalida" [ngClass]="{ 'is-invalid': submitted && f['fechaSalida'].errors }">
                     <mat-hint> {{getDateFormatString()}} </mat-hint>
                   </mat-date-range-input>
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-date-range-picker #picker></mat-date-range-picker>
                 </mat-form-field>
-                <div id="mssgCheck">
-                  <span *ngIf="this.formularioContacto.get('fechaEntrada')?.errors?.['required']">
-                    Elige fecha de Entrada
-                  </span>
-                  <span *ngIf="this.formularioContacto.get('fechaSalida')?.errors?.['required']">
-                    Elige fecha de Salida
-                  </span>
+                <div *ngIf="submitted && f['fechaEntrada'].errors" class="invalid-feedback">
+                  <div *ngIf="f['fechaEntrada'].errors['required']">CheckIn requerido</div>
+                </div>
+                <div *ngIf="submitted && f['fechaSalida'].errors" class="invalid-feedback">
+                  <div *ngIf="f['fechaSalida'].errors['required']">CheckOut requerido</div>
                 </div>
             </div>
-
         </div>
-      </div>
+        <div class="form-group">
+          <a class="btn btn-light" type="submit">Buscar</a>
+        </div>
+        <button type="button"(click)="onReset()"class="btn btn-warning float-right">
+        Reset
+      </button>
 
-      <a class="btn btn-light" routerLink="/resultado-busqueda" type="submit">Buscar</a>
+    </div>
 
   </form>
+</div>
 </div>

@@ -1,9 +1,9 @@
-import { Component, OnInit} from '@angular/core';
-import {Inject, Injectable} from '@angular/core';
-import {DateAdapter, MAT_DATE_LOCALE} from '@angular/material/core';
+import { Component, OnInit } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import 'moment/locale/ja';
 import 'moment/locale/fr';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 
 
 
@@ -30,25 +30,53 @@ fechasalida: Date | undefined;
 
 resultado!: string;
 
-formularioContacto = new FormGroup({
-  destino: new FormControl('', [Validators.required]),
-  personas: new FormControl('', [Validators.required, Validators.maxLength(30)]),
-  fechaEntrada: new FormControl('', [Validators.required]),
-  fechaSalida: new FormControl('', [Validators.required])
-
+form: FormGroup = new FormGroup({
+  destino: new FormControl(''),
+  personas: new FormControl(''),
+  fechaEntrada: new FormControl(''),
+  fechaSalida: new FormControl('')
 });
+
+submitted = false;
 
 
   constructor(  private _adapter: DateAdapter<any>,
-    @Inject(MAT_DATE_LOCALE) private _locale: string,) { }
+    @Inject(MAT_DATE_LOCALE) private _locale: string,
+    private formBuilder: FormBuilder ) { }
 
 
   ngOnInit(): void {
 
+    this.form = this.formBuilder.group(
+       {
+        destino: ['', Validators.required],
+        personas: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
+        fechaEntrada: ['', Validators.required],
+        fechasalida: ['', Validators.required]
+       }
+    )
   }
 
+  get f(): { [key: string]: AbstractControl } {
+    return this.form.controls;
+  }
+
+  onSubmit(): void {
+    this.submitted = true;
+    if (this.form.invalid) {
+      return;
+    }
+    console.log(JSON.stringify(this.form.value, null, 2));
+  }
+
+  onReset(): void {
+    this.submitted = false;
+    this.form.reset();
+  }
+
+
   submit() {
-    if (this.formularioContacto.valid)
+    if (this.form.valid)
     this.resultado = "Todos los datos son válidos";
   else
     this.resultado = "Hay datos inválidos en el formulario";
