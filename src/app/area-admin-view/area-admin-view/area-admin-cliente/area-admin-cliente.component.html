@@ -1,0 +1,78 @@
+<div class="container">
+  <h5>Datos Cliente</h5>
+
+  <form>
+    <div class="form-group row justify-content-between">
+      <div class="col-2">
+        <label>ID</label>
+      </div>
+      <div class="col">
+        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.id}}">
+      </div>
+      <div class="col-2"></div>
+    </div>
+
+    <hr>
+    <div class="form-group row justify-content-between">
+      <div class="col-2">
+        <label>Nombre</label>
+      </div>
+      <div class="col">
+        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.nombre}}">
+      </div>
+      <div class="col-2 align-items-center">
+        <a role="button"><i class="bi bi-pencil-square"></i> </a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group row justify-content-between">
+      <div class="col-2">
+        <label>Apellido</label>
+      </div>
+      <div class="col">
+        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.apellido}}">
+      </div>
+      <div class="col-2 align-items-center">
+        <a role="button"><i class="bi bi-pencil-square"></i> </a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group row justify-content-between">
+      <div class="col-2">
+        <label>E-mail</label>
+      </div>
+      <div class="col">
+        <input type="email" readonly class="form-control-plaintext" placeholder="{{cliente?.email}}">
+      </div>
+      <div class="col-2 align-items-center">
+        <a role="button"><i class="bi bi-pencil-square"></i> </a>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group row justify-content-between">
+      <div class="col-2">
+        <label>DNI</label>
+      </div>
+      <div class="col">
+        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.dni}}">
+      </div>
+      <!-- Botones editar y eliminar-->
+      <div class="col-2 align-items-center">
+        <a role="button"><i class="bi bi-pencil-square"></i> </a>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="row justify-content-end">
+    <div class="col-md-2">
+      <button class="btn btn-danger">Eliminar</button>
+    </div>
+  </div>
+</div>

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AreaAdminHotelesComponent } from './area-admin-hoteles.component';
+import { AreaAdminHotelComponent } from './area-admin-hotel.component';
 
 describe('AreaAdminHotelesComponent', () => {
-  let component: AreaAdminHotelesComponent;
-  let fixture: ComponentFixture<AreaAdminHotelesComponent>;
+  let component: AreaAdminHotelComponent;
+  let fixture: ComponentFixture<AreaAdminHotelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AreaAdminHotelesComponent ]
+      declarations: [ AreaAdminHotelComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AreaAdminHotelesComponent);
+    fixture = TestBed.createComponent(AreaAdminHotelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

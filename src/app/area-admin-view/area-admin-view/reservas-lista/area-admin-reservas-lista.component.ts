@@ -11,10 +11,10 @@ export class AreaAdminReservasListaComponent implements OnInit {
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
 
   listaReservas: Reserva[] = [
-    { codigo: "A141", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
-    { codigo: "A221", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
-    { codigo: "A312", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
-    { codigo: "A441", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
+    {id:0, codigo: "A141", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
+    {id:0, codigo: "A221", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
+    {id:0, codigo: "A312", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
+    {id:0, codigo: "A441", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
 
   ]
 

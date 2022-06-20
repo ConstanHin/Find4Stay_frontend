@@ -6,19 +6,20 @@
     </div>
     <div class="col">
 
-      <app-area-cuenta *ngIf="apartado === 'cuenta'"></app-area-cuenta>
+      <!-- <app-area-cuenta *ngIf="apartado === 'cuenta'"></app-area-cuenta>
       <app-area-admin-clientes-lista *ngIf="apartado === 'clientes'" (cambiarApartadoEvent)="cambiarApartado($event)">
       </app-area-admin-clientes-lista>
-      <app-area-admin-clientes *ngIf="apartado === 'cliente'"></app-area-admin-clientes>
+      <app-area-admin-cliente *ngIf="apartado === 'cliente'"></app-area-admin-cliente>
       <app-area-admin-empresas-listas *ngIf="apartado === 'empresas'" (cambiarApartadoEvent)="cambiarApartado($event)">
       </app-area-admin-empresas-listas>
       <app-area-admin-empresa *ngIf="apartado === 'empresa'"></app-area-admin-empresa>
       <app-area-admin-hoteles-listas *ngIf="apartado === 'hoteles'" (cambiarApartadoEvent)="cambiarApartado($event)">
       </app-area-admin-hoteles-listas>
-      <app-area-admin-hoteles *ngIf="apartado === 'hotel'"></app-area-admin-hoteles>
+      <app-area-admin-hotel *ngIf="apartado === 'hotel'"></app-area-admin-hotel>
       <app-area-admin-reservas-lista *ngIf="apartado === 'reservas'" (cambiarApartadoEvent)="cambiarApartado($event)">
       </app-area-admin-reservas-lista>
-      <app-area-admin-reserva *ngIf="apartado === 'reserva'"></app-area-admin-reserva>
+      <app-area-admin-reserva *ngIf="apartado === 'reserva'"></app-area-admin-reserva> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

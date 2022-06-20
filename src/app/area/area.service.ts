@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Cliente } from '../models/cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class AreaService {
 
   role: string = "admin";
+  cliente: Cliente| undefined;
 
   constructor() {
   }
@@ -16,6 +18,14 @@ export class AreaService {
 
   setRoleArea(role: string) {
     this.role = role;
+  }
+
+  getCliente() {
+    return this.cliente;
+  }
+
+  setCliente(cliente: Cliente) {
+    this.cliente = cliente;
   }
 
 }
