@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,11 @@ import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.mod
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es'
+
+registerLocaleData(localeEs)
 
 
 @NgModule({
@@ -44,11 +50,14 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     AreaAdminViewModule,
     BrowserAnimationsModule,
 
-
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
-  ],
+    {
+    provide: LOCALE_ID,
+    useValue: 'es-ES'
+  }
+],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

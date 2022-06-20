@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaClienteViewComponent implements OnInit {
 
-  apartado: string = "cliente";
+  apartado: string = "cuenta";
 
   constructor() { }
 

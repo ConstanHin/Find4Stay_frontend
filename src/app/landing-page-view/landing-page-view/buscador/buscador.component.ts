@@ -5,8 +5,9 @@ import 'moment/locale/ja';
 import 'moment/locale/fr';
 
 
-
-
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-buscador',
   templateUrl: './buscador.component.html',
@@ -16,6 +17,11 @@ import 'moment/locale/fr';
 
 
 export class BuscadorComponent implements OnInit {
+  mapComponent: MapComponent;
+
+  cuidades: any;
+  seleccionado: any = '';
+  ciudadSelect: any ='';
 
 maxDate = new Date();
 selectDate = new Date();
@@ -24,6 +30,7 @@ fechasalida: Date | undefined;
 
   constructor(  private _adapter: DateAdapter<any>,
     @Inject(MAT_DATE_LOCALE) private _locale: string,) { }
+
 
   ngOnInit(): void {
 
@@ -52,6 +59,7 @@ fechasalida: Date | undefined;
     return this.fechasalida;
   }
 
+
   saveCheckOut () {
     this.selectDate = new Date(this.maxDate);
     return this.selectDate;
@@ -63,7 +71,6 @@ fechasalida: Date | undefined;
     return this.maxDate;
 
   }
-
 
 
 }

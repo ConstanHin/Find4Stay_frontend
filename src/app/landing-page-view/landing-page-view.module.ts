@@ -20,8 +20,6 @@ import { FormsModule } from '@angular/forms';
     BuscadorComponent,
     MapComponent,
     SlidePhotosComponent,
-
-
   ],
   imports: [
     CommonModule,
@@ -31,7 +29,6 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatNativeDateModule,
     FormsModule
-
   ],
   exports:[
     LandingPageViewComponent

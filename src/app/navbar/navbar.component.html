@@ -33,9 +33,9 @@
             Area Personal
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item text-dark" routerLink="/area-admin" >Admin</a></li>
-            <li><a class="dropdown-item text-dark" routerLink="/area-cliente" >Cliente</a></li>
-            <li><a class="dropdown-item text-dark" routerLink="/area-empresa" >Empresa</a></li>
+            <li><a class="dropdown-item text-dark" routerLink="/area-admin" (click)="changeRoleArea('admin')" >Admin</a></li>
+            <li><a class="dropdown-item text-dark" routerLink="/area-cliente" (click)="changeRoleArea('cliente')" >Cliente</a></li>
+            <li><a class="dropdown-item text-dark" routerLink="/area-empresa" (click)="changeRoleArea('empresa')">Empresa</a></li>
           </ul>
         </li>
 

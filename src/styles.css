@@ -1,6 +1,44 @@
+/*
+general
+*/
+.vh100 {
+  min-height: 100vh;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/*
+listas
+*/
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+f.titulo {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.bi {
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+}
+
+.ex1 {
+  text-align: left;
+  padding-top: 5px;
+}
+
+.info-header {
+  font-weight: bold;
+  text-align: left;
+}
+
+.datos {
+  border-bottom: 1px #7CDEB4 solid;
+
+}
+
+h5 {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.table>div:nth-child(even) {
+  background-color: #F1F9F8;
+}
