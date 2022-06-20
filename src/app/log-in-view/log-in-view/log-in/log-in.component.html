@@ -8,17 +8,34 @@
 
             <h2 class="fw mb-2 text-uppercase">Iniciar Sesión</h2>
             <br>
-            <div class="form-outline form-white mb-4">
-              <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Usuario" />
-            </div>
+            <!-- Form -->
+            <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
 
-            <div class="form-outline form-white mb-4">
-              <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Contraseña" />
+              <div class="form-outline form-white mb-4">
+                <input type="email" class="form-control form-control-lg" placeholder="Usuario" formControlName="username"/>
+              </div>
 
-            </div>
+              <div class="form-outline form-white mb-4">
+                <input type="password" class="form-control form-control-lg"
+                  placeholder="Contraseña" formControlName="password"/>
 
-            <button class="btn px-5 fs-5" type="submit">Entrar</button>
+              </div>
 
+              <button class="btn px-5 fs-5" type="submit">Entrar</button>
+
+            </form>
+            <!-- Validation errors -->
+            <ul class="alert alert-danger mt-3"
+              *ngIf="loginFormGroup.invalid && (loginFormGroup.dirty || loginFormGroup.touched)">
+
+              <li class="m-1 p-0 " *ngIf="loginFormGroup.get('username')?.errors?.['required']">
+                Username is required.
+              </li>
+              <li class="m-1 p-0 " *ngIf="loginFormGroup.get('password')?.errors?.['required']">
+                Password is required.
+              </li>
+
+            </ul>
           </div>
 
           <div>
