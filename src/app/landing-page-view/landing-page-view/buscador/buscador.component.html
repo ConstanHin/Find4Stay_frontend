@@ -1,14 +1,14 @@
 <div class="container">
 
   <!-- <form [formGroup]="formCity" (ngSubmit)="capturar();"> -->
-   <h3 class="mt-5">Buscador alojamiento</h3>
+  <h3 class="mt-5">Buscador alojamiento</h3>
 
   <div class="form">
     <div class="row g-3">
 
       <div class="col-md">
         <label for="entrada"></label>
-        <select  class="form-select" aria-label="Destino">
+        <select class="form-select" aria-label="Destino">
           <option selected>Destino</option>
           <option value="1">Reus</option>
           <option value="2">Tarragona</option>
@@ -16,7 +16,7 @@
         </select>
       </div>
 
-     <!-- <div class="col-md">
+      <!-- <div class="col-md">
         <input matInput [matDatepicker]="pickerEntrada" class="form-control" [min]="maxDate" placeholder="Fecha Entrada" type="date" (change)="guardarFechaEntrada($event)">
         <input matInput [matDatepicker]="pickerEntrada" class="form-control" [min]="maxDate" placeholder="Fecha Entrada" (change)="guardarFechaEntrada($event)" >
         <mat-datepicker-toggle matSuffix [for]="pickerEntrada"></mat-datepicker-toggle>
@@ -30,10 +30,10 @@
         <mat-datepicker #pickerSalida></mat-datepicker>
       </div> -->
 
-      <mat-form-field  [color]= "'accent'"appearance="fill">
-        <mat-label >Introduce el rango de fechas:</mat-label>
-        <mat-date-range-input [rangePicker]="picker" [min]="maxDate" >
-          <input matStartDate placeholder="Fecha Entrada" >
+      <mat-form-field [color]="'accent'" appearance="fill">
+        <mat-label>Introduce el rango de fechas:</mat-label>
+        <mat-date-range-input [rangePicker]="picker" [min]="maxDate">
+          <input matStartDate placeholder="Fecha Entrada">
           <input matEndDate placeholder="Fecha Salida">
           <mat-hint> {{getDateFormatString()}} </mat-hint>
         </mat-date-range-input>
@@ -60,7 +60,5 @@
 
   <a class="btn btn-light" routerLink="/resultado-busqueda">Buscar</a>
 
-   <a class="btn btn-light" routerLink="/resultado-busqueda">Buscar</a>
- <!-- </form> -->
+  <!-- </form> -->
 </div>
-
