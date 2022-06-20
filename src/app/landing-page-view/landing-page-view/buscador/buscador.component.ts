@@ -17,7 +17,6 @@ import { FormControl, FormGroup, Validators, FormBuilder, AbstractControl } from
 })
 
 
-
 export class BuscadorComponent implements OnInit {
 
 cuidades: any;
@@ -57,6 +56,12 @@ submitted = false;
     )
   }
 
+  range = new FormGroup({
+    fechaEntrada: new FormControl(),
+    fechaSalida: new FormControl(),
+
+  });
+
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
@@ -91,7 +96,6 @@ submitted = false;
     return '';
   }
 
-
   guardarFechaEntrada(event: any) {
     console.log(event.target.value);
     this.selectDate = event.target.value;
@@ -111,12 +115,13 @@ submitted = false;
     return this.selectDate;
   }
 
-
-
   getFecha() {
     return this.maxDate;
 
   }
-
-
 }
+
+
+
+
+
