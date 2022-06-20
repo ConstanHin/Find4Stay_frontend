@@ -16,7 +16,7 @@ export class BarraLateralComponent implements OnInit {
   constructor(
     private areaService: AreaService,
     private activatedRoute: ActivatedRoute
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.role = this.areaService.getRoleArea()
@@ -28,16 +28,20 @@ export class BarraLateralComponent implements OnInit {
    * Accion al clicar los botones de la barra lateral
    */
   cambiarApartado(apartado: string) {
-    // Aspecto Botones -> Modificar la class "selected" del elemento de la barra lateral
-    document.querySelectorAll('ul a').forEach((elem) => {
-      elem.classList.remove('selected');
-    });
-    document.getElementById(apartado)?.classList.add('selected');
+    this.setCssClassSelected(apartado);
 
     /* Cambio componente -> envia evento al componente padre
      * que a su vez cambia el componente principal
      */
     this.cambiarApartadoEvent.emit(apartado);
+  }
+
+  setCssClassSelected(apartado: string) {
+    // Aspecto Botones -> Modificar la class "selected" del elemento de la barra lateral
+    document.querySelectorAll('ul a').forEach((elem) => {
+      elem.classList.remove('selected');
+    });
+    document.getElementById(apartado)?.classList.add('selected');
   }
 
 }
