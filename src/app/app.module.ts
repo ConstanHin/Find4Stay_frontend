@@ -14,10 +14,15 @@ import { AreaEmpresaViewModule } from './area-empresa-view/area-empresa-view.mod
 import { AreaAdminViewModule } from './area-admin-view/area-admin-view.module';
 import { FooterComponent } from './footer/footer.component';
 import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatePipe } from '@angular/common';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es'
 
 registerLocaleData(localeEs)
+
 
 @NgModule({
   declarations: [
@@ -36,8 +41,12 @@ registerLocaleData(localeEs)
     AreaEmpresaViewModule,
     AreaClienteViewModule,
     AreaAdminViewModule,
+    BrowserAnimationsModule,
+
   ],
-  providers: [{
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
+    {
     provide: LOCALE_ID,
     useValue: 'es-ES'
   }

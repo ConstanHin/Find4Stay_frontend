@@ -6,9 +6,11 @@ import { BuscadorComponent } from './landing-page-view/buscador/buscador.compone
 import { MapComponent } from './landing-page-view/map/map.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SlidePhotosComponent } from './landing-page-view/slide-photos/slide-photos.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
-
-
 
 
 @NgModule({
@@ -18,11 +20,14 @@ import { FormsModule } from '@angular/forms';
     BuscadorComponent,
     MapComponent,
     SlidePhotosComponent,
-
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule,
     FormsModule
   ],
   exports:[

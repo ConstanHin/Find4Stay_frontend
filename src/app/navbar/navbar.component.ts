@@ -8,7 +8,11 @@ import { AreaService } from '../area/area.service';
 })
 export class NavbarComponent implements OnInit {
 
+
+  isLoggedIn: boolean = false;
+
   constructor(private areaService: AreaService) { }
+
 
   ngOnInit(): void {
   }
