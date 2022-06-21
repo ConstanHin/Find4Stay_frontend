@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Inject, Injectable } from '@angular/core';
 import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
-import 'moment/locale/ja';
-import 'moment/locale/fr';
 import { FormControl, FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 
 
