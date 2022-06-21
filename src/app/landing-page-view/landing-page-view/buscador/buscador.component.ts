@@ -1,8 +1,10 @@
-import { Component, OnInit} from '@angular/core';
-import {Inject, Injectable} from '@angular/core';
-import {DateAdapter, MAT_DATE_LOCALE} from '@angular/material/core';
+import { Component, OnInit } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import 'moment/locale/ja';
 import 'moment/locale/fr';
+import { FormControl, FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
+
 
 
 @Injectable({
@@ -15,24 +17,74 @@ import 'moment/locale/fr';
 })
 
 
-
 export class BuscadorComponent implements OnInit {
 
-  cuidades: any;
-  seleccionado: any = '';
-  ciudadSelect: any ='';
+cuidades: any;
+seleccionado: any = '';
+ciudadSelect: any ='';
 
 maxDate = new Date();
 selectDate = new Date();
 fechasalida: Date | undefined;
 
+resultado!: string;
 
-  constructor(  private _adapter: DateAdapter<any>,
-    @Inject(MAT_DATE_LOCALE) private _locale: string,) { }
+form: FormGroup = new FormGroup({
+  destino: new FormControl(''),
+  personas: new FormControl(''),
+  fechaEntrada: new FormControl(''),
+  fechaSalida: new FormControl('')
+});
+
+submitted = false;
+
+
+  constructor( private formBuilder: FormBuilder,
+    private _adapter: DateAdapter<any>,
+    @Inject(MAT_DATE_LOCALE) private _locale: string, ) { }
 
 
   ngOnInit(): void {
 
+    this.form = this.formBuilder.group(
+       {
+        destino: ['', Validators.required],
+        personas: ['', Validators.required],
+        fechaEntrada: ['', Validators.required],
+        fechasalida: ['', Validators.required]
+       }
+    )
+  }
+
+  range = new FormGroup({
+    fechaEntrada: new FormControl(),
+    fechaSalida: new FormControl(),
+
+  });
+
+  get f(): { [key: string]: AbstractControl } {
+    return this.form.controls;
+  }
+
+  onSubmit(): void {
+    this.submitted = true;
+    if (this.form.invalid) {
+      return;
+    }
+    console.log(JSON.stringify(this.form.value, null, 2));
+  }
+
+  onReset(): void {
+    this.submitted = false;
+    this.form.reset();
+  }
+
+
+  submit() {
+    if (this.form.valid)
+    this.resultado = "Todos los datos son válidos";
+  else
+    this.resultado = "Hay datos inválidos en el formulario";
   }
 
   getDateFormatString(): string {
@@ -43,7 +95,6 @@ fechasalida: Date | undefined;
     }
     return '';
   }
-
 
   guardarFechaEntrada(event: any) {
     console.log(event.target.value);
@@ -64,12 +115,13 @@ fechasalida: Date | undefined;
     return this.selectDate;
   }
 
-
-
   getFecha() {
     return this.maxDate;
 
   }
-
-
 }
+
+
+
+
+
