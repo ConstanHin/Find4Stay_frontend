@@ -39,9 +39,9 @@ form: FormGroup = new FormGroup({
 submitted = false;
 
 
-  constructor(  private _adapter: DateAdapter<any>,
-    @Inject(MAT_DATE_LOCALE) private _locale: string,
-    private formBuilder: FormBuilder ) { }
+  constructor( private formBuilder: FormBuilder,
+    private _adapter: DateAdapter<any>,
+    @Inject(MAT_DATE_LOCALE) private _locale: string, ) { }
 
 
   ngOnInit(): void {
@@ -49,7 +49,7 @@ submitted = false;
     this.form = this.formBuilder.group(
        {
         destino: ['', Validators.required],
-        personas: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
+        personas: ['', Validators.required],
         fechaEntrada: ['', Validators.required],
         fechasalida: ['', Validators.required]
        }

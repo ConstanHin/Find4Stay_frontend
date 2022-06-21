@@ -28,15 +28,7 @@ h3 {
 ::ng-deep  .mat-form-field-label {
   /*change color of label*/
   color: rgb(17, 15, 15) !important;
-
  }
-
- /*::ng-deep.mat-form-field {
-  /*change color of underline*/
-
-
-
-
 
 
 ::ng-deep.mat-form-field-ripple {

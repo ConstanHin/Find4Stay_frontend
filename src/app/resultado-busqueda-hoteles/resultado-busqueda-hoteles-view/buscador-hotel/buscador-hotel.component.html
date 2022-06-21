@@ -1,33 +1,65 @@
 <div class="container">
-  <div class="form mb-5">
-    <div class="row">
-      <div class="">
-        <label for="entrada"></label>
-        <select class="form-select" aria-label="Destino">
-          <option selected>Destino</option>
-          <option value="1">Reus</option>
-          <option value="2">Tarragona</option>
-          <option value="3">Barcelona</option>
-        </select>
 
-      </div>
-      <div class="">
-        <label for="entrada">Fecha entrada</label>
-        <input type="date" id="date" class="form-control" placeholder="Entrada" aria-label="Entrada">
-      </div>
-      <div class="">
-        <label for="salida">Fecha salida</label>
-        <input type="date" id="date" class="form-control" placeholder="Salida" aria-label="Salida">
-      </div>
-      <div class="">
-        <label for="personas"></label>
-        <input type="text" class="form-control" placeholder="Numero de personas" aria-label="Personas">
-      </div>
-      <div>
-        <a class="btn btn-light" type="submit" role="button">Buscar</a>
-      </div>
-    </div>
+  <div class="register-form">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group mb-5">
+            <div class="row">
+              <div class="">
+                <label for="entrada"></label>
+                <select class="form-control" aria-label="Destino" formControlName="destino" min="1" [ngClass]="{ 'is-invalid': submitted && f['destino'].errors }">
+                  <option value="" disabled selected hidden>Elige tu destino</option>
+                  <option value="1">Reus</option>
+                  <option value="2">Tarragona</option>
+                  <option value="3">Barcelona</option>
+                </select>
+                <div *ngIf="submitted && f['destino'].errors" class="invalid-feedback">
+                  <div *ngIf="f['destino'].errors['required']">Elige un destino</div>
+                </div>
+              </div>
+
+
+              <div class="">
+                <label for="personas"></label>
+                <input  type="number" class="form-control" placeholder="Numero de personas" formControlName="personas" aria-label="Personas" min="1" max="30" [ngClass]="{ 'is-invalid': submitted && f['personas'].errors }">
+                <div *ngIf="submitted && f['personas'].errors" class="invalid-feedback">
+                  <div *ngIf="f['personas'].errors['required']">Elige número de personas</div>
+                </div>
+              </div>
+
+
+
+              <div class="">
+                  <mat-form-field [color]="'accent'" appearance="standard">
+                    <mat-date-range-input [rangePicker]="picker" [min]="maxDate">
+                      <input matStartDate placeholder="CheckIn" formControlName="fechaEntrada" [ngClass]="{ 'is-invalid': submitted && f['fechaEntrada'].errors }">
+                      <input matEndDate placeholder="CheckOut" formControlName="fechasalida" [ngClass]="{ 'is-invalid': submitted && f['fechasalida'].errors }">
+                      <mat-hint> {{getDateFormatString()}} </mat-hint>
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                  </mat-form-field>
+
+
+              <div *ngIf="submitted && f['fechaEntrada'].errors" class="invalid-feedback">
+                <div *ngIf="f['fechaEntrada'].errors['required']">CheckIn requerido</div>
+              </div>
+
+              <div *ngIf="submitted && f['fechasalida'].errors" class="invalid-feedback">
+                <div *ngIf="f['fechasalida'].errors['required']">CheckOut requerido</div>
+              </div>
+
+
+              <div class="col-sm" style="float: right">
+                <div class="">
+                  <button class="btn btn-light me-md-2" type="submit">Buscar</button>
+                  <button type="button"(click)="onReset()"class="btn btn-light">Reset</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        </div>
+
+    </form>
   </div>
-
-
 </div>
