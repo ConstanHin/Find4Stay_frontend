@@ -51,9 +51,14 @@ export class LogInComponent implements OnInit {
         this.success = true;
         this.loading = false;
 
+        // format role; ex: from "ROLE_ADMIN" to "admin"
+        const roleArr: string = v.role.split('_');
+        const role = roleArr[roleArr.length - 1].toLocaleLowerCase();
+
         // Set logged in status
         this.authService.setAuthenticated(true);
         this.authService.setUsername(username);
+        this.authService.setRole(role);
 
         // Show success message for 2.5sec
         const contador = timer(2500);
@@ -65,6 +70,8 @@ export class LogInComponent implements OnInit {
 
         // Save login username in sessionStorage
         window.sessionStorage.setItem("auth-username", username)
+        // Save role in sessionStorage
+        window.sessionStorage.setItem("auth-role", role)
 
         // Redirect to home (TODO: show a successfuly message )
         this.router.navigate(['/']);

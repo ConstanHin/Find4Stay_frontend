@@ -11,6 +11,7 @@ export class AuthService {
 
   isAuth: boolean = false;
   username: string| undefined;
+  role: string| undefined;
 
   constructor(private httpCliente: HttpClient) { }
 
@@ -53,25 +54,35 @@ export class AuthService {
   }
 
   /**
-   * Check if user is authenticated or not
+   * Check user authentication status
    */
   isAuthenticated(): boolean {
     return this.isAuth;
   }
 
   /**
-   * Set if user is authenticated or not
+   * Set user authentication status
    */
   setAuthenticated(auth: boolean) {
     this.isAuth = auth;
   }
 
+   // Setter getter username
   setUsername(username: string) {
     this.username = username;
   }
 
   getUsername(){
     return this.username;
+  }
+
+  // Setter getter role
+  getRole() {
+    this.role;
+  }
+
+  setRole(role: string) {
+    this.role = role;
   }
 
 }
