@@ -18,6 +18,7 @@ export class LogInComponent implements OnInit {
   success: boolean = false;
   fail: boolean = false;
   submited: boolean = false;
+  loading: boolean = false;
 
   loginFormGroup = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -39,6 +40,7 @@ export class LogInComponent implements OnInit {
    * On submit click atempt login
    */
   onSubmit() {
+    this.loading = true;
     const username = this.loginFormGroup.value.username;
     const password = this.loginFormGroup.value.password;
 
@@ -47,6 +49,7 @@ export class LogInComponent implements OnInit {
     observable.subscribe({
       next: (v) => {
         this.success = true;
+        this.loading = false;
 
         // Set logged in status
         this.authService.setAuthenticated(true);
@@ -68,6 +71,7 @@ export class LogInComponent implements OnInit {
       },
       error: (e) => {
         this.fail = true;
+        this.loading = false;
 
         // Show fail message for 2.5sec
         const contador = timer(2500);

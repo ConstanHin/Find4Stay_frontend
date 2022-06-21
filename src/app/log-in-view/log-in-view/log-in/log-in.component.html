@@ -7,9 +7,11 @@
           <div class="mb-md-5 mt-md-4 pb-5">
 
             <h2 class="fw mb-2 text-uppercase">Iniciar Sesión</h2>
-            <br>
+
+            <div class="spinner-border" *ngIf="loading"></div>
+
             <!-- Form -->
-            <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+            <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()" *ngIf="!loading">
 
               <div class="form-outline form-white mb-4">
                 <input type="email" class="form-control form-control-lg" placeholder="Usuario" formControlName="username"/>
@@ -21,7 +23,7 @@
 
               </div>
 
-              <button class="btn px-5 fs-5" type="submit">Entrar</button>
+              <button class="btn px-5 fs-5" type="submit" [disabled]="loginFormGroup.invalid">Entrar</button>
 
             </form>
             <!-- Validation errors -->
@@ -29,13 +31,20 @@
               *ngIf="loginFormGroup.invalid && (loginFormGroup.dirty || loginFormGroup.touched)">
 
               <li class="m-1 p-0 " *ngIf="loginFormGroup.get('username')?.errors?.['required']">
-                Username is required.
+                Introduce el usuario.
               </li>
               <li class="m-1 p-0 " *ngIf="loginFormGroup.get('password')?.errors?.['required']">
-                Password is required.
+                Introduce la contraseña.
               </li>
 
             </ul>
+            <!-- fallo login -->
+            <ul class="alert alert-danger mt-3" *ngIf="fail">
+              <li class="my-1 p-0 ">
+                Ha ocurrido un error.
+              </li>
+            </ul>
+
           </div>
 
           <div>
