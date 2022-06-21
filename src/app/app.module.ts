@@ -15,7 +15,6 @@ import { AreaAdminViewModule } from './area-admin-view/area-admin-view.module';
 import { FooterComponent } from './footer/footer.component';
 import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DatePipe } from '@angular/common';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { registerLocaleData } from '@angular/common';
