@@ -1,4 +1,4 @@
-.card{
+.card-body{
   box-shadow: 15px 15px 3px #3335;
 }
 
@@ -55,6 +55,7 @@
   padding-top: 5%;
   border: none;
 }
+
 
 #main-registro-section {
   min-height: 100vh;
