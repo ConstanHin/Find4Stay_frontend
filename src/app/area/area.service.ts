@@ -7,6 +7,7 @@ import { Cliente } from '../models/cliente';
 export class AreaService {
 
   role: string = "admin";
+  apartado: string = "cuenta"
   cliente: Cliente| undefined;
 
   constructor() {
@@ -26,6 +27,13 @@ export class AreaService {
 
   setCliente(cliente: Cliente) {
     this.cliente = cliente;
+  }
+  getApartado() {
+    return this.apartado;
+  }
+
+  setApartado(apartado: string) {
+    this.apartado = apartado;
   }
 
 }

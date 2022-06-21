@@ -19,9 +19,9 @@ export class BarraLateralComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // Set botones de la barra lateral segun el rol del usuario
     this.role = this.areaService.getRoleArea()
-    this.activatedRoute.paramMap.subscribe((param) => console.log(param))
-
+    this.setCssClassSelected(this.areaService.getApartado());
   }
 
   /**
@@ -34,6 +34,7 @@ export class BarraLateralComponent implements OnInit {
      * que a su vez cambia el componente principal
      */
     this.cambiarApartadoEvent.emit(apartado);
+    this.areaService.setApartado(apartado);
   }
 
   setCssClassSelected(apartado: string) {
