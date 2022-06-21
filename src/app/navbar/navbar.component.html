@@ -2,7 +2,7 @@
 
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="#" id="nav1">FIND4STAY</a>
+    <a class="navbar-brand" routerLink="/" id="nav1">FIND4STAY</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
       aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,31 +12,31 @@
 
       <ul class="navbar-nav" routerLinkActive="active">
 
-        <li class="nav-item me-md-5" *ngIf="!isLoggedIn">
+        <li class="nav-item me-md-5" *ngIf="!isAuth">
           <a class="nav-link" routerLink="/registro">Registra tu alojamiento</a>
         </li>
 
-        <li class="nav-item me-md-4" *ngIf="!isLoggedIn">
+        <li class="nav-item me-md-4" *ngIf="!isAuth">
           <a class="nav-link" routerLink="/login">Inicio Sesión</a>
         </li>
 
-        <!-- <li class="nav-item me-md-4" *ngIf="isLoggedIn">
+        <!-- <li class="nav-item me-md-4" *ngIf="isAuth">
           <a class="nav-link" routerLink="/area-cliente">{{user.username}}</a>
         </li> -->
 
-        <!-- <li class="nav-item me-md-4" *ngIf="isLoggedIn">
-          <a class="nav-link" (click)="logout()" >Cerrar Sesión</a>
-        </li> -->
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Area Personal
+        <li class="nav-item dropdown" *ngIf="isAuth">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{username}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item text-dark" routerLink="/area-admin" (click)="changeRoleArea('admin')" >Admin</a></li>
-            <li><a class="dropdown-item text-dark" routerLink="/area-cliente" (click)="changeRoleArea('cliente')" >Cliente</a></li>
-            <li><a class="dropdown-item text-dark" routerLink="/area-empresa" (click)="changeRoleArea('empresa')">Empresa</a></li>
+            <!-- <li><a class="dropdown-item text-dark" routerLink="/area-cliente" (click)="changeRoleArea('cliente')" >Cliente</a></li> -->
+            <!-- <li><a class="dropdown-item text-dark" routerLink="/area-empresa" (click)="changeRoleArea('empresa')">Empresa</a></li> -->
           </ul>
+        </li>
+
+        <li class="nav-item me-md-4" *ngIf="isAuth">
+          <button class="btn text-light" (click)="logOut()" >Cerrar Sesión</button>
         </li>
 
       </ul>

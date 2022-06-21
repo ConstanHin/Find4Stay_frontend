@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LogInViewComponent } from './log-in-view/log-in-view.component';
 import { LogInComponent } from './log-in-view/log-in/log-in.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,8 @@ import { LogInComponent } from './log-in-view/log-in/log-in.component';
     LogInComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     LogInViewComponent

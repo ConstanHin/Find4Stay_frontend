@@ -20,6 +20,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es'
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localeEs)
 
@@ -42,6 +43,7 @@ registerLocaleData(localeEs)
     AreaClienteViewModule,
     AreaAdminViewModule,
     BrowserAnimationsModule,
+    HttpClientModule
 
   ],
   providers: [
