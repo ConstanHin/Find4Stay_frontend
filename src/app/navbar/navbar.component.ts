@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
 
   isAuth: boolean = false;
   username: string| undefined;
+  role: string| undefined | null;
 
   constructor(
     private areaService: AreaService,
@@ -22,12 +23,6 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // Check if auth in sessionStorage and set auth status
-    const sessionUsername = window.sessionStorage.getItem("auth-username")
-    if (sessionUsername) {
-      this.authService.setAuthenticated(true)
-      this.username = sessionUsername;
-    }
 
     // On route change check if user is authenticated
     this.router.events.subscribe(event => {
@@ -35,6 +30,7 @@ export class NavbarComponent implements OnInit {
         this.isAuth = this.authService.isAuthenticated()
         if (this.authService.getUsername()) {
           this.username = this.authService.getUsername();
+          this.role = this.authService.getRole();
         }
       }
     })

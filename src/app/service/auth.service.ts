@@ -10,10 +10,17 @@ const AUTH_API = "http://localhost:8080/"
 export class AuthService {
 
   isAuth: boolean = false;
-  username: string| undefined;
-  role: string| undefined;
+  username: string | undefined;
+  role: string | null = null;
 
-  constructor(private httpCliente: HttpClient) { }
+  constructor(private httpCliente: HttpClient) {
+    const sessionUsername = window.sessionStorage.getItem("auth-username")
+    if (sessionUsername) {
+      this.username = sessionUsername;
+      this.isAuth = true;
+      this.role = window.sessionStorage.getItem("auth-role");
+    }
+  }
 
   /**
    * Login endpoint
@@ -67,18 +74,18 @@ export class AuthService {
     this.isAuth = auth;
   }
 
-   // Setter getter username
+  // Setter getter username
   setUsername(username: string) {
     this.username = username;
   }
 
-  getUsername(){
+  getUsername() {
     return this.username;
   }
 
   // Setter getter role
   getRole() {
-    this.role;
+    return this.role;
   }
 
   setRole(role: string) {
