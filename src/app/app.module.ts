@@ -2,9 +2,6 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistroComponent } from './registro/registro.component';
@@ -18,11 +15,11 @@ import { FooterComponent } from './footer/footer.component';
 import { AreaClienteViewModule } from './area-cliente-view/area-cliente-view.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es'
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { authInterceptorProvider } from './helpers/auth.interceptor';
 
 registerLocaleData(localeEs)
 
@@ -50,12 +47,13 @@ registerLocaleData(localeEs)
 
   ],
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
     {
-    provide: LOCALE_ID,
-    useValue: 'es-ES'
-  }
-],
+      provide: LOCALE_ID,
+      useValue: 'es-ES'
+    },
+    authInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

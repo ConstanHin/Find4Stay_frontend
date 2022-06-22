@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Cliente } from 'src/app/models/cliente';
 import { AreaService } from 'src/app/area/area.service';
 import data from '../../../fake-data/fake-data-clientes.json';
+import { CuentaService } from 'src/app/service/cuenta.service';
 
 @Component({
   selector: 'app-area-admin-clientes-lista',
@@ -24,10 +25,12 @@ export class AreaAdminClientesListaComponent implements OnInit {
 
   constructor(
     private areaService: AreaService,
+    private cuentaService: CuentaService
   ) { }
 
   ngOnInit(): void {
     this.listaClientes = data.clientes;
+    this.cuentaService.list().subscribe(v => console.log(v))
   }
 
   cambiarApartado(apartado: string) {
