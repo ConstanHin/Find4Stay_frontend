@@ -5,7 +5,7 @@
   <div class="register-form">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        
+
           <div class="row">
               <div class="col-md-3">
                 <label for="entrada"></label>
@@ -50,8 +50,7 @@
                     <div *ngIf="f['fechasalida'].errors['required']">CheckOut requerido</div>
                   </div>
 
-
-                  <div class="col-sm-6" style="float: right">
+                  <div class="col-sm-6" style="float:right; margin-top: -10px">
                     <div class="d-grid gap-2 d-md-flex justify-content-end">
                       <button class="btn btn-light me-md-2" type="submit">Buscar</button>
                       <button type="button"(click)="onReset()"class="btn btn-light">Reset</button>
