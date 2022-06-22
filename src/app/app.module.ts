@@ -29,7 +29,7 @@ registerLocaleData(localeEs)
     AppComponent,
     RegistroComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
