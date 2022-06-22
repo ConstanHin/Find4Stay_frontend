@@ -30,19 +30,19 @@
             <ul class="alert alert-danger mt-3"
               *ngIf="loginFormGroup.invalid && (loginFormGroup.dirty || loginFormGroup.touched)">
 
-              <li class="m-1 p-0 " *ngIf="loginFormGroup.get('username')?.errors?.['required']">
+              <p class="m-1 p-0 " *ngIf="loginFormGroup.get('username')?.errors?.['required']">
                 Introduce el usuario.
-              </li>
-              <li class="m-1 p-0 " *ngIf="loginFormGroup.get('password')?.errors?.['required']">
+              </p>
+              <p class="m-1 p-0 " *ngIf="loginFormGroup.get('password')?.errors?.['required']">
                 Introduce la contraseña.
-              </li>
+              </p>
 
             </ul>
             <!-- fallo login -->
             <ul class="alert alert-danger mt-3" *ngIf="fail">
-              <li class="my-1 p-0 ">
+              <p class="my-1 p-0 ">
                 Ha ocurrido un error.
-              </li>
+              </p>
             </ul>
 
           </div>
