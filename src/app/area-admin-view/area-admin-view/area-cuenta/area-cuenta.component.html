@@ -1,45 +1,54 @@
 <div class="container">
   <h5>Datos cuenta</h5>
 
-  <form>
+  <form [formGroup]="formEditUser">
     <div class="form-group row border-b">
       <div class="col-sm">
-        <label for="ex1" id="ex1">Usuario</label>
+        <label class="ex1">Usuario</label>
       </div>
       <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="ex2" placeholder="{{data.username}}">
+        <input type="text" [readonly]=disabled class="form-control-plaintext" id="usernameInput"
+          placeholder="{{usuarioLoguado.username}}" formControlName="username" >
       </div>
-      <div class="col-sm align-items-center">
-        <label for="ex3"><i class="bi bi-pencil-square"></i> </label>
-      </div>
+
     </div>
 
     <br>
 
     <div class="form-group row border-b">
       <div class="col-sm">
-        <label for="ex1" id="ex1">Contraseña</label>
+        <label class="ex1">Contraseña</label>
       </div>
       <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="ex2" placeholder="******">
+        <input type="text" [readonly]=disabled class="form-control-plaintext" id="passwordInput" placeholder="******"
+          formControlName="password">
       </div>
-      <div class="col-sm align-items-center">
-        <label for="ex3"><i class="bi bi-pencil-square"></i> </label>
-      </div>
+
     </div>
 
     <br>
 
     <div class="form-group row border-b">
       <div class="col-sm">
-        <label for="ex1" id="ex1">E-mail</label>
+        <label class="ex1">E-mail</label>
       </div>
       <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="ex2" placeholder="{{data.email}}">
+        <input type="text" [readonly]=disabled class="form-control-plaintext" id="emailInput"
+          placeholder="{{usuarioLoguado.email}}" formControlName="email">
       </div>
-      <div class="col-sm align-items-center">
-        <label for="ex3"><i class="bi bi-pencil-square"></i> </label>
-      </div>
+
     </div>
   </form>
+  <div class="row my-4">
+    <div class="col-md"></div>
+    <div class="col-md-2 my-2">
+      <button class="btn btn-warning" *ngIf="disabled" (click)="editar()">Editar</button>
+      <button class="btn btn-success me-2" *ngIf="!disabled" (click)="aceptarCambios()" type="submit">V</button>
+      <button class="btn btn-danger me-2" *ngIf="!disabled" (click)="cancelarCambios()">X</button>
+    </div>
+    <div class="col-md-2 my-2"><button class="btn btn-danger" (click)="eliminar()">Eliminar</button></div>
+  </div>
+  <div>{{formEditUser.value.username}}</div>
+  <div>{{formEditUser.value.password}}</div>
+  <div>{{formEditUser.value.email}}</div>
 </div>

@@ -8,14 +8,14 @@ import { catchError } from 'rxjs/operators';
 })
 export class CuentaService {
 
-  apiUrl: string = "http://localhost:8080/api";
+  apiUrl: string = "http://localhost:8080/api/cuentas";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private httpClient: HttpClient) { }
 
   // Get list
   list(): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/cuentas`).pipe(
+    return this.httpClient.get(`${this.apiUrl}`).pipe(
       catchError(this.handleError)
     );
   }
@@ -64,7 +64,7 @@ export class CuentaService {
   }
 
   getauthcuenta(): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/cuenta/auth`).pipe(
+    return this.httpClient.get(`${this.apiUrl}/auth`).pipe(
     )
   }
 

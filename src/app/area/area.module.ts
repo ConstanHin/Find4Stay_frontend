@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { AreaCuentaComponent } from '../area-admin-view/area-admin-view/area-cuenta/area-cuenta.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     BarraLateralComponent,
