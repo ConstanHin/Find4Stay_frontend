@@ -10,9 +10,6 @@ import { coordenadas } from './Coordenadas/coords';
 })
 export class ResultadoBusquedaHotelesViewComponent implements OnInit {
 
-
-
-  @Output() updateCharEvent = new EventEmitter<Map>();
 ngOnInit(): void{
   this.ngAfterViewInit()
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { Map, tileLayer } from 'leaflet';
 import { coordenadas } from './Coordenadas/coords';
-
+import { BuscadorComponent } from '../buscador/buscador.component';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -13,7 +13,12 @@ export class MapComponent implements OnInit {
     this.ngAfterViewInit()
   }
   ngAfterViewInit(): void{
-  const map = new Map('map').setView([41.1561200, 1.1068700], 14);
+    switch (BuscadorComponent){
+      case value="1"
+      const map = new Map('map').setView([41.1561200, 1.1068700], 14);
+    }
+
+
  tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     minZoom: 5,
