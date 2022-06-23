@@ -8,21 +8,21 @@ import { catchError } from 'rxjs/operators';
 })
 export class CuentaService {
 
-apiUrl: string = "http://localhost:8080/";
-headers = new HttpHeaders().set('Content-Type', 'application/json');
+  apiUrl: string = "http://localhost:8080/api";
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private httpClient: HttpClient) { }
 
-   // Get list
+  // Get list
   list(): Observable<any> {
-    return this.httpClient.get(this.apiUrl).pipe(
+    return this.httpClient.get(`${this.apiUrl}/cuentas`).pipe(
       catchError(this.handleError)
     );
   }
 
 
-   // Get one by id
-   getItem(id: any): Observable<any> {
+  // Get one by id
+  getItem(id: any): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}/${id}`).pipe(
       catchError(this.handleError)
     );
@@ -36,7 +36,7 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
   }
 
   // Update
-  update(id:any, data:any): Observable<any> {
+  update(id: any, data: any): Observable<any> {
     return this.httpClient.put(this.apiUrl + `/${id}`, data).pipe(
       catchError(this.handleError)
     );
@@ -73,7 +73,7 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
         body was: ${error.error}`
       )
     }
-    return throwError(() => new Error('Ha ocurrido un error, intentelo de nuevo más tarde.'));
+    return throwError(() => new Error('Ha ocurrido un error: .' + error.message));
   }
 
 
