@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CuentaService } from 'src/app/service/cuenta.service';
 
 @Component({
   selector: 'app-area-cuenta',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaCuentaComponent implements OnInit {
 
-  constructor() { }
+  data: any = null;
+
+  constructor(private cuentaservice: CuentaService) { }
 
   ngOnInit(): void {
+
+    this.cuentaservice.getauthcuenta().subscribe(
+      cuentaAuth => { this.data = cuentaAuth
+        console.log(cuentaAuth);
+      }
+
+
+    );
+
   }
 
 }

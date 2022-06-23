@@ -63,6 +63,11 @@ export class CuentaService {
     )
   }
 
+  getauthcuenta(): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/cuenta/auth`).pipe(
+    )
+  }
+
   //Handle errors
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
