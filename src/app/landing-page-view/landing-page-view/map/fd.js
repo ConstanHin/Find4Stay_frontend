@@ -1,3 +1,4 @@
+import { BuscadorComponent } from '../buscador/buscador.component';
 let marker = null
 const updateMap = () => {
   const urlIss = ''
@@ -11,3 +12,4 @@ const updateMap = () => {
     setTimeout(updateMap, 1)
 }
 updateMap()
+
