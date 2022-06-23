@@ -8,7 +8,7 @@ import { CuentaService } from 'src/app/service/cuenta.service';
 })
 export class AreaCuentaComponent implements OnInit {
 
-  data: any = null;
+  data: any = {"username":"", "email": ""};
 
   constructor(private cuentaservice: CuentaService) { }
 
