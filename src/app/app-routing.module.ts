@@ -18,6 +18,10 @@ import { AreaAdminClienteComponent } from './area-admin-view/area-admin-view/are
 import { AreaAdminReservaComponent } from './area-admin-view/area-admin-view/area-admin-reserva/area-admin-reserva.component';
 import { AreaAdminEmpresaComponent } from './area-admin-view/area-admin-view/area-admin-empresa/area-admin-empresa.component';
 import { AreaAdminHotelComponent } from './area-admin-view/area-admin-view/area-admin-hotel/area-admin-hotel.component';
+import { AreaclienteComponent } from './area-cliente-view/area-cliente-view/areacliente/areacliente.component';
+import { MisreservasComponent } from './area-cliente-view/area-cliente-view/misreservas/misreservas.component';
+import { AreaempresaComponent } from './area-empresa-view/area-empresa-view/areaempresa/areaempresa.component';
+import { MishotelesComponent } from './area-empresa-view/area-empresa-view/mishoteles/mishoteles.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageViewComponent},
@@ -62,13 +66,28 @@ const routes: Routes = [
       {path: 'reservas/:id', component: AreaAdminReservaComponent},
     ]
   },
+
   {
     path:'area-cliente',
-    component: AreaClienteViewComponent
+    component: AreaClienteViewComponent,
+    children: [
+      {path: 'cuenta', component: AreaCuentaComponent},
+      {path: 'misdatos/:id', component: AreaclienteComponent},
+      {path: 'misreservas/:id', component: MisreservasComponent},
+
+    ]
   },
   {
     path:'area-empresa',
-    component:AreaEmpresaViewComponent
+    component:AreaEmpresaViewComponent,
+    children: [
+      {path: 'cuenta', component: AreaCuentaComponent},
+      {path: 'misclientes', component: AreaclienteComponent},
+      {path: 'empresas', component: AreaEmpresaViewComponent},
+      {path: 'mishoteles', component: MishotelesComponent},
+      {path: 'reservas', component: MisreservasComponent},
+
+    ]
   }
 
 ];
