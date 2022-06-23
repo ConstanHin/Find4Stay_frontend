@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
+
+
 @Component({
   selector: 'app-landing-page-view',
   templateUrl: './landing-page-view.component.html',
@@ -8,9 +10,10 @@ import { DatePipe } from '@angular/common';
 })
 export class LandingPageViewComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+
+  constructor( ) { }
+
+  ngOnInit(): void {}
 
 }

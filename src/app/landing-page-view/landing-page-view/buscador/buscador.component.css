@@ -1,4 +1,8 @@
 
+.form-group {
+  display: grid;
+
+}
 .grid {
   text-align: center;
 
@@ -24,11 +28,7 @@ h3 {
 ::ng-deep  .mat-form-field-label {
   /*change color of label*/
   color: rgb(17, 15, 15) !important;
-
  }
-
- /*::ng-deep.mat-form-field {
-  /*change color of underline*/
 
 
 ::ng-deep.mat-form-field-ripple {
@@ -47,3 +47,11 @@ h3 {
 
 
  }
+
+ .btn-space{
+  margin-right: 5px;
+ }
+
+
+
+

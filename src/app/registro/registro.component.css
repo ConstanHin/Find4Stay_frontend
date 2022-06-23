@@ -1,4 +1,4 @@
-.card{
+.card-body{
   box-shadow: 15px 15px 3px #3335;
 }
 
@@ -34,10 +34,6 @@
   color:#79C7BB
 }
 
-.mb-0{
-  color:#79C7BB
-}
-
 .btn-group{
   letter-spacing: 0.2em;
   color: rgb(255, 255, 255) !important;
@@ -54,6 +50,10 @@
   background-color: #eee;
   padding-top: 5%;
   border: none;
+}
+
+label{
+  height: 60px;
 }
 
 #main-registro-section {

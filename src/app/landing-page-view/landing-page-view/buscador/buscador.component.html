@@ -1,64 +1,65 @@
 <div class="container">
 
-  <!-- <form [formGroup]="formCity" (ngSubmit)="capturar();"> -->
-  <h3 class="mt-5">Buscador alojamiento</h3>
+<h3 class="mt-5">Buscador alojamiento</h3>
 
-  <div class="form">
-    <div class="row g-3">
+  <div class="register-form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
 
-      <div class="col-md">
-        <label for="entrada"></label>
-        <select class="form-select" aria-label="Destino">
-          <option selected>Destino</option>
-          <option value="1">Reus</option>
-          <option value="2">Tarragona</option>
-          <option value="3">Barcelona</option>
-        </select>
+          <div class="row">
+              <div class="col-md-3">
+                <label for="entrada"></label>
+                <select class="form-control" aria-label="Destino" formControlName="destino" [ngClass]="{ 'is-invalid': submitted && f['destino'].errors }">
+                  <option value="" disabled selected hidden>Elige tu destino</option>
+                  <option value="1">Reus</option>
+                  <option value="2">Tarragona</option>
+                  <option value="3">Barcelona</option>
+                </select>
+                <div *ngIf="submitted && f['destino'].errors" class="invalid-feedback">
+                  <div *ngIf="f['destino'].errors['required']">Elige un destino</div>
+                </div>
+              </div>
+
+
+              <div class="col-md-3">
+                <label for="personas"></label>
+                <input  type="number" class="form-control" placeholder="Numero de personas" formControlName="personas" aria-label="Personas" min="1" max="30" [ngClass]="{ 'is-invalid': submitted && f['personas'].errors }">
+                <div *ngIf="submitted && f['personas'].errors" class="invalid-feedback">
+                  <div *ngIf="f['personas'].errors['required']">Elige número de personas</div>
+                </div>
+              </div>
+
+
+              <div class="col">
+                  <mat-form-field [color]="'accent'" appearance="standard">
+                    <mat-date-range-input [rangePicker]="picker" [min]="maxDate">
+                      <input matStartDate placeholder="CheckIn" formControlName="fechaEntrada" [ngClass]="{ 'is-invalid': submitted && f['fechaEntrada'].errors }">
+                      <input matEndDate placeholder="CheckOut" formControlName="fechasalida" [ngClass]="{ 'is-invalid': submitted && f['fechasalida'].errors }">
+                      <mat-hint> {{getDateFormatString()}} </mat-hint>
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                  </mat-form-field>
+
+
+                  <div *ngIf="submitted && f['fechaEntrada'].errors" class="invalid-feedback">
+                    <div *ngIf="f['fechaEntrada'].errors['required']">CheckIn requerido</div>
+                  </div>
+
+                  <div *ngIf="submitted && f['fechasalida'].errors" class="invalid-feedback">
+                    <div *ngIf="f['fechasalida'].errors['required']">CheckOut requerido</div>
+                  </div>
+
+                  <div class="col-sm-6" style="float:right; margin-top: -10px">
+                    <div class="d-grid gap-2 d-md-flex justify-content-end">
+                      <button class="btn btn-light me-md-2" type="submit">Buscar</button>
+                      <button type="button"(click)="onReset()"class="btn btn-light">Reset</button>
+                  </div>
+              </div>
+          </div>
+
+        </div>
       </div>
-
-      <!-- <div class="col-md">
-        <input matInput [matDatepicker]="pickerEntrada" class="form-control" [min]="maxDate" placeholder="Fecha Entrada" type="date" (change)="guardarFechaEntrada($event)">
-        <input matInput [matDatepicker]="pickerEntrada" class="form-control" [min]="maxDate" placeholder="Fecha Entrada" (change)="guardarFechaEntrada($event)" >
-        <mat-datepicker-toggle matSuffix [for]="pickerEntrada"></mat-datepicker-toggle>
-        <mat-datepicker #pickerEntrada></mat-datepicker>
-      </div> -->
-
-
-      <!-- <div class="col-md">
-        <input matInput [matDatepicker]="pickerSalida" class="form-control" [min]="selectDate" placeholder="Fecha Salida"  (click)="guardarFechaSalida($event)" (change)="guardarFechaSalida($event)">
-        <mat-datepicker-toggle matSuffix [for]="pickerSalida"></mat-datepicker-toggle>
-        <mat-datepicker #pickerSalida></mat-datepicker>
-      </div> -->
-
-      <mat-form-field [color]="'accent'" appearance="fill">
-        <mat-label>Introduce el rango de fechas:</mat-label>
-        <mat-date-range-input [rangePicker]="picker" [min]="maxDate">
-          <input matStartDate placeholder="Fecha Entrada">
-          <input matEndDate placeholder="Fecha Salida">
-          <mat-hint> {{getDateFormatString()}} </mat-hint>
-        </mat-date-range-input>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker #picker></mat-date-range-picker>
-
-        <!-- <div class="d-flex justify-content-center mt-3">
-          <button type="submit" id="change" class="btn px-4 text-white">¡Enviar reserva!</button>
-        </div> -->
-      </mat-form-field>
-
-
-
-
-
-
-      <div class="col-md">
-        <label for="personas"></label>
-        <input type="text" class="form-control" placeholder="Numero de personas" aria-label="Personas">
-      </div>
-
-    </div>
-  </div>
-
-  <a class="btn btn-light" routerLink="/resultado-busqueda">Buscar</a>
-
-  <!-- </form> -->
+  </form>
+</div>
 </div>
