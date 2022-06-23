@@ -26,8 +26,6 @@ export class NavbarComponent implements OnInit {
 
     // On route change check if user is authenticated
     this.router.events.subscribe(event => {
-      console.log("route change event", event);
-      console.log("isAuth:", this.isAuth);
 
       this.isAuth = this.authService.isAuthenticated()
       if (this.authService.getUsername()) {

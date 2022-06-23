@@ -30,12 +30,6 @@ export class AreaAdminClientesListaComponent implements OnInit {
       arrayCuentas.forEach( (cuenta: any) => {
         if (!cuenta.cliente) return; // skip si no es cliente
 
-        // const cliente = new Cliente();
-        // cliente.id = cuenta.cliente.id;
-        // cliente.nombre = cuenta.cliente.nombre;
-        // cliente.apellido = cuenta.cliente.apellido;
-        // cliente.email = cuenta.email; // excepción, el email está directamente en cuenta
-        // cliente.dni = cuenta.cliente.dni;
         arrayClientes.push(fromCuentaToCliente(cuenta));
       });
 
