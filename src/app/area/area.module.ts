@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
-import { AreaCuentaComponent } from '../area-admin-view/area-admin-view/area-cuenta/area-cuenta.component';
+import { AreaCuentaComponent } from './area-cuenta/area-cuenta.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ComunModule } from '../comun/module/comun/comun.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ComunModule
   ],
   exports: [
     BarraLateralComponent,

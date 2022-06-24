@@ -21,7 +21,7 @@
       </div>
       <div class="col-sm">
         <!-- Password input -->
-        <input type="text" [readonly]=disabled [ngClass]="{'edit-border': !disabled}"
+        <input type="password" [readonly]=disabled [ngClass]="{'edit-border': !disabled}"
           class="form-control-plaintext transparent-border-2px" id="passwordInput" placeholder="******"
           formControlName="password">
       </div>
@@ -53,10 +53,8 @@
         <span class="btn-label"><i class="bi bi-check text-light"></i></span>Aceptar</button>
 
     </div>
-    <div class="col-md-2 my-2"><button class="btn btn-danger" (click)="eliminar()">Eliminar</button></div>
+    <!-- Eliminar btn -->
+    <!-- <div class="col-md-2 my-2"><button class="btn btn-danger" (click)="eliminar()">Eliminar</button></div> -->
   </div>
 
-  <div>{{formEditUser.value.username}}</div>
-  <div>{{formEditUser.value.password}}</div>
-  <div>{{formEditUser.value.email}}</div>
 </div>

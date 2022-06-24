@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ComunModule } from '../comun/module/comun/comun.module';
 
 
 
@@ -22,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BuscadorComponent,
     MapComponent,
     SlidePhotosComponent,
+
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatNativeDateModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ComunModule
   ],
   exports:[
     LandingPageViewComponent
