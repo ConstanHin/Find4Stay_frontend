@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, pipe, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
@@ -46,6 +46,12 @@ update(id:any, data:any): Observable<any> {
 // Delete
 delete(id: any): Observable<any> {
   return this.httpClient.delete(`${this.apiUrl}/${id}`).pipe(
+    catchError(this.handleError)
+  )
+}
+
+getReservaByClienteId(): Observable<any>{
+  return this.httpClient.get(`${this.apiUrl}/cliente`).pipe(
     catchError(this.handleError)
   )
 }

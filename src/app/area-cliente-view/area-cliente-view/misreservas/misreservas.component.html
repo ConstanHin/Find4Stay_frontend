@@ -1,14 +1,14 @@
-<div class="container">
+<div class="container ">
   <h5>Mis reservas</h5>
-
-  <form>
+  <div class="row">
+    <div class="col col-6 border rounded shadow-sm" *ngFor="let reserva of datoreserva">
     <div class="row" >
       <div class="col-sm-2">
         <label class="ex1">Codigo:</label>
       </div>
       <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputCodigo" placeholder="10A" >
-      </div>
+        <span id="inputCodigo">{{reserva.codigo}}
+        </span>
     </div>
 
     <div class="row" >
@@ -16,7 +16,8 @@
         <label class="ex1">Fecha entrada:</label>
       </div>
       <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputEntrada" placeholder="24/02/2022" >
+        <span id="inputCodigo">{{reserva.fecha_entrada | date : 'mediumDate'}}
+        </span>
       </div>
     </div>
 
@@ -25,7 +26,8 @@
         <label class="ex1">Fecha salida:</label>
       </div>
       <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputSalida" placeholder="22/02/2022" >
+        <span id="inputCodigo">{{reserva.fecha_salida | date : 'mediumDate'}}
+        </span>
       </div>
     </div>
 
@@ -34,7 +36,18 @@
         <label class="ex1">Hotel:</label>
       </div>
       <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputSalida" placeholder="Hotel NH Reus" >
+        <span id="inputCodigo">{{reserva.hotel.nombre}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div class="col-sm-2">
+        <label class="ex1"> Ubicación:</label>
+      </div>
+      <div class="col-sm">
+        <span id="inputCodigo">{{reserva.hotel.ubicacion}}
+        </span>
       </div>
     </div>
 
@@ -43,60 +56,8 @@
         <label class="ex1">Importe reserva: </label>
       </div>
       <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputSalida" placeholder="120.00 €" >
+        <span id="inputCodigo">{{reserva.importe_reserva}}
+        </span>
       </div>
     </div>
-
-
-
-    <hr>
-
-
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Codigo:</label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputCodigo" placeholder="21C" >
-      </div>
-    </div>
-
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Fecha entrada:</label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputEntrada" placeholder="15/02/2022" >
-      </div>
-    </div>
-
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Fecha salida:</label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputSalida" placeholder="17/02/2022" >
-      </div>
-    </div>
-
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Hotel:</label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputSalida" placeholder="Hotel NH Reus" >
-      </div>
-    </div>
-
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Importe reserva: </label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputSalida" placeholder="140.00 €" >
-      </div>
-    </div>
-
-    <hr>
-</form>
 </div>

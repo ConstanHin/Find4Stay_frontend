@@ -6,7 +6,7 @@ import { Cliente } from '../models/cliente';
 })
 export class AreaService {
 
-  role: string = "admin";
+  role: string | null = window.sessionStorage.getItem("auth-role");
   apartado: string = "cuenta"
   cliente: Cliente| undefined;
 
