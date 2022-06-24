@@ -34,7 +34,6 @@ registerLocaleData(localeEs)
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     ResultadoBusquedaHotelesModule,
     LandingPageViewModule,
     LogInViewModule,
@@ -43,6 +42,7 @@ registerLocaleData(localeEs)
     AreaAdminViewModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule
 
   ],
