@@ -47,7 +47,7 @@ registerLocaleData(localeEs)
 
   ],
   providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
     {
       provide: LOCALE_ID,
       useValue: 'es-ES'
