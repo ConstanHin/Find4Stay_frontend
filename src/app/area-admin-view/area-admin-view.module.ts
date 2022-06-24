@@ -13,6 +13,7 @@ import { AreaModule } from '../area/area.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NumberToStarsPipe } from '../pipes/number-to-stars.pipe';
 import { AppRoutingModule } from '../app-routing.module';
+import { ComunModule } from '../comun/module/comun/comun.module';
 
 
 
@@ -35,6 +36,8 @@ import { AppRoutingModule } from '../app-routing.module';
     AreaModule,
     NgxPaginationModule,
     AppRoutingModule,
+    ComunModule
+
   ],
   exports: [
     AreaAdminViewComponent

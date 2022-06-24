@@ -1,0 +1,53 @@
+.titulo{
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.bi{
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+}
+
+.ex1{
+  padding-top: 5px;
+}
+
+#linia{
+  width: 50%;
+}
+
+.border-b {
+  border-bottom: 1px #7CDEB4 solid;
+
+}
+
+h5{
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.btn-labeled {
+	padding-top: 0;
+	padding-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.btn-label {
+	position: relative;
+	left: -12px;
+	display: inline-block;
+	padding: 0px 5px;
+	background: rgba(0, 0, 0, 0.15);
+	border-radius: 3px 0 0 3px;
+}
+
+.transparent-border-2px {
+  border: 3px solid transparent;
+  padding: 5px;
+}
+.transparent-border-2px.edit-border {
+  border-color: #dec47c;
+}
+
+

@@ -52,19 +52,26 @@ export class CuentaService {
   //Get by username
   getByNombre(username: any): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}?username_like=${username}`).pipe(
-
+      catchError(this.handleError)
     )
   }
 
   //Get by role
   getByApellido(role: any): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}?role_like=${role}`).pipe(
-
+      catchError(this.handleError)
     )
   }
 
   getauthcuenta(): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}/auth`).pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  editCuentaAuth(data: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}/auth`, data).pipe(
+      catchError(this.handleError)
     )
   }
 

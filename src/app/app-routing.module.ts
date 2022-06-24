@@ -8,7 +8,7 @@ import { AreaAdminViewComponent } from './area-admin-view/area-admin-view/area-a
 import { LogInViewComponent } from './log-in-view/log-in-view/log-in-view.component';
 import { AreaClienteViewComponent } from './area-cliente-view/area-cliente-view/area-cliente-view.component';
 import { AreaEmpresaViewComponent } from './area-empresa-view/area-empresa-view/area-empresa-view.component';
-import { AreaCuentaComponent } from './area-admin-view/area-admin-view/area-cuenta/area-cuenta.component';
+import { AreaCuentaComponent } from './area/area-cuenta/area-cuenta.component';
 import { AreaAdminClientesListaComponent } from './area-admin-view/area-admin-view/clientes-lista/area-admin-clientes-lista.component';
 import { AreaAdminEmpresasListasComponent } from './area-admin-view/area-admin-view/empresas-lista/area-admin-empresas-listas.component';
 import { AreaAdminHotelesListasComponent } from './area-admin-view/area-admin-view/hoteles-lista/area-admin-hoteles-listas.component';
@@ -20,7 +20,6 @@ import { AreaAdminEmpresaComponent } from './area-admin-view/area-admin-view/are
 import { AreaAdminHotelComponent } from './area-admin-view/area-admin-view/area-admin-hotel/area-admin-hotel.component';
 import { AreaclienteComponent } from './area-cliente-view/area-cliente-view/areacliente/areacliente.component';
 import { MisreservasComponent } from './area-cliente-view/area-cliente-view/misreservas/misreservas.component';
-import { AreaempresaComponent } from './area-empresa-view/area-empresa-view/areaempresa/areaempresa.component';
 import { MishotelesComponent } from './area-empresa-view/area-empresa-view/mishoteles/mishoteles.component';
 
 const routes: Routes = [
