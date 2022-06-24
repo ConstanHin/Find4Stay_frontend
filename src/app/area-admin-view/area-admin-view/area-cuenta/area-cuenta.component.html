@@ -2,52 +2,60 @@
   <h5>Datos cuenta</h5>
 
   <form [formGroup]="formEditUser">
-    <div class="form-group row border-b">
+    <div class="form-group row border-b my-4">
       <div class="col-sm">
         <label class="ex1">Usuario</label>
       </div>
       <div class="col-sm">
-        <input type="text" [readonly]=disabled class="form-control-plaintext" id="usernameInput"
-          placeholder="{{usuarioLoguado.username}}" formControlName="username" >
+        <!-- Username input -->
+        <input type="text" [readonly]=disabled [ngClass]="{'edit-border': !disabled}"
+          class="form-control-plaintext transparent-border-2px" id="usernameInput"
+          placeholder="{{usuarioLoguado.username}}" formControlName="username">
       </div>
 
     </div>
+    <div class="form-group row border-b my-4">
 
-    <br>
-
-    <div class="form-group row border-b">
       <div class="col-sm">
         <label class="ex1">Contraseña</label>
       </div>
       <div class="col-sm">
-        <input type="text" [readonly]=disabled class="form-control-plaintext" id="passwordInput" placeholder="******"
+        <!-- Password input -->
+        <input type="text" [readonly]=disabled [ngClass]="{'edit-border': !disabled}"
+          class="form-control-plaintext transparent-border-2px" id="passwordInput" placeholder="******"
           formControlName="password">
       </div>
 
     </div>
-
-    <br>
-
-    <div class="form-group row border-b">
+    <div class="form-group row border-b my-4">
       <div class="col-sm">
         <label class="ex1">E-mail</label>
       </div>
       <div class="col-sm">
-        <input type="text" [readonly]=disabled class="form-control-plaintext" id="emailInput"
-          placeholder="{{usuarioLoguado.email}}" formControlName="email">
+        <!-- Email input -->
+        <input type="text" [readonly]=disabled [ngClass]="{'edit-border': !disabled}"
+          class="form-control-plaintext transparent-border-2px" id="emailInput" placeholder="{{usuarioLoguado.email}}"
+          formControlName="email">
       </div>
 
     </div>
   </form>
+  <!-- Edit buttons, confirmar cancelar-->
   <div class="row my-4">
     <div class="col-md"></div>
     <div class="col-md-2 my-2">
       <button class="btn btn-warning" *ngIf="disabled" (click)="editar()">Editar</button>
-      <button class="btn btn-success me-2" *ngIf="!disabled" (click)="aceptarCambios()" type="submit">V</button>
-      <button class="btn btn-danger me-2" *ngIf="!disabled" (click)="cancelarCambios()">X</button>
+
+      <button type="button" class="btn btn-labeled btn-danger mb-4 me-2" *ngIf="!disabled" (click)="cancelarCambios()">
+        <span class="btn-label"><i class="bi bi-x text-light"></i></span>Cancelar</button>
+      <button type="button" class="btn btn-labeled btn-success mb-2 me-2" *ngIf="!disabled" (click)="aceptarCambios()"
+        type="submit">
+        <span class="btn-label"><i class="bi bi-check text-light"></i></span>Aceptar</button>
+
     </div>
     <div class="col-md-2 my-2"><button class="btn btn-danger" (click)="eliminar()">Eliminar</button></div>
   </div>
+
   <div>{{formEditUser.value.username}}</div>
   <div>{{formEditUser.value.password}}</div>
   <div>{{formEditUser.value.email}}</div>
