@@ -18,17 +18,16 @@ export class AreaAdminHotelesListasComponent implements OnInit {
 
   ]
   page: number = 1;
-
   constructor(private hotelService: HotelService) { }
 
   ngOnInit(): void {
-    // cargar hoteles
-    this.hotelService.list().subscribe(arrayHoteles => {
-      console.log(arrayHoteles);
+    this.hotelService.list().subscribe({
+      next: (v) => {this.listaHoteles = v; console.log(v);
+      },
+      error: (e) => console.log(e),
+      complete: () => "hoteles list endpoint complete"
 
-      this.listaHoteles = arrayHoteles;
     })
-
   }
 
   cambiarApartado(apartado: string) {

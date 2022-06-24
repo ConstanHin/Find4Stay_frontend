@@ -12,22 +12,25 @@ export class AreaAdminReservasListaComponent implements OnInit {
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
 
   listaReservas: Reserva[] = [
-    {id:0, codigo: "A141", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
-    {id:0, codigo: "A221", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
-    {id:0, codigo: "A312", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
-    {id:0, codigo: "A441", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
+    { id: 0, codigo: "A141", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
+    { id: 0, codigo: "A221", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
+    { id: 0, codigo: "A312", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
+    { id: 0, codigo: "A441", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
 
   ]
 
   page: number = 1;
 
-  constructor(private reservaService: ReservaService) { }
+  constructor(private reservasService: ReservaService) { }
 
   ngOnInit(): void {
-    this.reservaService.list().subscribe(arrayReservas => {
-      console.log(arrayReservas);
+    this.reservasService.list().subscribe({
+      next: (v) => {
+        this.listaReservas = v; console.log(v);
+      },
+      error: (e) => console.log(e),
+      complete: () => "reservas list endpoint complete"
 
-      this.listaReservas = arrayReservas;
     })
   }
 
