@@ -8,14 +8,14 @@ import { catchError } from 'rxjs/operators';
 })
 export class EmpresaService {
 
-  apiUrl: string = "http://localhost:8080/";
+  apiUrl: string = "http://localhost:8080/api";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private httpClient: HttpClient) { }
 
    // Get list
    list(): Observable<any> {
-    return this.httpClient.get(this.apiUrl).pipe(
+    return this.httpClient.get(`${this.apiUrl}/empresas`).pipe(
       catchError(this.handleError)
     );
   }
@@ -23,28 +23,28 @@ export class EmpresaService {
 
    // Get one by id
    getItem(id: any): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/${id}`).pipe(
+    return this.httpClient.get(`${this.apiUrl}/empresas/${id}`).pipe(
       catchError(this.handleError)
     );
   }
 
   // Create new
   create(data: any): Observable<any> {
-    return this.httpClient.post(this.apiUrl, data).pipe(
+    return this.httpClient.post(`${this.apiUrl}/empresas`, data).pipe(
       catchError(this.handleError)
     );
   }
 
   // Update
   update(id:any, data:any): Observable<any> {
-    return this.httpClient.put(this.apiUrl + `/${id}`, data).pipe(
+    return this.httpClient.put(`${this.apiUrl}/empresas/${id}`, data).pipe(
       catchError(this.handleError)
     );
   }
 
   // Delete
   delete(id: any): Observable<any> {
-    return this.httpClient.delete(`${this.apiUrl}/${id}`).pipe(
+    return this.httpClient.delete(`${this.apiUrl}/empresas/${id}`).pipe(
       catchError(this.handleError)
     )
   }
