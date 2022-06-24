@@ -18,8 +18,6 @@ export class AreaCuentaComponent implements OnInit {
       cuentaAuth => { this.data = cuentaAuth
         console.log(cuentaAuth);
       }
-
-
     );
 
   }

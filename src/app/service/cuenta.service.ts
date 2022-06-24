@@ -23,7 +23,7 @@ export class CuentaService {
 
   // Get one by id
   getItem(id: any): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/${id}`).pipe(
+    return this.httpClient.get(`${this.apiUrl}/cuentas/${id}`).pipe(
       catchError(this.handleError)
     );
   }
