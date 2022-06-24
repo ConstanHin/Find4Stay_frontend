@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Hotel } from 'src/app/models/hotel';
+import { HotelService } from 'src/app/service/hotel.service';
 
 @Component({
   selector: 'app-area-admin-hoteles-listas',
@@ -17,9 +18,17 @@ export class AreaAdminHotelesListasComponent implements OnInit {
 
   ]
   page: number = 1;
-  constructor() { }
+
+  constructor(private hotelService: HotelService) { }
 
   ngOnInit(): void {
+    // cargar hoteles
+    this.hotelService.list().subscribe(arrayHoteles => {
+      console.log(arrayHoteles);
+
+      this.listaHoteles = arrayHoteles;
+    })
+
   }
 
   cambiarApartado(apartado: string) {

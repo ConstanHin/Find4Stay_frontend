@@ -31,13 +31,6 @@ export class AreaAdminEmpresasListasComponent implements OnInit {
     this.empresaService.list().subscribe(arrayEmpresas => {
       console.log(arrayEmpresas);
 
-      // const arrayClientes : Cliente[] = [];
-      // arrayCuentas.forEach( (cuenta: any) => {
-      //   if (!cuenta.cliente) return; // skip si no es cliente
-
-      //   arrayClientes.push(fromCuentaToCliente(cuenta));
-      // });
-
       this.listaEmpresas = arrayEmpresas;
     })
   }

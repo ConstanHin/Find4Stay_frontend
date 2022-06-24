@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Reserva } from 'src/app/models/reserva';
+import { ReservaService } from 'src/app/service/reserva.service';
 
 @Component({
   selector: 'app-area-admin-reservas-lista',
@@ -20,9 +21,14 @@ export class AreaAdminReservasListaComponent implements OnInit {
 
   page: number = 1;
 
-  constructor() { }
+  constructor(private reservaService: ReservaService) { }
 
   ngOnInit(): void {
+    this.reservaService.list().subscribe(arrayReservas => {
+      console.log(arrayReservas);
+
+      this.listaReservas = arrayReservas;
+    })
   }
 
   cambiarApartado(apartado: string) {
