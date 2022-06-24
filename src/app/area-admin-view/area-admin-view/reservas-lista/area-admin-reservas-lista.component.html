@@ -14,8 +14,8 @@
       <tr *ngFor="let reserva of listaReservas | paginate: {itemsPerPage:10, currentPage: page}">
         <td class="td-id">{{reserva.id}}</td>
         <td>{{reserva.codigo}}</td>
-        <td>{{reserva.fechaEntrada | date : 'short'}}</td>
-        <td>{{reserva.fechaSalida | date : 'short'}}</td>
+        <td>{{reserva.fechaEntrada | date : 'mediumDate'}}</td>
+        <td>{{reserva.fechaSalida | date : 'mediumDate'}}</td>
         <td>{{reserva.importe | currency:'EUR':'symbol':'1.2-2' : 'es'}}</td>
         <td class="text-center td-btn"><a role="button" (click)="cambiarApartado('reserva')"><i
               class="bi bi-pencil-square"></i></a></td>
