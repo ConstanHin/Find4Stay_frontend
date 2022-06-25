@@ -24,6 +24,7 @@ import { MishotelesComponent } from './area-empresa-view/area-empresa-view/misho
 import { NuevoClienteComponent } from './area-admin-view/area-admin-view/nuevo-cliente/nuevo-cliente.component';
 import { NuevaEmpresaComponent } from './area-admin-view/nueva-empresa/nueva-empresa.component';
 import { NuevoHotelComponent } from './area-admin-view/nuevo-hotel/nuevo-hotel.component';
+import { NuevoReservaComponent } from './area-admin-view/nuevo-reserva/nuevo-reserva.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageViewComponent},
@@ -66,7 +67,9 @@ const routes: Routes = [
       {path: 'empresas', component: AreaAdminEmpresasListasComponent},
       {path: 'hoteles/add', component: NuevoHotelComponent},
       {path: 'hoteles/:id', component: AreaAdminHotelComponent},
+      
       {path: 'hoteles', component: AreaAdminHotelesListasComponent},
+      {path: 'reservas/add', component: NuevoReservaComponent},
       {path: 'reservas/:id', component: AreaAdminReservaComponent},
       {path: 'reservas', component: AreaAdminReservasListaComponent},
     ]

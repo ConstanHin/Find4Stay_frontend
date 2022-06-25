@@ -4,6 +4,15 @@
 
   <form [formGroup]="formGroupAddHotel">
 
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="nombre">Empresa</label>
+        <select class="form-control bg-light rounded" id="empresa" formControlName="empresa"
+          placeholder="Empresa">
+          <option value="empresa.nombre" id="empresa" *ngFor="let empresa of listaEmpresas">{{empresa.nombre}}</option>
+        </select>
+      </div>
+    </div>
     <!-- Hotel -->
     <div class="mb-2 row justify-content-between">
       <div class="col">
@@ -36,7 +45,7 @@
     <div class="mb-2 row justify-content-between">
       <div class="col">
         <label class="form-label" for="importe">Importe</label>
-        <input class="form-control bg-light rounded" id="importe" formControlName="importe" type="text" placeholder="Importe">
+        <input class="form-control bg-light rounded" id="importe" formControlName="importe" type="number" placeholder="Importe">
       </div>
     </div>
 

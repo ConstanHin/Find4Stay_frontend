@@ -11,6 +11,7 @@ import { Cliente } from 'src/app/models/cliente';
 export class AreaAdminClienteComponent implements OnInit {
 
   cliente: Cliente | undefined;
+  disabled: boolean = true;
 
   // Inject AreaService and ActivateRoute
   constructor(
@@ -28,6 +29,9 @@ export class AreaAdminClienteComponent implements OnInit {
     // utilizar area service para obtener los datos del cliente segun id?
     console.log('id:', id);
 
+  }
+  editar() {
+    this.disabled = !this.disabled;
   }
 
 

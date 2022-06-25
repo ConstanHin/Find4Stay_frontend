@@ -14,6 +14,7 @@ import { ClienteService } from 'src/app/service/cliente.service';
 export class AreaAdminClientesListaComponent implements OnInit {
 
   loading: boolean = true;
+  disabled: boolean = true;
 
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
   // Datos de prueba. Substituir por datos recibidos por la base de datos
@@ -56,6 +57,11 @@ export class AreaAdminClientesListaComponent implements OnInit {
   setCliente(cliente: Cliente) {
     this.areaService.setCliente(cliente)
   }
+
+  editar() {
+    this.disabled = !this.disabled;
+  }
+
 
   deleteCliente(id: number, arrayIndex: number) {
 

@@ -13,6 +13,7 @@ export class NuevaEmpresaComponent implements OnInit {
   message: string | undefined;
   errorMessage: string | undefined;
 
+
     /**
    * nombre codigo
    */
@@ -27,6 +28,7 @@ export class NuevaEmpresaComponent implements OnInit {
   constructor(private empresaService: EmpresaService) { }
 
   ngOnInit(): void {
+    
   }
 
   submit() {

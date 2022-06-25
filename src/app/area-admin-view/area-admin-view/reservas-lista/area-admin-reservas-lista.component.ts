@@ -9,13 +9,15 @@ import { ReservaService } from 'src/app/service/reserva.service';
 })
 export class AreaAdminReservasListaComponent implements OnInit {
 
+  loading: boolean = true;
+
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
 
   listaReservas: Reserva[] = [
-    { id: 0, codigo: "A141", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
+   /*  { id: 0, codigo: "A141", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
     { id: 0, codigo: "A221", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
     { id: 0, codigo: "A312", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
-    { id: 0, codigo: "A441", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 },
+    { id: 0, codigo: "A441", fechaEntrada: new Date(), fechaSalida: new Date(), importe: 222.50 }, */
 
   ]
 
@@ -27,8 +29,11 @@ export class AreaAdminReservasListaComponent implements OnInit {
     this.reservasService.list().subscribe({
       next: (v) => {
         this.listaReservas = v; console.log(v);
+        this.loading = false
       },
-      error: (e) => console.log(e),
+      error: (e) => {console.log(e),
+      this.loading = false
+      },
       complete: () => "reservas list endpoint complete"
 
     })

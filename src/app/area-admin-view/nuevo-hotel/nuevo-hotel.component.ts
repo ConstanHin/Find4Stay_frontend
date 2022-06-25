@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Empresa } from 'src/app/models/empresa';
+import { Reserva } from 'src/app/models/reserva';
+import { EmpresaService } from 'src/app/service/empresa.service';
 import { HotelService } from 'src/app/service/hotel.service';
+import { ReservaService } from 'src/app/service/reserva.service';
 
 @Component({
   selector: 'app-nuevo-hotel',
@@ -11,23 +15,38 @@ export class NuevoHotelComponent implements OnInit {
 
   message: string | undefined;
   errorMessage: string | undefined;
+  listaEmpresas: Empresa[] = []
+  loading:boolean = true;
 
     /**
    * nombre categoria poblacion ubicacion importe
    */
      formGroupAddHotel = new FormGroup({
+      empresa: new FormControl('', Validators.required),
       nombre: new FormControl('', Validators.required),
       categoria: new FormControl('', Validators.required),
-      poblacion: new FormControl('', Validators.required),
-      ubicacion: new FormControl('', Validators.required),
+      poblacion: new FormControl('',),
+      ubicacion: new FormControl('',),
       importe: new FormControl('', Validators.required),
+
 
     })
 
 
-  constructor( private hotelService: HotelService) { }
+  constructor( private hotelService: HotelService, private empresaService: EmpresaService) { }
 
   ngOnInit(): void {
+    this.empresaService.list().subscribe({
+      next: (v) => {
+        this.listaEmpresas = v; console.log(v);
+        this.loading = false
+      },
+      error: (e) => {console.log(e),
+      this.loading = false
+      },
+      complete: () => "reservas list endpoint complete"
+
+    })
   }
 
   submit() {

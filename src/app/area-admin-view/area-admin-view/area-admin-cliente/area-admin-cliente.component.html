@@ -7,9 +7,10 @@
         <label>ID</label>
       </div>
       <div class="col">
-        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.id}}">
+        <input type="text"  placeholder="{{cliente?.id}}" readonly class="form-control-plaintext">
       </div>
-      <div class="col-2"></div>
+      <div class="col-2">
+      </div>
     </div>
 
     <hr>
@@ -21,7 +22,7 @@
         <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.nombre}}">
       </div>
       <div class="col-2 align-items-center">
-        <a role="button"><i class="bi bi-pencil-square"></i> </a>
+        <a role="button"><i class="bi bi-pencil-square" onclick="editar()"></i> </a>
       </div>
     </div>
 
@@ -62,6 +63,7 @@
       <div class="col">
         <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.dni}}">
       </div>
+
       <!-- Botones editar y eliminar-->
       <div class="col-2 align-items-center">
         <a role="button"><i class="bi bi-pencil-square"></i> </a>
