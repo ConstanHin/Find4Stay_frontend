@@ -1,7 +1,7 @@
 import { BuscadorComponent } from '../buscador/buscador.component';
 let marker = null
 const updateMap = () => {
-  const urlIss = 'localhost:8383/api/hoteles'
+  const urlIss = 'COLOCAR API AQUI'
   fetch(urlIss)
     .then(res => res.json())
     .then(data => {

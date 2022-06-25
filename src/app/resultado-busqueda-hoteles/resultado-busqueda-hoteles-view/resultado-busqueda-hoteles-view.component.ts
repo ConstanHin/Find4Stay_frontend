@@ -23,6 +23,9 @@ ngOnInit(): void{
   coordenadas.map((point)=>{
     L.marker([point.lat, point.lon]).addTo(map).bindPopup(point.nombre);
    })
+   map.fitBounds([
+    ...coordenadas.map((point) => [point.lat,point.lon] as[number, number])
+  ])
 }
 onMapReady(map: L.Map) {
   setTimeout(() => {
