@@ -14,12 +14,13 @@
             <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()" *ngIf="!loading">
 
               <div class="form-outline form-white mb-4">
-                <input type="email" class="form-control form-control-lg" placeholder="Usuario" formControlName="username"/>
+                <input type="email" class="form-control form-control-lg" placeholder="Usuario"
+                  formControlName="username" />
               </div>
 
               <div class="form-outline form-white mb-4">
-                <input type="password" class="form-control form-control-lg"
-                  placeholder="Contraseña" formControlName="password"/>
+                <input type="password" class="form-control form-control-lg" placeholder="Contraseña"
+                  formControlName="password" />
 
               </div>
 
@@ -48,7 +49,8 @@
           </div>
 
           <div>
-            <p class="mb-0">Aún no te has registrado? <a href="../../../registro" >Registrate!</a>
+            <p class="mb-0">Aún no te has registrado?
+              <a routerLink="/registro">Registrate!</a>
             </p>
           </div>
 

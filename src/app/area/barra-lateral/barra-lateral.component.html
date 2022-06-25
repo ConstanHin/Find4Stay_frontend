@@ -13,10 +13,6 @@
         <a id="clientes" class="nav-link px-0 align-items-center" (click)="cambiarApartado('clientes')">
           <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Clientes</span> </a>
       </li>
-      <!-- <li class="d-block w-100">
-        <a id="clientes" class="nav-link px-0 align-items-center" (click)="cambiarApartado('clientes')">
-          <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Clientes</span> </a>
-      </li> -->
       <li class="d-block w-100">
         <a id="empresas" class="nav-link px-0 align-items-center" (click)="cambiarApartado('empresas')">
           <i class="bi bi-briefcase"></i><span class="ms-1 d-none d-md-inline">Empresas</span></a>
@@ -34,7 +30,7 @@
     <!-- Cliente buttons -->
     <div id="barra-lateral-cliente-items" class="w-100" *ngIf="role === 'cliente'">
       <li class="d-block w-100">
-        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('cliente')">
+        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('misdatos')">
           <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Mis datos</span></a>
       </li>
       <li class="d-block w-100">
@@ -46,12 +42,20 @@
     <!-- Empresa buttons -->
     <div id="barra-lateral-empresa-items" class="w-100" *ngIf="role === 'empresa'">
       <li class="d-block w-100">
-        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('empresa')">
+        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('misclientes')">
           <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Datos Empresa</span> </a>
+      </li>
+      <li class="d-block w-100">
+        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('empresas')">
+          <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Empresa</span></a>
       </li>
       <li class="d-block w-100">
         <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('mishoteles')">
           <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Mis Hoteles</span></a>
+      </li>
+      <li class="d-block w-100">
+        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('reservas')">
+          <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Reservas</span></a>
       </li>
     </div>
 

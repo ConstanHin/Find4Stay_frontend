@@ -25,7 +25,10 @@
             {{username}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item text-dark" routerLink="/area-admin" (click)="changeRoleArea(role)" >Area {{role}}</a></li>
+
+            <li><a class="dropdown-item text-dark bg-light" *ngIf="role === 'admin'" routerLink="/area-admin" (click)="changeRoleArea(role)" >Area {{role}}</a></li>
+            <li><a class="dropdown-item text-dark bg-light" *ngIf="role === 'cliente'" routerLink="/area-cliente" (click)="changeRoleArea(role)" >Area {{role}}</a></li>
+            <li><a class="dropdown-item text-dark bg-light" *ngIf="role === 'empresa'" routerLink="/area-empresa" (click)="changeRoleArea(role)" >Area {{role}}</a></li>
           </ul>
         </li>
 
