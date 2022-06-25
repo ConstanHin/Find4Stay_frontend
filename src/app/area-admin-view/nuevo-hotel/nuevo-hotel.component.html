@@ -7,9 +7,9 @@
     <div class="mb-2 row justify-content-between">
       <div class="col">
         <label class="form-label" for="nombre">Empresa</label>
-        <select class="form-control bg-light rounded" id="empresa" formControlName="empresa"
+        <select class="form-control bg-light rounded" id="empresa" formControlName="id_empresa"
           placeholder="Empresa">
-          <option value="empresa.nombre" id="empresa" *ngFor="let empresa of listaEmpresas">{{empresa.nombre}}</option>
+          <option value={{empresa.id}} id="empresa" *ngFor="let empresa of listaEmpresas">{{empresa.nombre}}</option>
         </select>
       </div>
     </div>

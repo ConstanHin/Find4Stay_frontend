@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Empresa } from 'src/app/models/empresa';
-import { Reserva } from 'src/app/models/reserva';
-import { ClienteService } from 'src/app/service/cliente.service';
 import { EmpresaService } from 'src/app/service/empresa.service';
 import { HotelService } from 'src/app/service/hotel.service';
-import { ReservaService } from 'src/app/service/reserva.service';
-import { Cliente } from 'src/app/models/cliente';
 
 @Component({
   selector: 'app-nuevo-hotel',
@@ -19,25 +15,25 @@ export class NuevoHotelComponent implements OnInit {
   errorMessage: string | undefined;
   listaEmpresas: Empresa[] = []
 
-  loading:boolean = true;
+  loading: boolean = true;
 
-    /**
+  /**
    * nombre categoria poblacion ubicacion importe
    */
-     formGroupAddHotel = new FormGroup({
-      empresa: new FormControl('', Validators.required),
+  formGroupAddHotel = new FormGroup({
+    id_empresa: new FormControl('', Validators.required),
 
-      nombre: new FormControl('', Validators.required),
-      categoria: new FormControl('', Validators.required),
-      poblacion: new FormControl('',),
-      ubicacion: new FormControl('',),
-      importe: new FormControl('', Validators.required),
-
-
-    })
+    nombre: new FormControl('', Validators.required),
+    categoria: new FormControl('', Validators.required),
+    poblacion: new FormControl('',),
+    ubicacion: new FormControl('',),
+    importe: new FormControl('', Validators.required),
 
 
-  constructor( private hotelService: HotelService, private empresaService: EmpresaService) { }
+  })
+
+
+  constructor(private hotelService: HotelService, private empresaService: EmpresaService) { }
 
   ngOnInit(): void {
     this.empresaService.list().subscribe({
@@ -45,8 +41,9 @@ export class NuevoHotelComponent implements OnInit {
         this.listaEmpresas = v; console.log(v);
         this.loading = false
       },
-      error: (e) => {console.log(e),
-      this.loading = false
+      error: (e) => {
+        console.log(e),
+          this.loading = false
       },
       complete: () => "empresas list endpoint complete"
 

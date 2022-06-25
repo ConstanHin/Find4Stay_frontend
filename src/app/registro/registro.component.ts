@@ -5,6 +5,7 @@ import { ClienteService } from '../service/cliente.service';
 import { timer } from 'rxjs';
 import { Router } from '@angular/router';
 import { EmpresaService } from '../service/empresa.service';
+import { RedirectMessageService } from '../service/redirect-message.service';
 
 @Component({
   selector: 'app-registro',
@@ -32,6 +33,7 @@ export class RegistroComponent implements OnInit {
     private empresaService: EmpresaService,
     private authService: AuthService,
     private router: Router,
+    private redirectMessage: RedirectMessageService,
   ) { }
 
   ngOnInit(): void {
@@ -71,7 +73,10 @@ export class RegistroComponent implements OnInit {
         // Make submit button available again
         timer(2500).subscribe(() => { this.success = false; this.submited = false })
 
-        // Redirect to home (TODO: show a successfuly message )
+
+
+        // Redirect a la pagina principal y mostrar un mensaje
+        this.redirectMessage.setMessage("Se ha registrado con éxito. Ya puede iniciar sesión con la nueva cuenta!")
         this.router.navigate(['/']);
       },
       error: (e) => {

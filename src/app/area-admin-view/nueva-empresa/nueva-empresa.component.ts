@@ -28,7 +28,7 @@ export class NuevaEmpresaComponent implements OnInit {
   constructor(private empresaService: EmpresaService) { }
 
   ngOnInit(): void {
-    
+
   }
 
   submit() {
@@ -36,6 +36,7 @@ export class NuevaEmpresaComponent implements OnInit {
 
     this.empresaService.create(this.formGroupAddEmpresa.value).subscribe({
       next: v => {
+        this.formGroupAddEmpresa.reset();
         this.message = "Registo añadido con éxito.";
         setTimeout(() => this.message = undefined, 4000);
       },
