@@ -12,6 +12,8 @@ export class MapComponent implements OnInit {
   ngOnInit(): void{
     this.ngAfterViewInit()
   }
+
+
   ngAfterViewInit(): void{
   const map = new Map('map').setView([41.1561200, 1.1068700], 14);
      tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -20,12 +22,19 @@ export class MapComponent implements OnInit {
     attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
+
+
 coordenadas.map((point)=>{
  L.marker([point.lat, point.lon]).addTo(map).bindPopup(point.nombre);
 })
 map.fitBounds([
   ...coordenadas.map((point) => [point.lat,point.lon] as[number, number])
 ])
+var container = L.DomUtil.get('map');
+      if(container != null){
+        container = null;
+      }
+      map.invalidateSize();
 }
   }
 

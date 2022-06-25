@@ -24,5 +24,10 @@ ngOnInit(): void{
     L.marker([point.lat, point.lon]).addTo(map).bindPopup(point.nombre);
    })
 }
+onMapReady(map: L.Map) {
+  setTimeout(() => {
+    map.invalidateSize();
+  }, 1);
+}
 
 }

@@ -1,7 +1,7 @@
 import { BuscadorComponent } from '../buscador/buscador.component';
 let marker = null
 const updateMap = () => {
-  const urlIss = ''
+  const urlIss = 'localhost:8383/api/hoteles'
   fetch(urlIss)
     .then(res => res.json())
     .then(data => {
@@ -12,4 +12,10 @@ const updateMap = () => {
     setTimeout(updateMap, 1)
 }
 updateMap()
+
+document.getElementById('select-location').addEventListener('change', function(e){
+  let location = e.target.value.split(",");
+  L.marker(location).addTo(map)
+  map.flyTo(location, 18);
+})
 
