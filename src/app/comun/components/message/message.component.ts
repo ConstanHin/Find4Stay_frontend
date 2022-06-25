@@ -29,6 +29,7 @@ export class MessageComponent implements OnInit {
       next: (v) => { this.message = v },
       error: (e) => console.log(e),
       complete: () => console.log("complete")
-    })  }
+    })
+  }
 
 }

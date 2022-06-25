@@ -16,10 +16,12 @@ export class NuevoClienteComponent implements OnInit {
    * nombre apellido dni email
    */
   formGroupAddCliente = new FormGroup({
-    nombre: new FormControl('a', Validators.required),
-    apellido: new FormControl('a', Validators.required),
-    dni: new FormControl('a', Validators.required),
-    email: new FormControl('a@a.com', [Validators.required, Validators.email]),
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    nombre: new FormControl('', Validators.required),
+    apellido: new FormControl('', Validators.required),
+    dni: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
   })
 
   constructor(
@@ -39,7 +41,7 @@ export class NuevoClienteComponent implements OnInit {
       },
       error: e => {
         this.errorMessage = "Ha ocurrido un error.";
-        setTimeout(() => this.message = undefined, 4000)
+        setTimeout(() => this.errorMessage = undefined, 4000)
       }
 
     })

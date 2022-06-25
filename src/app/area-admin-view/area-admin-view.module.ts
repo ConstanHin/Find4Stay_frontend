@@ -15,8 +15,8 @@ import { NumberToStarsPipe } from '../pipes/number-to-stars.pipe';
 import { AppRoutingModule } from '../app-routing.module';
 import { ComunModule } from '../comun/module/comun/comun.module';
 import { NuevoClienteComponent } from './area-admin-view/nuevo-cliente/nuevo-cliente.component';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { NuevaEmpresaComponent } from './nueva-empresa/nueva-empresa.component';
+import { NuevoHotelComponent } from './nuevo-hotel/nuevo-hotel.component';
 
 
 
@@ -33,6 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AreaAdminReservasListaComponent,
     NumberToStarsPipe,
     NuevoClienteComponent,
+    NuevaEmpresaComponent,
+    NuevoHotelComponent,
   ],
   imports: [
     CommonModule,
