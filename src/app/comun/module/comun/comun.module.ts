@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MessageComponent } from '../../components/message/message.component';
 import { NumberToStarsPipe } from 'src/app/pipes/number-to-stars.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,11 +12,13 @@ import { NumberToStarsPipe } from 'src/app/pipes/number-to-stars.pipe';
     NumberToStarsPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     MessageComponent,
-    NumberToStarsPipe
+    NumberToStarsPipe,
+    ReactiveFormsModule
   ]
 })
 export class ComunModule { }

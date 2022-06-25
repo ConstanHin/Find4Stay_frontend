@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class ClienteService {
 
-apiUrl: string = "http://localhost:8080/api";
+apiUrl: string = "http://localhost:8080/api/clientes";
 headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 
@@ -24,7 +24,7 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
 
    // Get one by id
    getItem(id: any): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/clientes/${id}`).pipe(
+    return this.httpClient.get(`${this.apiUrl}/${id}`).pipe(
       catchError(this.handleError)
     );
   }

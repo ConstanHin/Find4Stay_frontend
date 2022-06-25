@@ -12,6 +12,7 @@ export class AreaAdminClienteComponent implements OnInit {
 
   cliente: Cliente | undefined;
 
+
   // Inject AreaService and ActivateRoute
   constructor(
     private route: ActivatedRoute,
@@ -29,6 +30,7 @@ export class AreaAdminClienteComponent implements OnInit {
     console.log('id:', id);
 
   }
+
 
 
 }
