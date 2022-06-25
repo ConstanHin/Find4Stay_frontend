@@ -14,6 +14,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { NumberToStarsPipe } from '../pipes/number-to-stars.pipe';
 import { AppRoutingModule } from '../app-routing.module';
 import { ComunModule } from '../comun/module/comun/comun.module';
+import { NuevoClienteComponent } from './area-admin-view/nuevo-cliente/nuevo-cliente.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -30,13 +32,14 @@ import { ComunModule } from '../comun/module/comun/comun.module';
     AreaAdminReservaComponent,
     AreaAdminReservasListaComponent,
     NumberToStarsPipe,
+    NuevoClienteComponent,
   ],
   imports: [
     CommonModule,
     AreaModule,
     NgxPaginationModule,
     AppRoutingModule,
-    ComunModule
+    ComunModule,
 
   ],
   exports: [

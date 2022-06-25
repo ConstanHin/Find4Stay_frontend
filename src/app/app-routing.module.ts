@@ -21,6 +21,7 @@ import { AreaAdminHotelComponent } from './area-admin-view/area-admin-view/area-
 import { AreaclienteComponent } from './area-cliente-view/area-cliente-view/areacliente/areacliente.component';
 import { MisreservasComponent } from './area-cliente-view/area-cliente-view/misreservas/misreservas.component';
 import { MishotelesComponent } from './area-empresa-view/area-empresa-view/mishoteles/mishoteles.component';
+import { NuevoClienteComponent } from './area-admin-view/area-admin-view/nuevo-cliente/nuevo-cliente.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageViewComponent},
@@ -55,14 +56,15 @@ const routes: Routes = [
     component: AreaAdminViewComponent,
     children: [
       {path: 'cuenta', component: AreaCuentaComponent},
-      {path: 'clientes', component: AreaAdminClientesListaComponent},
+      {path: 'clientes/add', component: NuevoClienteComponent},
       {path: 'clientes/:id', component: AreaAdminClienteComponent},
-      {path: 'empresas', component: AreaAdminEmpresasListasComponent},
+      {path: 'clientes', component: AreaAdminClientesListaComponent},
       {path: 'empresas/:id', component: AreaAdminEmpresaComponent},
-      {path: 'hoteles', component: AreaAdminHotelesListasComponent},
+      {path: 'empresas', component: AreaAdminEmpresasListasComponent},
       {path: 'hoteles/:id', component: AreaAdminHotelComponent},
-      {path: 'reservas', component: AreaAdminReservasListaComponent},
+      {path: 'hoteles', component: AreaAdminHotelesListasComponent},
       {path: 'reservas/:id', component: AreaAdminReservaComponent},
+      {path: 'reservas', component: AreaAdminReservasListaComponent},
     ]
   },
 
@@ -70,9 +72,9 @@ const routes: Routes = [
     path:'area-cliente',
     component: AreaClienteViewComponent,
     children: [
-      {path: 'cuenta', component: AreaCuentaComponent},
-      {path: 'misdatos/:id', component: AreaclienteComponent},
       {path: 'misreservas/:id', component: MisreservasComponent},
+      {path: 'misdatos/:id', component: AreaclienteComponent},
+      {path: 'cuenta', component: AreaCuentaComponent},
 
     ]
   },
