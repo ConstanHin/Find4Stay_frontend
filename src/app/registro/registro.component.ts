@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
+import { ClienteService } from '../service/cliente.service';
 import { timer } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -25,7 +26,7 @@ export class RegistroComponent implements OnInit {
     password: new FormControl("",[ Validators.required, Validators.min(6), Validators.max(200) ]),
   });
 
-  constructor( private authService: AuthService, private router: Router,) { }
+  constructor( private clienteService: ClienteService, private authService: AuthService,  private router: Router,) { }
 
   ngOnInit(): void {
     if (this.authService.isAuthenticated()) {
@@ -39,7 +40,7 @@ export class RegistroComponent implements OnInit {
     const password = this.registerForm.value.password;
     const email = this.registerForm.value.email;
 
-    const observable = this.authService.register(usuario, password, email)
+    const observable = this.clienteService.crearByGuest({username:usuario , password:password, email: email})
 
     observable.subscribe({
       next: (v) => {

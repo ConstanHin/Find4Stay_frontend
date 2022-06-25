@@ -64,6 +64,13 @@ export class ClienteService {
     )
   }
 
+  crearByGuest(data: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}/guest`, data).pipe(
+      catchError(this.handleError)
+    )
+  }
+
+
   //Handle errors
   handleError(error: HttpErrorResponse) {
     let errorMessage = ""
