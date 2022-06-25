@@ -13,6 +13,7 @@ export class AreaAdminClienteComponent implements OnInit {
   cliente: Cliente | undefined;
   disabled: boolean = true;
 
+
   // Inject AreaService and ActivateRoute
   constructor(
     private route: ActivatedRoute,
@@ -33,6 +34,7 @@ export class AreaAdminClienteComponent implements OnInit {
   editar() {
     this.disabled = !this.disabled;
   }
+
 
 
 }

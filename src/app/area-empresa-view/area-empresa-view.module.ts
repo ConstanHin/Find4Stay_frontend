@@ -5,6 +5,7 @@ import { AreaempresaComponent } from './area-empresa-view/areaempresa/areaempres
 import { SeguridadComponent } from './area-empresa-view/seguridad/seguridad.component';
 import { MishotelesComponent } from './area-empresa-view/mishoteles/mishoteles.component';
 import { AreaModule } from '../area/area.module';
+import { ComunModule } from '../comun/module/comun/comun.module';
 
 
 @NgModule({
@@ -12,11 +13,12 @@ import { AreaModule } from '../area/area.module';
     AreaEmpresaViewComponent,
     AreaempresaComponent,
     SeguridadComponent,
-    MishotelesComponent
+    MishotelesComponent,
   ],
   imports: [
     CommonModule,
-    AreaModule
+    AreaModule,
+    ComunModule
   ],
   exports:[
     AreaEmpresaViewComponent

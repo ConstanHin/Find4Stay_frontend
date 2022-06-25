@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpresaService } from 'src/app/service/empresa.service';
+import { CuentaService } from 'src/app/service/cuenta.service';
 
 @Component({
   selector: 'app-areaempresa',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaempresaComponent implements OnInit {
 
-  constructor() { }
+  id?: any;
+  email?: any;
+  data: any = {"id":""};
+  datoempresa: any = {"codigo_empresa":"", "nombre": ""};
+
+  constructor(private cuentaservice: CuentaService, private empresaservice: EmpresaService) { }
 
   ngOnInit(): void {
+
+    this.empresaservice.getempresaauth().subscribe(
+      empresaauth => { this.datoempresa = empresaauth
+        console.log(empresaauth)
+      }
+    );
   }
 
 }
