@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MessageComponent } from '../../components/message/message.component';
+import { NumberToStarsPipe } from 'src/app/pipes/number-to-stars.pipe';
 
 
 
 @NgModule({
   declarations: [
-    MessageComponent
+    MessageComponent,
+    NumberToStarsPipe
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    MessageComponent
+    MessageComponent,
+    NumberToStarsPipe
   ]
 })
 export class ComunModule { }
