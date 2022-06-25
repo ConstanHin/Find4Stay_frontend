@@ -5,6 +5,7 @@ import { AreaclienteComponent } from './area-cliente-view/areacliente/areaclient
 import { seguridadComponent } from './area-cliente-view/seguridad/seguridad.component';
 import { MisreservasComponent } from './area-cliente-view/misreservas/misreservas.component';
 import { AreaModule } from '../area/area.module';
+import { ComunModule } from '../comun/module/comun/comun.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AreaModule } from '../area/area.module';
   ],
   imports: [
     CommonModule,
-    AreaModule
+    AreaModule,
+    ComunModule
   ],
   exports:[
     AreaClienteViewComponent
