@@ -21,6 +21,7 @@ import { AreaAdminHotelComponent } from './area-admin-view/area-admin-view/area-
 import { AreaclienteComponent } from './area-cliente-view/area-cliente-view/areacliente/areacliente.component';
 import { MisreservasComponent } from './area-cliente-view/area-cliente-view/misreservas/misreservas.component';
 import { MishotelesComponent } from './area-empresa-view/area-empresa-view/mishoteles/mishoteles.component';
+import { AreaempresaComponent } from './area-empresa-view/area-empresa-view/areaempresa/areaempresa.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageViewComponent},
@@ -81,11 +82,9 @@ const routes: Routes = [
     component:AreaEmpresaViewComponent,
     children: [
       {path: 'cuenta', component: AreaCuentaComponent},
-      {path: 'misclientes', component: AreaclienteComponent},
+      {path: 'datosempresa', component: AreaempresaComponent},
       {path: 'empresas', component: AreaEmpresaViewComponent},
       {path: 'mishoteles', component: MishotelesComponent},
-      {path: 'reservas', component: MisreservasComponent},
-
     ]
   }
 

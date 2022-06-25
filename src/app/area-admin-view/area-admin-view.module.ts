@@ -11,7 +11,6 @@ import { AreaAdminReservaComponent } from './area-admin-view/area-admin-reserva/
 import { AreaAdminReservasListaComponent } from './area-admin-view/reservas-lista/area-admin-reservas-lista.component';
 import { AreaModule } from '../area/area.module';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { NumberToStarsPipe } from '../pipes/number-to-stars.pipe';
 import { AppRoutingModule } from '../app-routing.module';
 import { ComunModule } from '../comun/module/comun/comun.module';
 
@@ -29,7 +28,7 @@ import { ComunModule } from '../comun/module/comun/comun.module';
     AreaAdminHotelesListasComponent,
     AreaAdminReservaComponent,
     AreaAdminReservasListaComponent,
-    NumberToStarsPipe,
+
   ],
   imports: [
     CommonModule,

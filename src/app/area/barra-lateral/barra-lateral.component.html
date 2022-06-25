@@ -42,20 +42,12 @@
     <!-- Empresa buttons -->
     <div id="barra-lateral-empresa-items" class="w-100" *ngIf="role === 'empresa'">
       <li class="d-block w-100">
-        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('misclientes')">
+        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('datosempresa')">
           <i class="bi bi-person-fill"></i><span class="ms-1 d-none d-md-inline">Datos Empresa</span> </a>
-      </li>
-      <li class="d-block w-100">
-        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('empresas')">
-          <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Empresa</span></a>
       </li>
       <li class="d-block w-100">
         <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('mishoteles')">
           <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Mis Hoteles</span></a>
-      </li>
-      <li class="d-block w-100">
-        <a class="nav-link px-0 align-items-center" (click)="cambiarApartado('reservas')">
-          <i class="bi bi-book"></i><span class="ms-1 d-none d-md-inline">Reservas</span></a>
       </li>
     </div>
 
