@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Empresa } from 'src/app/models/empresa';
 import { Reserva } from 'src/app/models/reserva';
+import { ClienteService } from 'src/app/service/cliente.service';
 import { EmpresaService } from 'src/app/service/empresa.service';
 import { HotelService } from 'src/app/service/hotel.service';
 import { ReservaService } from 'src/app/service/reserva.service';
+import { Cliente } from 'src/app/models/cliente';
 
 @Component({
   selector: 'app-nuevo-hotel',
@@ -16,6 +18,7 @@ export class NuevoHotelComponent implements OnInit {
   message: string | undefined;
   errorMessage: string | undefined;
   listaEmpresas: Empresa[] = []
+
   loading:boolean = true;
 
     /**
@@ -23,6 +26,7 @@ export class NuevoHotelComponent implements OnInit {
    */
      formGroupAddHotel = new FormGroup({
       empresa: new FormControl('', Validators.required),
+
       nombre: new FormControl('', Validators.required),
       categoria: new FormControl('', Validators.required),
       poblacion: new FormControl('',),
@@ -44,9 +48,10 @@ export class NuevoHotelComponent implements OnInit {
       error: (e) => {console.log(e),
       this.loading = false
       },
-      complete: () => "reservas list endpoint complete"
+      complete: () => "empresas list endpoint complete"
 
     })
+
   }
 
   submit() {
