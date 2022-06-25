@@ -8,8 +8,8 @@ import { catchError } from 'rxjs/operators';
 })
 export class ClienteService {
 
-apiUrl: string = "http://localhost:8080/api";
-headers = new HttpHeaders().set('Content-Type', 'application/json');
+  apiUrl: string = "http://localhost:8080/api/clientes";
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 
   constructor(private httpClient: HttpClient) { }
@@ -22,9 +22,9 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
   }
 
 
-   // Get one by id
-   getItem(id: any): Observable<any> {
-    return this.httpClient.get(`${this.apiUrl}/clientes/${id}`).pipe(
+  // Get one by id
+  getItem(id: any): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/${id}`).pipe(
       catchError(this.handleError)
     );
   }
@@ -37,7 +37,7 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
   }
 
   // Update
-  update(id:any, data:any): Observable<any> {
+  update(id: any, data: any): Observable<any> {
     return this.httpClient.put(this.apiUrl + `/${id}`, data).pipe(
       catchError(this.handleError)
     );
@@ -66,15 +66,20 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   //Handle errors
   handleError(error: HttpErrorResponse) {
+    let errorMessage = ""
+
+    // Set error
     if (error.error instanceof ErrorEvent) {
-      console.error('Ha ocurrido un error: ', error.error.message)
+      errorMessage = 'Ha ocurrido un error: ' + error.error.message;
+      console.error(errorMessage)
     } else {
-      console.error(
-        `Backend  returned code ${error.status},
-        body was: ${error.error}`
-      )
+      errorMessage = `Backend returned code ${error.status},
+      body was: ${error.error},
+      error message: ${error.message}`
+      console.error(errorMessage)
     }
-    return throwError(() => new Error('Ha ocurrido un error, intentelo de nuevo más tarde.'));
+
+    return throwError(() => new Error(errorMessage));
   }
 }
 

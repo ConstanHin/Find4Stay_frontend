@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ClienteService } from 'src/app/service/cliente.service';
 
 @Component({
   selector: 'app-nuevo-cliente',
@@ -8,13 +9,40 @@ import { FormGroup } from '@angular/forms';
 })
 export class NuevoClienteComponent implements OnInit {
 
-  formGroupAddCliente = new FormGroup({
+  message: string | undefined;
+  errorMessage: string | undefined;
 
+  /**
+   * nombre apellido dni email
+   */
+  formGroupAddCliente = new FormGroup({
+    nombre: new FormControl('a', Validators.required),
+    apellido: new FormControl('a', Validators.required),
+    dni: new FormControl('a', Validators.required),
+    email: new FormControl('a@a.com', [Validators.required, Validators.email]),
   })
 
-  constructor() { }
+  constructor(
+    private clienteService: ClienteService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  submit() {
+    console.log(this.formGroupAddCliente.value);
+
+    this.clienteService.create(this.formGroupAddCliente.value).subscribe({
+      next: v => {
+        this.message = "Registo añadido con éxito.";
+        setTimeout(() => this.message = undefined, 4000);
+      },
+      error: e => {
+        this.errorMessage = "Ha ocurrido un error.";
+        setTimeout(() => this.message = undefined, 4000)
+      }
+
+    })
   }
 
 }

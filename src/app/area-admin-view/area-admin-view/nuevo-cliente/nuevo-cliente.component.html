@@ -2,17 +2,79 @@
   <h5>Datos Cliente</h5>
 
   <form [formGroup]="formGroupAddCliente">
-    <div class="form-group row justify-content-between">
-      <div class="col-2">
-        <label for="nombre">Nombre</label>
+
+    <!-- Cuenta -->
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="usuario">Usuario</label>
+        <input class="form-control bg-light rounded" id="usuario" formControlName="usuario" type="text"
+          placeholder="usuario">
       </div>
       <div class="col">
-        <input id="nombre" formControlName="nombre" type="text" readonly class="form-control-plaintext" placeholder="Nombre">
+        <label class="form-label" for="password">Contraseña</label>
+        <input class="form-control bg-light rounded" id="password" formControlName="password" type="password"
+          placeholder="***">
       </div>
-      <div class="col-2"></div>
+      <div class="col">
+        <label class="form-label" for="usuario">Usuario</label>
+        <input class="form-control bg-light rounded" id="usuario" formControlName="usuario" type="text"
+          placeholder="usuario">
+      </div>
+    </div>
+    <!-- Cliente -->
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="nombre">Nombre</label>
+        <input class="form-control bg-light rounded" id="nombre" formControlName="nombre" type="text"
+          placeholder="Nombre">
+      </div>
+    </div>
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="apellido">Apellido</label>
+        <input class="form-control bg-light rounded" id="apellido" formControlName="apellido" type="text"
+          placeholder="Apellido">
+      </div>
+    </div>
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="dni">DNI</label>
+        <input class="form-control bg-light rounded" id="dni" formControlName="dni" type="text" placeholder="">
+      </div>
+    </div>
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="email">E-mail</label>
+        <input class="form-control bg-light rounded" id="email" formControlName="email" type="email"
+          placeholder="email">
+      </div>
     </div>
 
+    <!-- Validation errors -->
+    <!-- <ul class="alert alert-danger mt-3"
+      *ngIf="formGroupAddCliente.invalid && (formGroupAddCliente.dirty || formGroupAddCliente.touched)">
+      <p class="m-1 p-0 ">
+        Campos requeridos.
+      </p>
 
+    </ul> -->
+    <!-- Validation errors -->
+    <ul class="alert alert-success mt-3" *ngIf="message">
+      <p class="m-1 p-0 ">
+        {{message}}
+      </p>
+    </ul>
+    <ul class="alert alert-danger mt-3" *ngIf="errorMessage">
+      <p class="m-1 p-0 ">
+        {{errorMessage}}
+      </p>
+    </ul>
+
+    <div class="row my-4">
+      <div class="col">
+        <button [disabled]="!formGroupAddCliente.valid" class="btn btn-success" (click)="submit()">Enviar</button>
+      </div>
+    </div>
 
   </form>
 
