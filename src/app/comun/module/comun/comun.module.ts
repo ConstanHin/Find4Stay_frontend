@@ -11,7 +11,8 @@ import { NumberToStarsPipe } from 'src/app/pipes/number-to-stars.pipe';
     NumberToStarsPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     MessageComponent,

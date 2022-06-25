@@ -13,7 +13,9 @@ import { AreaModule } from '../area/area.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { AppRoutingModule } from '../app-routing.module';
 import { ComunModule } from '../comun/module/comun/comun.module';
-
+import { NuevoClienteComponent } from './area-admin-view/nuevo-cliente/nuevo-cliente.component';
+import { NuevaEmpresaComponent } from './nueva-empresa/nueva-empresa.component';
+import { NuevoHotelComponent } from './nuevo-hotel/nuevo-hotel.component';
 
 
 
@@ -28,14 +30,17 @@ import { ComunModule } from '../comun/module/comun/comun.module';
     AreaAdminHotelesListasComponent,
     AreaAdminReservaComponent,
     AreaAdminReservasListaComponent,
-
+    NumberToStarsPipe,
+    NuevoClienteComponent,
+    NuevaEmpresaComponent,
+    NuevoHotelComponent,
   ],
   imports: [
     CommonModule,
     AreaModule,
     NgxPaginationModule,
     AppRoutingModule,
-    ComunModule
+    ComunModule,
 
   ],
   exports: [

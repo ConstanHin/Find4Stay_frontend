@@ -44,4 +44,17 @@ export class AreaAdminEmpresasListasComponent implements OnInit {
 
   }
 
+  deleteEmpresa(id: number, arrayIndex: number) {
+
+    this.empresaService.delete(id).subscribe({
+      next: v => {
+        console.log("eliminado con éxito", v);
+        // Eliminarlo del array para mostrar los cambios
+        this.listaEmpresas.splice(arrayIndex, 1)
+      },
+      error: e => console.log(e)
+    })
+
+  }
+
 }

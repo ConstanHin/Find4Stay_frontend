@@ -2,38 +2,38 @@
   <h5>Datos cuenta</h5>
 
   <form [formGroup]="formEditUser">
-    <div class="form-group row border-b my-4">
+    <div class="form-group row border-b my-4 py-2">
       <div class="col-sm">
         <label class="ex1">Usuario</label>
       </div>
       <div class="col-sm">
         <!-- Username input -->
-        <input type="text" [readonly]=disabled [ngClass]="{'edit-border': !disabled}"
+        <input type="text" [readonly]=disabled [ngClass]="{'editable-form-field': !disabled}"
           class="form-control-plaintext transparent-border-2px" id="usernameInput"
           placeholder="{{usuarioLoguado.username}}" formControlName="username">
       </div>
 
     </div>
-    <div class="form-group row border-b my-4">
+    <div class="form-group row border-b my-4 py-2">
 
       <div class="col-sm">
         <label class="ex1">Contraseña</label>
       </div>
       <div class="col-sm">
         <!-- Password input -->
-        <input type="password" [readonly]=disabled [ngClass]="{'edit-border': !disabled}"
+        <input type="password" [readonly]=disabled [ngClass]="{'editable-form-field': !disabled}"
           class="form-control-plaintext transparent-border-2px" id="passwordInput" placeholder="******"
           formControlName="password">
       </div>
 
     </div>
-    <div class="form-group row border-b my-4">
+    <div class="form-group row border-b my-4 py-2">
       <div class="col-sm">
         <label class="ex1">E-mail</label>
       </div>
       <div class="col-sm">
         <!-- Email input -->
-        <input type="text" [readonly]=disabled [ngClass]="{'edit-border': !disabled}"
+        <input type="text" [readonly]=disabled [ngClass]="{'editable-form-field': !disabled}"
           class="form-control-plaintext transparent-border-2px" id="emailInput" placeholder="{{usuarioLoguado.email}}"
           formControlName="email">
       </div>

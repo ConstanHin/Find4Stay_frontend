@@ -22,6 +22,9 @@ import { AreaclienteComponent } from './area-cliente-view/area-cliente-view/area
 import { MisreservasComponent } from './area-cliente-view/area-cliente-view/misreservas/misreservas.component';
 import { MishotelesComponent } from './area-empresa-view/area-empresa-view/mishoteles/mishoteles.component';
 import { AreaempresaComponent } from './area-empresa-view/area-empresa-view/areaempresa/areaempresa.component';
+import { NuevoClienteComponent } from './area-admin-view/area-admin-view/nuevo-cliente/nuevo-cliente.component';
+import { NuevaEmpresaComponent } from './area-admin-view/nueva-empresa/nueva-empresa.component';
+import { NuevoHotelComponent } from './area-admin-view/nuevo-hotel/nuevo-hotel.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageViewComponent},
@@ -56,14 +59,17 @@ const routes: Routes = [
     component: AreaAdminViewComponent,
     children: [
       {path: 'cuenta', component: AreaCuentaComponent},
-      {path: 'clientes', component: AreaAdminClientesListaComponent},
+      {path: 'clientes/add', component: NuevoClienteComponent},
       {path: 'clientes/:id', component: AreaAdminClienteComponent},
-      {path: 'empresas', component: AreaAdminEmpresasListasComponent},
+      {path: 'clientes', component: AreaAdminClientesListaComponent},
+      {path: 'empresas/add', component: NuevaEmpresaComponent},
       {path: 'empresas/:id', component: AreaAdminEmpresaComponent},
-      {path: 'hoteles', component: AreaAdminHotelesListasComponent},
+      {path: 'empresas', component: AreaAdminEmpresasListasComponent},
+      {path: 'hoteles/add', component: NuevoHotelComponent},
       {path: 'hoteles/:id', component: AreaAdminHotelComponent},
-      {path: 'reservas', component: AreaAdminReservasListaComponent},
+      {path: 'hoteles', component: AreaAdminHotelesListasComponent},
       {path: 'reservas/:id', component: AreaAdminReservaComponent},
+      {path: 'reservas', component: AreaAdminReservasListaComponent},
     ]
   },
 
@@ -71,9 +77,9 @@ const routes: Routes = [
     path:'area-cliente',
     component: AreaClienteViewComponent,
     children: [
-      {path: 'cuenta', component: AreaCuentaComponent},
-      {path: 'misdatos/:id', component: AreaclienteComponent},
       {path: 'misreservas/:id', component: MisreservasComponent},
+      {path: 'misdatos/:id', component: AreaclienteComponent},
+      {path: 'cuenta', component: AreaCuentaComponent},
 
     ]
   },
@@ -83,6 +89,7 @@ const routes: Routes = [
     children: [
       {path: 'cuenta', component: AreaCuentaComponent},
       {path: 'datosempresa', component: AreaempresaComponent},
+      {path: 'empresas/add', component: NuevaEmpresaComponent},
       {path: 'empresas', component: AreaEmpresaViewComponent},
       {path: 'mishoteles', component: MishotelesComponent},
     ]
