@@ -14,10 +14,10 @@ export class AreaAdminReservasListaComponent implements OnInit {
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
 
   listaReservas: Reserva[] = [
-    { id: 0, codigo: "A141", fecha_entrada: new Date(), fecha_salida: new Date(), importe_reserva: 222.50 },
-    { id: 0, codigo: "A221", fecha_entrada: new Date(), fecha_salida: new Date(), importe_reserva: 222.50 },
-    { id: 0, codigo: "A312", fecha_entrada: new Date(), fecha_salida: new Date(), importe_reserva: 222.50 },
-    { id: 0, codigo: "A441", fecha_entrada: new Date(), fecha_salida: new Date(), importe_reserva: 222.50 },
+    // { id: 0, codigo: "A141", fecha_entrada: new Date(), fecha_salida: new Date(), importe_reserva: 222.50 },
+    // { id: 0, codigo: "A221", fecha_entrada: new Date(), fecha_salida: new Date(), importe_reserva: 222.50 },
+    // { id: 0, codigo: "A312", fecha_entrada: new Date(), fecha_salida: new Date(), importe_reserva: 222.50 },
+    // { id: 0, codigo: "A441", fecha_entrada: new Date(), fecha_salida: new Date(), importe_reserva: 222.50 },
 
   ]
 
@@ -41,6 +41,27 @@ export class AreaAdminReservasListaComponent implements OnInit {
 
   cambiarApartado(apartado: string) {
     this.cambiarApartadoEvent.emit(apartado)
+  }
+
+  setReserva(reserva: Reserva) {
+    console.log("setReserva", reserva);
+
+  }
+
+  /**
+   * Eliminar reserva de la DB y del array
+   * @param id
+   * @param arrayIndex
+   */
+  deleteReserva(id: number, arrayIndex: number) {
+    this.reservasService.delete(id).subscribe({
+      next: v => {
+        console.log("eliminado con éxito", v);
+        // Eliminarlo del array para mostrar los cambios
+        this.listaReservas.splice(arrayIndex, 1)
+      },
+      error: e => console.log(e)
+    })
   }
 
 }

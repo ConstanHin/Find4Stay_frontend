@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AreaService } from 'src/app/area/area.service';
 import { Cliente } from 'src/app/models/cliente';
@@ -9,6 +10,13 @@ import { Cliente } from 'src/app/models/cliente';
   styleUrls: ['./area-admin-cliente.component.css']
 })
 export class AreaAdminClienteComponent implements OnInit {
+  //formDetallesCliente
+  formDetallesCliente = new FormGroup({
+    nombre: new FormControl("", Validators.required),
+    apellido: new FormControl("", [Validators.required]),
+    dni: new FormControl("", [Validators.required, Validators.max(200)]),
+    email: new FormControl("", [Validators.required, Validators.email]),
+  });
 
   cliente: Cliente | undefined;
   disabled: boolean = true;

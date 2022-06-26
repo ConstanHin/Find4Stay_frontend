@@ -1,13 +1,13 @@
 <div class="container">
   <h5>Datos Cliente</h5>
 
-  <form>
+  <form [formGroup]="formDetallesCliente">
     <div class="form-group row justify-content-between">
       <div class="col-2">
         <label>ID</label>
       </div>
       <div class="col">
-        <input type="text"  placeholder="{{cliente?.id}}" readonly class="form-control-plaintext">
+        <span type="text" class="form-control-plaintext">{{cliente?.id}}</span>
       </div>
       <div class="col-2">
       </div>

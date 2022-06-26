@@ -41,16 +41,3 @@ h5{
 	background: rgba(0, 0, 0, 0.15);
 	border-radius: 3px 0 0 3px;
 }
-
-.transparent-border-2px {
-  border: 1px solid transparent;
-  padding: 5px;
-}
-
-.editable-form-field {
-  background-color: aliceblue;
-  border: 1px solid gray;
-  border-radius: 5px;
-}
-
-

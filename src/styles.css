@@ -47,9 +47,32 @@ h5 {
   width: 50px;
   text-align: center;
 }
+
 .td-btn {
   width: 4em;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/*
+editable form
+*/
+
+.transparent-border-2px {
+  border: 1px solid transparent;
+  padding: 5px;
+}
+
+.editable-form-field {
+  background-color: aliceblue;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
