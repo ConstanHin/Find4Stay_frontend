@@ -10,7 +10,6 @@ import { BuscadorComponent } from '../buscador/buscador.component';
 })
 export class MapComponent implements OnInit {
   ngOnInit(): void {
-    this.ngAfterViewInit()
   }
 
 
