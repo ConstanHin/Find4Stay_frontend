@@ -1,4 +1,4 @@
-import { BuscadorComponent } from '../buscador/buscador.component';
+// import { BuscadorComponent } from '../buscador/buscador.component';
 // let marker = null
 // const updateMap = () => {
 //   const urlIss = 'COLOCAR API AQUI'
