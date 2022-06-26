@@ -1,36 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
-
-@Injectable({
-  providedIn: 'root'
-})
+import * as L from 'leaflet';
+import { Map, tileLayer } from 'leaflet';
+import { coordenadas, coordCiudadesHoteles, coordenadasCiudades } from './Coordenadas/coords';
+import { BuscadorComponent } from '../buscador/buscador.component';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
-  city: any;
-  number= 0;
-
   ngOnInit(): void {
   }
-  constructor(){
-    this.city = sessionStorage.getItem('ciudadKey');// agafem el valor de ciudadkey
 
+
+  ngAfterViewInit(): void {
+    // "setView([41.1561200, 1.1068700]" - son las coordenadas del punto médio del render
+    const mapaPuntoMedio = coordenadasCiudades.reus as L.LatLngExpression;
+    const map = new Map('map').setView(mapaPuntoMedio, 14);
+    tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      minZoom: 5,
+    }).addTo(map);
+
+
+    coordCiudadesHoteles.reus.map((point) => {
+      L.marker([point.lat, point.lon]).addTo(map).bindPopup(point.nombre);
+    })
+    // map.fitBounds([
+    //   ...coordenadas.map((point) => [point.lat, point.lon] as [number, number])
+    // ])
+    // var container = L.DomUtil.get('map');
+    // if (container != null) {
+    //   container = null;
+    // }
+    map.invalidateSize();
   }
-
-changeCity(ciudad : string){
-  this.city = ciudad;
-  console.log(this.city);
-  sessionStorage.setItem('ciudadKey',this.city); //a ciudadKey li donem un valor
-  this.refreshPage();
-
 }
 
-refreshPage() {
-  window.location.reload();
- }
-
-}

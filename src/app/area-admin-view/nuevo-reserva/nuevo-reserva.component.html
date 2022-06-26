@@ -1,0 +1,89 @@
+
+<div class="container">
+  <h5>Datos Empresa</h5>
+
+  <form [formGroup]="formGroupAddReserva">
+
+
+    <!-- Reserva -->
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="nombre">Hotel</label>
+        <select class="form-control bg-light rounded" id="hotel" formControlName="hotel"
+          placeholder="Hotel">
+          <option value="hotel.nombre" id="hotel" *ngFor="let hotel of listaHotel">{{hotel.nombre}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="nombre">Cliente</label>
+        <select class="form-control bg-light rounded" id="cliente" formControlName="cliente"
+          placeholder="Cliente">
+          <option value="cliente.nombre" id="cliente" *ngFor="let cliente of listaClientes">{{cliente.nombre}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="nombre">Codigo</label>
+        <input class="form-control bg-light rounded" id="codigo_empresa" formControlName="codigo_empresa" type="text"
+          placeholder="Codigo empresa">
+      </div>
+    </div>
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="fecha_entrada">Fecha Entrada</label>
+        <input class="form-control bg-light rounded" id="fecha_entrada" formControlName="fecha_entrada" type="date"
+          placeholder="Fecha Entrada">
+      </div>
+    </div>
+
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="fecha_salida">Fecha Salida</label>
+        <input class="form-control bg-light rounded" id="fecha_salida" formControlName="fecha_salida" type="date"
+          placeholder="Fecha Salida">
+      </div>
+    </div>
+
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="importe_reserva">Importe reserva</label>
+        <input class="form-control bg-light rounded" id="importe_reserva" formControlName="importe_reserva" type="number"
+          placeholder="Importe Reserva">
+      </div>
+    </div>
+
+
+
+
+    <!-- Validation errors -->
+    <!-- <ul class="alert alert-danger mt-3"
+      *ngIf="formGroupAddCliente.invalid && (formGroupAddCliente.dirty || formGroupAddCliente.touched)">
+      <p class="m-1 p-0 ">
+        Campos requeridos.
+      </p>
+
+    </ul> -->
+    <!-- Validation errors -->
+    <ul class="alert alert-success mt-3" *ngIf="message">
+      <p class="m-1 p-0 ">
+        {{message}}
+      </p>
+    </ul>
+    <ul class="alert alert-danger mt-3" *ngIf="errorMessage">
+      <p class="m-1 p-0 ">
+        {{errorMessage}}
+      </p>
+    </ul>
+
+    <div class="row my-4">
+      <div class="col">
+        <button [disabled]="!formGroupAddReserva.valid" class="btn btn-success" (click)="submit()">Enviar</button>
+      </div>
+    </div>
+
+  </form>

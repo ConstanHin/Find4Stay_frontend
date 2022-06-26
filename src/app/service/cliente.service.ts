@@ -29,11 +29,18 @@ export class ClienteService {
     );
   }
 
-  // Create new
+  // Create new by admin
   create(data: any): Observable<any> {
     return this.httpClient.post(this.apiUrl, data).pipe(
       catchError(this.handleError)
     );
+  }
+
+  // Create new by guest
+  crearByGuest(data: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}/guest`, data).pipe(
+      catchError(this.handleError)
+    )
   }
 
   // Update
@@ -63,13 +70,6 @@ export class ClienteService {
 
     )
   }
-
-  crearByGuest(data: any): Observable<any> {
-    return this.httpClient.post(`${this.apiUrl}/guest`, data).pipe(
-      catchError(this.handleError)
-    )
-  }
-
 
   //Handle errors
   handleError(error: HttpErrorResponse) {

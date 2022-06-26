@@ -16,6 +16,7 @@ import { ComunModule } from '../comun/module/comun/comun.module';
 import { NuevoClienteComponent } from './area-admin-view/nuevo-cliente/nuevo-cliente.component';
 import { NuevaEmpresaComponent } from './nueva-empresa/nueva-empresa.component';
 import { NuevoHotelComponent } from './nuevo-hotel/nuevo-hotel.component';
+import { NuevoReservaComponent } from './nuevo-reserva/nuevo-reserva.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -34,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NuevoClienteComponent,
     NuevaEmpresaComponent,
     NuevoHotelComponent,
+    NuevoReservaComponent,
   ],
   imports: [
     CommonModule,

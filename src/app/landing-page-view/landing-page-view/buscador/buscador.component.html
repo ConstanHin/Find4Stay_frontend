@@ -1,65 +1,67 @@
 <div class="container">
 
-<h3 class="mt-5">Buscador alojamiento</h3>
+  <h3 class="mt-5">Buscador alojamiento</h3>
 
   <div class="register-form">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form-group">
 
-          <div class="row">
-              <div class="col-md-3">
-                <label for="entrada"></label>
-                <select class="form-control" aria-label="Destino" formControlName="destino" [ngClass]="{ 'is-invalid': submitted && f['destino'].errors }">
-                  <option value="" disabled selected hidden>Elige tu destino</option>
-                  <option value="1">Reus</option>
-                  <option value="2">Tarragona</option>
-                  <option value="3">Barcelona</option>
-                </select>
-                <div *ngIf="submitted && f['destino'].errors" class="invalid-feedback">
-                  <div *ngIf="f['destino'].errors['required']">Elige un destino</div>
-                </div>
-              </div>
+        <div class="row">
+          <div class="col-md-3" [ngClass]="{'col-md-12': secResBusqueda}">
+            <label for="entrada"></label>
+            <select class="form-control" aria-label="Destino" formControlName="destino"
+              [ngClass]="{ 'is-invalid': submitted && f['destino'].errors }">
+              <option value="{{form.get('destino')}}" disabled selected hidden>Elige tu destino</option>
+              <option value="reus">Reus</option>
+              <option value="tarragona">Tarragona</option>
+              <option value="barcelona">Barcelona</option>
+            </select>
+            <div *ngIf="submitted && f['destino'].errors" class="invalid-feedback">
+              <div *ngIf="f['destino'].errors['required']">Elige un destino</div>
+            </div>
+          </div>
 
 
-              <div class="col-md-3">
-                <label for="personas"></label>
-                <input  type="number" class="form-control" placeholder="Numero de personas" formControlName="personas" aria-label="Personas" min="1" max="30" [ngClass]="{ 'is-invalid': submitted && f['personas'].errors }">
-                <div *ngIf="submitted && f['personas'].errors" class="invalid-feedback">
-                  <div *ngIf="f['personas'].errors['required']">Elige número de personas</div>
-                </div>
-              </div>
+          <div class="col-md-3" [ngClass]="{'col-md-12': secResBusqueda}">
+            <label for="personas"></label>
+            <input type="number" class="form-control" placeholder="Numero de personas" formControlName="personas"
+              aria-label="Personas" min="1" max="30" [ngClass]="{ 'is-invalid': submitted && f['personas'].errors }">
+            <div *ngIf="submitted && f['personas'].errors" class="invalid-feedback">
+              <div *ngIf="f['personas'].errors['required']">Elige número de personas</div>
+            </div>
+          </div>
 
 
-              <div class="col">
-                  <mat-form-field [color]="'accent'" appearance="standard">
-                    <mat-date-range-input [rangePicker]="picker" [min]="maxDate">
-                      <input matStartDate placeholder="CheckIn" formControlName="fechaEntrada" [ngClass]="{ 'is-invalid': submitted && f['fechaEntrada'].errors }">
-                      <input matEndDate placeholder="CheckOut" formControlName="fechasalida" [ngClass]="{ 'is-invalid': submitted && f['fechasalida'].errors }">
-                      <mat-hint> {{getDateFormatString()}} </mat-hint>
-                    </mat-date-range-input>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-date-range-picker #picker></mat-date-range-picker>
-                  </mat-form-field>
+          <div class="col" [ngClass]="{'col-md-12': secResBusqueda}">
+            <mat-form-field [color]="'accent'" appearance="standard">
+              <mat-date-range-input [rangePicker]="picker" [min]="maxDate">
+                <input matStartDate placeholder="CheckIn" formControlName="fecha_entrada"
+                  [ngClass]="{ 'is-invalid': submitted && f['fecha_entrada'].errors }">
+                <input matEndDate placeholder="CheckOut" formControlName="fecha_salida"
+                  [ngClass]="{ 'is-invalid': submitted && f['fecha_salida'].errors }">
+                <!-- <mat-hint> {{getDateFormatString()}} </mat-hint> -->
+              </mat-date-range-input>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
 
 
-                  <div *ngIf="submitted && f['fechaEntrada'].errors" class="invalid-feedback">
-                    <div *ngIf="f['fechaEntrada'].errors['required']">CheckIn requerido</div>
-                  </div>
+            <div *ngIf="submitted && f['fecha_entrada'].errors" class="invalid-feedback">
+              <div *ngIf="f['fecha_entrada'].errors['required']">CheckIn requerido</div>
+            </div>
 
-                  <div *ngIf="submitted && f['fechasalida'].errors" class="invalid-feedback">
-                    <div *ngIf="f['fechasalida'].errors['required']">CheckOut requerido</div>
-                  </div>
-
-                  <div class="col-sm-6" style="float:right; margin-top: -10px">
-                    <div class="d-grid gap-2 d-md-flex justify-content-end">
-                      <button class="btn btn-light me-md-2" type="submit">Buscar</button>
-                      <button type="button"(click)="onReset()"class="btn btn-light">Reset</button>
-                  </div>
-              </div>
+            <div *ngIf="submitted && f['fecha_salida'].errors" class="invalid-feedback">
+              <div *ngIf="f['fecha_salida'].errors['required']">CheckOut requerido</div>
+            </div>
+          </div>
+          <!-- botones buscar reset -->
+          <div class="col d-flex justify-content-center align-content-center">
+            <button class="btn btn-light btn-magenta m-auto me-2" type="submit">Buscar</button>
+            <button class="btn btn-secondary m-auto me-2 ms-2" type="button" (click)="onReset()">Reset</button>
           </div>
 
         </div>
       </div>
-  </form>
-</div>
+    </form>
+  </div>
 </div>

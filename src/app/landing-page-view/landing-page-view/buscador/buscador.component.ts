@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Inject, Injectable } from '@angular/core';
 import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { FormControl, FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { BuscadorService } from 'src/app/service/buscador.service';
 
 
 
@@ -17,46 +19,63 @@ import { FormControl, FormGroup, Validators, FormBuilder, AbstractControl } from
 
 export class BuscadorComponent implements OnInit {
 
-cuidades: any;
-seleccionado: any = '';
-ciudadSelect: any ='';
+  @Input() secResBusqueda: boolean = false;
+  cuidades: any;
+  seleccionado: any = '';
+  ciudadSelect: any = '';
 
-maxDate = new Date();
-selectDate = new Date();
-fechasalida: Date | undefined;
+  maxDate = new Date();
+  selectDate = new Date();
+  fecha_salida: Date | undefined;
 
-resultado!: string;
+  resultado!: string;
 
-form: FormGroup = new FormGroup({
-  destino: new FormControl(''),
-  personas: new FormControl(''),
-  fechaEntrada: new FormControl(''),
-  fechaSalida: new FormControl('')
-});
+  form: FormGroup = new FormGroup({
+    destino: new FormControl(''),
+    personas: new FormControl(''),
+    fecha_entrada: new FormControl(''),
+    fecha_salida: new FormControl('')
+  });
 
-submitted = false;
+  submitted = false;
 
 
-  constructor( private formBuilder: FormBuilder,
-    private _adapter: DateAdapter<any>,
-    @Inject(MAT_DATE_LOCALE) private _locale: string, ) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private buscadorService: BuscadorService,
+    // private _adapter: DateAdapter<any>,
+    // @Inject(MAT_DATE_LOCALE) private _locale: string,
+  ) { }
 
 
   ngOnInit(): void {
 
     this.form = this.formBuilder.group(
-       {
+      {
         destino: ['', Validators.required],
         personas: ['', Validators.required],
-        fechaEntrada: ['', Validators.required],
-        fechasalida: ['', Validators.required]
-       }
+        fecha_entrada: ['', Validators.required],
+        fecha_salida: ['', Validators.required]
+      }
     )
+
+    // this.form.setValue(this.buscadorService.getDatosBusqueda())
+
+  }
+
+  ngAfterViewInit() {
+    if(this.buscadorService.getDatosBusqueda().destino) {
+      console.log(this.buscadorService.getDatosBusqueda());
+      this.form.setValue(this.buscadorService.getDatosBusqueda())
+
+    }
+
   }
 
   range = new FormGroup({
-    fechaEntrada: new FormControl(),
-    fechaSalida: new FormControl(),
+    fecha_entrada: new FormControl(),
+    fecha_salida: new FormControl(),
 
   });
 
@@ -67,9 +86,22 @@ submitted = false;
   onSubmit(): void {
     this.submitted = true;
     if (this.form.invalid) {
+      console.info("Form invalid!!");
       return;
     }
-    console.log(JSON.stringify(this.form.value, null, 2));
+    console.log(this.form.value);
+    // console.log(JSON.stringify(this.form.value, null, 2));
+
+    // Guardar los datos de busqueda
+    this.buscadorService.setDatosBusqueda(this.form.value)
+    // Cambiar vista
+    this.router.navigate(["/resultado-busqueda"])
+
+    if (this.secResBusqueda) {
+      // buscar hoteles por ciudad
+      console.log("buscar hoteles por ciudad");
+
+    }
   }
 
   onReset(): void {
@@ -77,22 +109,14 @@ submitted = false;
     this.form.reset();
   }
 
-
-  submit() {
-    if (this.form.valid)
-    this.resultado = "Todos los datos son válidos";
-  else
-    this.resultado = "Hay datos inválidos en el formulario";
-  }
-
-  getDateFormatString(): string {
-    if (this._locale === 'ja-JP') {
-      return 'YYYY/MM/DD';
-    } else if (this._locale === 'fr') {
-      return 'DD/MM/YYYY';
-    }
-    return '';
-  }
+  // getDateFormatString(): string {
+  //   // if (this._locale === 'ja-JP') {
+  //   //   return 'YYYY/MM/DD';
+  //   // } else if (this._locale === 'fr') {
+  //   //   return 'DD/MM/YYYY';
+  //   // }
+  //   return '';
+  // }
 
   guardarFechaEntrada(event: any) {
     console.log(event.target.value);
@@ -101,14 +125,14 @@ submitted = false;
 
   }
 
-  guardarFechaSalida(event: any) {
+  guardarfechaSalida(event: any) {
     console.log(event.target.value);
-    this.fechasalida = event.target.value;
-    return this.fechasalida;
+    this.fecha_salida = event.target.value;
+    return this.fecha_salida;
   }
 
 
-  saveCheckOut () {
+  saveCheckOut() {
     this.selectDate = new Date(this.maxDate);
     return this.selectDate;
   }
