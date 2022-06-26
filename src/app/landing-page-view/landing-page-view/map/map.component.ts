@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { Map, tileLayer } from 'leaflet';
-import { coordenadas } from './Coordenadas/coords';
+import { coordenadas, coordCiudadesHoteles, coordenadasCiudades } from './Coordenadas/coords';
 import { BuscadorComponent } from '../buscador/buscador.component';
 @Component({
   selector: 'app-map',
@@ -9,32 +9,32 @@ import { BuscadorComponent } from '../buscador/buscador.component';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.ngAfterViewInit()
   }
 
 
-  ngAfterViewInit(): void{
-  const map = new Map('map').setView([41.1561200, 1.1068700], 14);
-     tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    minZoom: 5,
-    attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+  ngAfterViewInit(): void {
+    // "setView([41.1561200, 1.1068700]" - son las coordenadas del punto médio del render
+    const mapaPuntoMedio = coordenadasCiudades.reus as L.LatLngExpression;
+    const map = new Map('map').setView(mapaPuntoMedio, 14);
+    tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      minZoom: 5,
+    }).addTo(map);
 
 
-
-coordenadas.map((point)=>{
- L.marker([point.lat, point.lon]).addTo(map).bindPopup(point.nombre);
-})
-map.fitBounds([
-  ...coordenadas.map((point) => [point.lat,point.lon] as[number, number])
-])
-var container = L.DomUtil.get('map');
-      if(container != null){
-        container = null;
-      }
-      map.invalidateSize();
-}
+    coordCiudadesHoteles.reus.map((point) => {
+      L.marker([point.lat, point.lon]).addTo(map).bindPopup(point.nombre);
+    })
+    // map.fitBounds([
+    //   ...coordenadas.map((point) => [point.lat, point.lon] as [number, number])
+    // ])
+    // var container = L.DomUtil.get('map');
+    // if (container != null) {
+    //   container = null;
+    // }
+    map.invalidateSize();
   }
+}
 
