@@ -2,6 +2,7 @@
   <h5>Datos Cliente</h5>
 
   <form [formGroup]="formDetallesCliente">
+    <!-- ID -->
     <div class="form-group row justify-content-between">
       <div class="col-2">
         <label>ID</label>
@@ -9,53 +10,39 @@
       <div class="col">
         <span type="text" class="form-control-plaintext">{{cliente?.id}}</span>
       </div>
-      <div class="col-2">
-      </div>
+
     </div>
 
     <hr>
+
+    <!-- Campo nombre -->
     <div class="form-group row justify-content-between">
       <div class="col-2">
         <label>Nombre</label>
       </div>
       <div class="col">
-        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.nombre}}">
+        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.nombre}}"
+          formControlName="nombre">
       </div>
-      <div class="col-2 align-items-center">
-        <a role="button"><i class="bi bi-pencil-square" onclick="editar()"></i> </a>
-      </div>
+
     </div>
 
     <hr>
 
+    <!-- Campo apellido -->
     <div class="form-group row justify-content-between">
       <div class="col-2">
         <label>Apellido</label>
       </div>
       <div class="col">
-        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.apellido}}">
-      </div>
-      <div class="col-2 align-items-center">
-        <a role="button"><i class="bi bi-pencil-square"></i> </a>
+        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.apellido}}"
+          formControlName="apellido">
       </div>
     </div>
 
     <hr>
 
-    <div class="form-group row justify-content-between">
-      <div class="col-2">
-        <label>E-mail</label>
-      </div>
-      <div class="col">
-        <input type="email" readonly class="form-control-plaintext" placeholder="{{cliente?.email}}">
-      </div>
-      <div class="col-2 align-items-center">
-        <a role="button"><i class="bi bi-pencil-square"></i> </a>
-      </div>
-    </div>
-
-    <hr>
-
+    <!-- Campo dni -->
     <div class="form-group row justify-content-between">
       <div class="col-2">
         <label>DNI</label>
@@ -63,12 +50,41 @@
       <div class="col">
         <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.dni}}">
       </div>
+    </div>
 
-      <!-- Botones editar y eliminar-->
-      <div class="col-2 align-items-center">
-        <a role="button"><i class="bi bi-pencil-square"></i> </a>
+    <hr>
+
+    <!-- Campo email -->
+    <div class="form-group row justify-content-between">
+      <div class="col-2">
+        <label>E-mail</label>
+      </div>
+      <div class="col">
+        <input type="email" readonly class="form-control-plaintext" placeholder="{{cliente?.email}}"
+          formControlName="email">
       </div>
     </div>
+
+    <!-- Edit buttons, confirmar cancelar-->
+    <div class="row my-4">
+      <div class="col-md"></div>
+      <div class="col-md-2 my-2">
+        <button class="btn btn-warning" *ngIf="disabled" (click)="editar()">Editar</button>
+        <button type="button" class="btn btn-labeled btn-danger mb-4 me-2" *ngIf="!disabled"
+          (click)="cancelarCambios()">
+          <span class="btn-label"><i class="bi bi-x text-light"></i></span>Cancelar</button>
+        <button type="button" class="btn btn-labeled btn-success mb-2 me-2" *ngIf="!disabled" (click)="aceptarCambios()"
+          type="submit">
+          <span class="btn-label"><i class="bi bi-check text-light"></i></span>Aceptar</button>
+
+      </div>
+    </div>
+
+    <!-- mensaje feedback-->
+    <div class="row justify-content-center" *ngIf="mensaje">
+      <div class="col col-md-6 alert alert-secondary">{{mensaje}}</div>
+    </div>
+
 
   </form>
 
