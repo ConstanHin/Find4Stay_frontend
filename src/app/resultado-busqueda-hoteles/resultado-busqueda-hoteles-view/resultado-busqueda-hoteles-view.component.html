@@ -6,10 +6,20 @@
       <app-buscador></app-buscador>
       <app-filtro></app-filtro>
       <!-- Google maps -->
-      <div id="mapa-maps" class="d-none d-md-block my-5">
-        <iframe class="w-100" style="border:0" loading="lazy" height="250px" allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=reus&t=&z=13&ie=UTF8&iwloc=&output=embed">
-        </iframe>
+      <style>
+        html, body {
+          width: 100%;
+        }
+        #map {
+          width: 120%;
+          height: 350px;
+
+        }
+        </style>
+
+      <div class="container col-12 " >
+      <div id='map'>
+        </div>
       </div>
     </div>
 
