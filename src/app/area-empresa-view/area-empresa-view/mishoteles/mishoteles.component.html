@@ -2,52 +2,120 @@
   <h5>Mis hoteles</h5>
   <div class="row">
     <div class="col col-6 border rounded shadow-sm" *ngFor="let hotel of datohoteles.hotel">
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Nombre:</label>
-      </div>
-      <div class="col-sm">
-        <span id="inputCodigo">{{hotel.nombre}}
-        </span>
-    </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <label class="ex1">Nombre:</label>
+        </div>
+        <div class="col-sm">
+          <span id="inputCodigo">{{hotel.nombre}}
+          </span>
+        </div>
 
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Categoria:</label>
-      </div>
-      <div class="col-sm">
-        <span id="inputCodigo">{{hotel.categoria | numberToStars}}
-        </span>
-      </div>
-    </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <label class="ex1">Categoria:</label>
+          </div>
+          <div class="col-sm">
+            <span id="inputCodigo">{{hotel.categoria | numberToStars}}
+            </span>
+          </div>
+        </div>
 
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Población:</label>
-      </div>
-      <div class="col-sm">
-        <span id="inputCodigo">{{hotel.poblacion}}
-        </span>
-      </div>
-    </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <label class="ex1">Población:</label>
+          </div>
+          <div class="col-sm">
+            <span id="inputCodigo">{{hotel.poblacion}}
+            </span>
+          </div>
+        </div>
 
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Ubicación:</label>
-      </div>
-      <div class="col-sm">
-        <span id="inputCodigo">{{hotel.ubicacion}}
-        </span>
-      </div>
-    </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <label class="ex1">Ubicación:</label>
+          </div>
+          <div class="col-sm">
+            <span id="inputCodigo">{{hotel.ubicacion}}
+            </span>
+          </div>
+        </div>
 
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1"> Precio:</label>
-      </div>
-      <div class="col-sm">
-        <span id="inputCodigo">{{hotel.precio}}
-        </span>
+        <div class="row">
+          <div class="col-sm-2">
+            <label class="ex1"> Precio:</label>
+          </div>
+          <div class="col-sm">
+            <span id="inputCodigo">{{hotel.precio}}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 </div>
+
+<br>
+<hr>
+
+<div class="container">
+  <h5>Añadir un nuevo Hotel</h5>
+  <form [formGroup]="formGroupAddHotel">
+    <!-- Hotel -->
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="nombre">Nombre</label>
+        <input class="form-control bg-light rounded" id="nombre" formControlName="nombre" type="text"
+          placeholder="Nombre">
+      </div>
+    </div>
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="categoria">Categoria</label>
+        <input class="form-control bg-light rounded" id="categoria" formControlName="categoria" type="number"
+          placeholder="Categoria">
+      </div>
+    </div>
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="poblacion">Población</label>
+        <input class="form-control bg-light rounded" id="poblacion" formControlName="poblacion" type="text"
+          placeholder="Población">
+      </div>
+    </div>
+
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="ubicacion">Ubicación</label>
+        <input class="form-control bg-light rounded" id="ubicacion" formControlName="ubicacion" type="text"
+          placeholder="Latitud + Longitud">
+      </div>
+    </div>
+
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="importe">Importe</label>
+        <input class="form-control bg-light rounded" id="importe" formControlName="importe" type="number"
+          placeholder="Importe">
+      </div>
+    </div>
+
+
+    <ul class="alert alert-success mt-3" *ngIf="message">
+      <p class="m-1 p-0 ">
+        {{message}}
+      </p>
+    </ul>
+    <ul class="alert alert-danger mt-3" *ngIf="errorMessage">
+      <p class="m-1 p-0 ">
+        {{errorMessage}}
+      </p>
+    </ul>
+
+    <div class="row my-4">
+      <div class="col">
+        <button [disabled]="!formGroupAddHotel.valid" class="btn btn-success" (click)="submit()">Enviar</button>
+      </div>
+    </div>
+
+  </form>
