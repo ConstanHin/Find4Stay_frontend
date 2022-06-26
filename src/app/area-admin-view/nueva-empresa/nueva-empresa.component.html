@@ -1,0 +1,67 @@
+
+<div class="container">
+  <h5>Datos Empresa</h5>
+
+  <form [formGroup]="formGroupAddEmpresa">
+
+    <!-- Cuenta -->
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="username">Usuario</label>
+        <input class="form-control bg-light rounded" id="username" formControlName="username" type="text"
+          placeholder="">
+      </div>
+      <div class="col">
+        <label class="form-label" for="password">Contraseña</label>
+        <input class="form-control bg-light rounded" id="password" formControlName="password" type="password"
+          placeholder="***">
+      </div>
+      <div class="col">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control bg-light rounded" id="email" formControlName="email" type="email"
+          placeholder="email">
+      </div>
+    </div>
+    <!-- Cliente -->
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="nombre">Nombre</label>
+        <input class="form-control bg-light rounded" id="nombreEmpresa" formControlName="nombre" type="text"
+          placeholder="Nombre empresa">
+      </div>
+    </div>
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="codigo">Codigo</label>
+        <input class="form-control bg-light rounded" id="codigo_empresa" formControlName="codigo_empresa" type="text"
+          placeholder="Codigo">
+      </div>
+    </div>
+
+    <!-- Validation errors -->
+    <!-- <ul class="alert alert-danger mt-3"
+      *ngIf="formGroupAddCliente.invalid && (formGroupAddCliente.dirty || formGroupAddCliente.touched)">
+      <p class="m-1 p-0 ">
+        Campos requeridos.
+      </p>
+
+    </ul> -->
+    <!-- Validation errors -->
+    <ul class="alert alert-success mt-3" *ngIf="message">
+      <p class="m-1 p-0 ">
+        {{message}}
+      </p>
+    </ul>
+    <ul class="alert alert-danger mt-3" *ngIf="errorMessage">
+      <p class="m-1 p-0 ">
+        {{errorMessage}}
+      </p>
+    </ul>
+
+    <div class="row my-4">
+      <div class="col">
+        <button [disabled]="!formGroupAddEmpresa.valid" class="btn btn-success" (click)="submit()">Enviar</button>
+      </div>
+    </div>
+
+  </form>

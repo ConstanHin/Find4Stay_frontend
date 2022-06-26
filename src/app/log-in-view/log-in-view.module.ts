@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LogInViewComponent } from './log-in-view/log-in-view.component';
 import { LogInComponent } from './log-in-view/log-in/log-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,7 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     LogInViewComponent

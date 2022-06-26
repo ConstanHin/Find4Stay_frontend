@@ -34,10 +34,6 @@
   color:#79C7BB
 }
 
-.mb-0{
-  color:#79C7BB
-}
-
 .btn-group{
   letter-spacing: 0.2em;
   color: rgb(255, 255, 255) !important;
@@ -56,6 +52,9 @@
   border: none;
 }
 
+label{
+  height: 60px;
+}
 
 #main-registro-section {
   min-height: 100vh;

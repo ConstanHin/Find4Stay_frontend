@@ -6,10 +6,9 @@ import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-
 export class HotelService {
 
-apiUrl: string = "http://localhost:8080/";
+apiUrl: string = "http://localhost:8080/api/hoteles";
 headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private httpClient: HttpClient) { }

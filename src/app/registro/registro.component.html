@@ -27,19 +27,17 @@
                 </div>
 
                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked
-                    (click)="cambioTipo('Cliente')">
+                  <input (click)="cambioTipo('cliente')" type="radio" class="btn-check" name="btnradio" id="btnradio1"
+                    autocomplete="off" [checked]="tipo === 'cliente'">
                   <label class="btn btncolor1" for="btnradio1">Cliente</label>
-
-                  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
-                    (click)="cambioTipo('Empresa')">
+                  <input (click)="cambioTipo('empresa')" type="radio" class="btn-check" name="btnradio" id="btnradio2"
+                    autocomplete="off" [checked]="tipo === 'empresa'">
                   <label class="btn btncolor1" for="btnradio2">Empresa</label>
                 </div>
-
                 <br>
                 <br>
 
-                <button class="button fs-5" type="submit">Registrarse</button>
+                <button class="button fs-5" type="submit" [disabled]="registerForm.invalid">Registrarse</button>
 
               </form>
 
@@ -47,25 +45,25 @@
               <ul class="alert alert-danger mt-3"
                 *ngIf="registerForm.invalid && (registerForm.dirty || registerForm.touched)">
 
-                <li class="m-1 p-0 " *ngIf="registerForm.get('usuario')?.errors?.['required']">
+                <p class="m-1 p-0 " *ngIf="registerForm.get('usuario')?.errors?.['required']">
                   Introduce el usuario.
-                </li>
-                <li class="m-1 p-0 " *ngIf="registerForm.get('email')?.errors?.['email']">
+                </p>
+                <p class="m-1 p-0 " *ngIf="registerForm.get('email')?.errors?.['email']">
                   Sintaxis Email no correcta.
-                </li>
-                <li class="m-1 p-0 " *ngIf="registerForm.get('email')?.errors?.['required']">
+                </p>
+                <p class="m-1 p-0 " *ngIf="registerForm.get('email')?.errors?.['required']">
                   Introduce el Email.
-                </li>
-                <li class="m-1 p-0 " *ngIf="registerForm.get('password')?.errors?.['required']">
+                </p>
+                <p class="m-1 p-0 " *ngIf="registerForm.get('password')?.errors?.['required']">
                   Introduce la contraseña.
-                </li>
+                </p>
               </ul>
 
               <!-- fallo register -->
               <ul class="alert alert-danger mt-3" *ngIf="fail">
-                <li class="my-1 p-0 ">
+                <p class="my-1 p-0 ">
                   Error al registrarse.
-                </li>
+                </p>
               </ul>
             </div>
           </div>

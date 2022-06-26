@@ -12,8 +12,8 @@ export class NavbarComponent implements OnInit {
 
 
   isAuth: boolean = false;
-  username: string| undefined;
-  role: string| undefined | null;
+  username: string | undefined;
+  role: string | undefined | null;
 
   constructor(
     private areaService: AreaService,
@@ -26,13 +26,13 @@ export class NavbarComponent implements OnInit {
 
     // On route change check if user is authenticated
     this.router.events.subscribe(event => {
-      if (event.constructor.name === 'NavigationEnd') {
-        this.isAuth = this.authService.isAuthenticated()
-        if (this.authService.getUsername()) {
-          this.username = this.authService.getUsername();
-          this.role = this.authService.getRole();
-        }
+
+      this.isAuth = this.authService.isAuthenticated()
+      if (this.authService.getUsername()) {
+        this.username = this.authService.getUsername();
+        this.role = this.authService.getRole();
       }
+
     })
   }
 

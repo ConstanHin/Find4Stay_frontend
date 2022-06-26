@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DatePipe } from '@angular/common';
-
+import { RedirectMessageService } from 'src/app/service/redirect-message.service';
 
 
 @Component({
@@ -12,8 +11,11 @@ export class LandingPageViewComponent implements OnInit {
 
 
 
-  constructor( ) { }
+  constructor(
 
-  ngOnInit(): void {}
+   ) { }
+
+  ngOnInit(): void {
+  }
 
 }

@@ -11,7 +11,7 @@ export class BarraLateralComponent implements OnInit {
 
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
   // @Input() role : string = "" //admin/cliente/empresa
-  role: string = ""
+  role: string | null = null
 
   constructor(
     private areaService: AreaService,

@@ -8,14 +8,14 @@ import { catchError } from 'rxjs/operators';
 })
 export class EmpresaService {
 
-  apiUrl: string = "http://localhost:8080/";
+  apiUrl: string = "http://localhost:8080/api/empresas";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private httpClient: HttpClient) { }
 
    // Get list
    list(): Observable<any> {
-    return this.httpClient.get(this.apiUrl).pipe(
+    return this.httpClient.get(`${this.apiUrl}/`).pipe(
       catchError(this.handleError)
     );
   }
@@ -28,16 +28,23 @@ export class EmpresaService {
     );
   }
 
-  // Create new
+  // Create new by admin
   create(data: any): Observable<any> {
-    return this.httpClient.post(this.apiUrl, data).pipe(
+    return this.httpClient.post(`${this.apiUrl}/`, data).pipe(
       catchError(this.handleError)
     );
   }
 
+  // Create new by guest
+  crearByGuest(data: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}/guest`, data).pipe(
+      catchError(this.handleError)
+    )
+  }
+
   // Update
   update(id:any, data:any): Observable<any> {
-    return this.httpClient.put(this.apiUrl + `/${id}`, data).pipe(
+    return this.httpClient.put(`${this.apiUrl}/${id}`, data).pipe(
       catchError(this.handleError)
     );
   }
@@ -60,6 +67,12 @@ export class EmpresaService {
   getByCodigoEmpresa(codigo_empresa: any): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}?codigo_empresa_like=${codigo_empresa}`).pipe(
 
+    )
+  }
+
+  getempresaauth(): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/auth`).pipe(
+      catchError(this.handleError)
     )
   }
 

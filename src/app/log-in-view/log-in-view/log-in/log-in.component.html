@@ -14,12 +14,13 @@
             <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()" *ngIf="!loading">
 
               <div class="form-outline form-white mb-4">
-                <input type="email" class="form-control form-control-lg" placeholder="Usuario" formControlName="username"/>
+                <input type="email" class="form-control form-control-lg" placeholder="Usuario"
+                  formControlName="username" />
               </div>
 
               <div class="form-outline form-white mb-4">
-                <input type="password" class="form-control form-control-lg"
-                  placeholder="Contraseña" formControlName="password"/>
+                <input type="password" class="form-control form-control-lg" placeholder="Contraseña"
+                  formControlName="password" />
 
               </div>
 
@@ -30,25 +31,26 @@
             <ul class="alert alert-danger mt-3"
               *ngIf="loginFormGroup.invalid && (loginFormGroup.dirty || loginFormGroup.touched)">
 
-              <li class="m-1 p-0 " *ngIf="loginFormGroup.get('username')?.errors?.['required']">
+              <p class="m-1 p-0 " *ngIf="loginFormGroup.get('username')?.errors?.['required']">
                 Introduce el usuario.
-              </li>
-              <li class="m-1 p-0 " *ngIf="loginFormGroup.get('password')?.errors?.['required']">
+              </p>
+              <p class="m-1 p-0 " *ngIf="loginFormGroup.get('password')?.errors?.['required']">
                 Introduce la contraseña.
-              </li>
+              </p>
 
             </ul>
             <!-- fallo login -->
             <ul class="alert alert-danger mt-3" *ngIf="fail">
-              <li class="my-1 p-0 ">
+              <p class="my-1 p-0 ">
                 Ha ocurrido un error.
-              </li>
+              </p>
             </ul>
 
           </div>
 
           <div>
-            <p class="mb-0">Aún no te has registrado? <a href="#!" class="text ">Registrate!</a>
+            <p class="mb-0">Aún no te has registrado?
+              <a routerLink="/registro">Registrate!</a>
             </p>
           </div>
 
