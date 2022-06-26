@@ -17,11 +17,11 @@
     <!-- Componentes para filtrar filtro-->
     <div id="barra-filtro" class="col-md-3">
       <!-- Buscador -->
-      <app-buscador [secResBusqueda]=true></app-buscador>
+      <app-buscador [secResBusqueda]=true (eventoEnvio)="setListaHoteles($event)"></app-buscador>
       <!-- Filtro -->
-      <app-filtro></app-filtro>
+      <!-- <app-filtro></app-filtro> -->
       <!-- Maps -->
-      <app-map></app-map>
+      <!-- <app-map></app-map> -->
 
     </div>
 

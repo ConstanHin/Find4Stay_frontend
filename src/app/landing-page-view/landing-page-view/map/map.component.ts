@@ -35,9 +35,9 @@ export class MapComponent implements OnInit {
     //   }).addTo(map);
 
 
-    //   coordCiudadesHoteles.reus.map((point) => {
-    //     L.marker([point.lat, point.lon]).addTo(map).bindPopup(point.nombre);
-    //   })
+      // coordCiudadesHoteles.reus.map((point) => {
+      //   L.marker([point.lat, point.lon]).addTo(map).bindPopup(point.nombre);
+      // })
     //   // map.fitBounds([
     //   //   ...coordenadas.map((point) => [point.lat, point.lon] as [number, number])
     //   // ])
@@ -46,6 +46,10 @@ export class MapComponent implements OnInit {
     // } catch (error) {
 
     // }
+  }
+
+  ngOnChange() {
+
   }
 }
 
