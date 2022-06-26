@@ -13,10 +13,10 @@ import { ClienteService } from 'src/app/service/cliente.service';
 export class AreaAdminClienteComponent implements OnInit {
   //Form
   formDetallesCliente = new FormGroup({
-    nombre: new FormControl("", Validators.required),
-    apellido: new FormControl("", [Validators.required]),
-    dni: new FormControl("", [Validators.required, Validators.max(200)]),
-    email: new FormControl("", [Validators.required, Validators.email]),
+    nombre: new FormControl(null, Validators.required),
+    apellido: new FormControl(null, [Validators.required]),
+    dni: new FormControl(null, [Validators.required, Validators.max(200)]),
+    email: new FormControl(null, [Validators.required]),
   });
 
   cliente: Cliente | undefined;

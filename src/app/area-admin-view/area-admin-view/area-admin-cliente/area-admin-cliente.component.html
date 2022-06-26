@@ -21,7 +21,8 @@
         <label>Nombre</label>
       </div>
       <div class="col">
-        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.nombre}}"
+        <input type="text" [readonly]=disabled [ngClass]="{'editable-form-field': !disabled}"
+          class="form-control-plaintext transparent-border-2px" placeholder="{{cliente?.nombre}}"
           formControlName="nombre">
       </div>
 
@@ -35,7 +36,8 @@
         <label>Apellido</label>
       </div>
       <div class="col">
-        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.apellido}}"
+        <input type="text" [readonly]=disabled [ngClass]="{'editable-form-field': !disabled}"
+          class="form-control-plaintext transparent-border-2px" placeholder="{{cliente?.apellido}}"
           formControlName="apellido">
       </div>
     </div>
@@ -48,22 +50,24 @@
         <label>DNI</label>
       </div>
       <div class="col">
-        <input type="text" readonly class="form-control-plaintext" placeholder="{{cliente?.dni}}">
+        <input type="text" [readonly]=disabled [ngClass]="{'editable-form-field': !disabled}"
+          class="form-control-plaintext transparent-border-2px" placeholder="{{cliente?.dni}}" formControlName="dni">
       </div>
     </div>
 
     <hr>
 
     <!-- Campo email -->
-    <div class="form-group row justify-content-between">
+    <!-- <div class="form-group row justify-content-between">
       <div class="col-2">
         <label>E-mail</label>
       </div>
       <div class="col">
-        <input type="email" readonly class="form-control-plaintext" placeholder="{{cliente?.email}}"
+        <input type="email" [readonly]=disabled [ngClass]="{'editable-form-field': !disabled}"
+          class="form-control-plaintext transparent-border-2px" placeholder="{{cliente?.email}}"
           formControlName="email">
       </div>
-    </div>
+    </div> -->
 
     <!-- Edit buttons, confirmar cancelar-->
     <div class="row my-4">
@@ -80,17 +84,10 @@
       </div>
     </div>
 
-    <!-- mensaje feedback-->
-    <div class="row justify-content-center" *ngIf="mensaje">
-      <div class="col col-md-6 alert alert-secondary">{{mensaje}}</div>
-    </div>
-
-
   </form>
-
-  <div class="row justify-content-end">
-    <div class="col-md-2">
-      <button class="btn btn-danger">Eliminar</button>
-    </div>
+  <!-- mensaje feedback-->
+  <div class="row justify-content-center" *ngIf="mensaje">
+    <div class="col col-md-6 alert alert-info">{{mensaje}}</div>
   </div>
+
 </div>
