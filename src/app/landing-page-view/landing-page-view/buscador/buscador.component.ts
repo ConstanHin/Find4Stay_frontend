@@ -95,7 +95,10 @@ export class BuscadorComponent implements OnInit {
     // Guardar los datos de busqueda
     this.buscadorService.setDatosBusqueda(this.form.value)
     // Cambiar vista
-    this.router.navigate(["/resultado-busqueda"])
+    this.router.navigate(["/resultado-busqueda"]).then(() =>{
+      console.log("then yes");
+
+    })
 
     if (this.secResBusqueda) {
       // buscar hoteles por ciudad

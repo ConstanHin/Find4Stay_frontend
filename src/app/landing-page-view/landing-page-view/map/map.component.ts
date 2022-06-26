@@ -19,7 +19,6 @@ export class MapComponent implements OnInit {
     // this.ngAfterViewInit();
     console.info("onInit map");
     this.mapService.initMap();
-    this.mapService.updateMap();
   }
 
 

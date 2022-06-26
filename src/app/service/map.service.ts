@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Map, tileLayer } from 'leaflet';
 import { coordenadasCiudades } from '../landing-page-view/landing-page-view/map/Coordenadas/coords';
-import { interval, timer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,6 @@ export class MapService {
   mapaPuntoMedio: any;
   mapInitiated = false;
   tileLayer: any;
-  // myTimer = interval(1000);
 
   constructor() { }
 
@@ -29,12 +27,6 @@ export class MapService {
     }).addTo(this.map);
 
     this.mapInitiated = true;
-
-  }
-
-  updateMap() {
-    if (!this.mapInitiated) return;
-    console.log("updating map");
 
   }
 
