@@ -22,8 +22,6 @@ export class MishotelesComponent implements OnInit {
   loading: boolean = true;
 
   formGroupAddHotel = new FormGroup({
-    id_empresa: new FormControl('', Validators.required),
-
     nombre: new FormControl('', Validators.required),
     categoria: new FormControl('', Validators.required),
     poblacion: new FormControl('',),
@@ -58,7 +56,7 @@ export class MishotelesComponent implements OnInit {
   submit() {
     console.log(this.formGroupAddHotel.value);
 
-    this.hotelService.create(this.formGroupAddHotel.value).subscribe({
+    this.hotelService.createByAuth(this.formGroupAddHotel.value).subscribe({
       next: v => {
         this.message = "Registo añadido con éxito.";
         setTimeout(() => this.message = undefined, 4000);

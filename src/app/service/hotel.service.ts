@@ -34,6 +34,12 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
       catchError(this.handleError)
     );
   }
+  // Create new hotel by auth
+  createByAuth(data: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}/auth`, data).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Update
   update(id:any, data:any): Observable<any> {
