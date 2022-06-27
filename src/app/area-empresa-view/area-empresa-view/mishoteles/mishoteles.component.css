@@ -1,6 +1,6 @@
 
 .titulo{
-  margin-top: 30px;
+  margin-top: 20px;
   font-weight: bold;
 }
 
@@ -10,9 +10,7 @@
   margin-left: 20px;
 }
 
-.ex1{
-  padding-top: 5px;
-}
+
 
 h5{
   margin-top: 30px;
@@ -23,3 +21,16 @@ hr {
   border-width: 2px;
   border-color: #7cdeb4;
 }
+
+.col {
+  padding: 5px;
+  padding-left: 25px;
+
+}
+
+img {
+  width: 27rem;
+  margin-top: 5px;
+}
+
+
