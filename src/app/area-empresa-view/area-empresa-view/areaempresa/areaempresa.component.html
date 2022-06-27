@@ -1,6 +1,8 @@
 <div class="container">
   <h5>Datos Empresa</h5>
-  <form class="form">
+
+
+  <form [formGroup]="formEditEmpresa">
     <div class="form-group row">
       <div class="col">
         <label for="ex1" id="ex1">Codigo Empresa</label>
@@ -27,4 +29,21 @@
       </div>
     </div>
   </form>
+
+  <div class="row my-4">
+    <div class="col-md"></div>
+    <div class="col-md-2 my-2">
+      <button class="btn btn-warning" *ngIf="disabled" (click)="editar()">Editar</button>
+
+      <button type="button" class="btn btn-labeled btn-danger mb-4 me-2" *ngIf="!disabled" (click)="cancelarCambios()">
+        <span class="btn-label"><i class="bi bi-x text-light"></i></span>Cancelar</button>
+      <button type="button" class="btn btn-labeled btn-success mb-2 me-2" *ngIf="!disabled" (click)="aceptarCambios()"
+        type="submit">
+        <span class="btn-label"><i class="bi bi-check text-light"></i></span>Aceptar</button>
+
+    </div>
+    <!-- Eliminar btn -->
+    <!-- <div class="col-md-2 my-2"><button class="btn btn-danger" (click)="eliminar()">Eliminar</button></div> -->
+  </div>
+
 </div>
