@@ -28,10 +28,11 @@ export class AreaclienteComponent implements OnInit {
   ngOnInit(): void {
 
     this.cuentaservice.getauthcuenta().subscribe(
-      cuentaAuth => { this.id = cuentaAuth.id, this.email = cuentaAuth.email,
+      cuentaAuth => { this.id = cuentaAuth.cliente.id, this.email = cuentaAuth.email,
         console.log(cuentaAuth.id);
         this.clienteservice.getItem(this.id).subscribe(
           datoscliente => { this.datocliente = datoscliente
+            console.log(this.id)
             this.formEditUser.value.nombre = datoscliente.nombre
             this.formEditUser.value.apellido = datoscliente.apellido
             this.formEditUser.value.dni = datoscliente.dni
