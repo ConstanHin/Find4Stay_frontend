@@ -29,8 +29,8 @@
         <td>{{hotel.poblacion}}</td>
         <td>{{hotel.ubicacion}}</td>
         <td>{{hotel.precio | currency:'EUR':'symbol':'1.2-2' : 'es'}}</td>
-        <td class="text-center td-btn"><button class="btn btn-outline-warning" (click)="setHotel(hotel)"
-            routerLink="./{{hotel.id}}"><i class="bi bi-pencil-square"></i></button></td>
+        <!-- <td class="text-center td-btn"><button class="btn btn-outline-warning" (click)="setHotel(hotel)"
+            routerLink="./{{hotel.id}}"><i class="bi bi-pencil-square"></i></button></td> -->
         <td class="text-center td-btn"><button class="btn btn-outline-danger" (click)="deleteHotel(hotel.id, i)"><i
               class="bi bi-trash3"></i></button></td>
       </tr>

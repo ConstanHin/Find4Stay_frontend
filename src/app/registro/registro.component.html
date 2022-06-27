@@ -2,73 +2,73 @@
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-white" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
 
-            <h2 class="fw mb-2 text-uppercase">{{tipo}}</h2>
-            <div class="mb-md-5 mt-md-4 pb-5">
-              <div class="spinner-border" *ngIf="loading"></div>
-              <!-- Form -->
-              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" *ngIf="!loading">
+        <div class="card-body card bg-white p-5 text-center rounded">
 
-                <div class="form-outline form-white mb-4">
-                  <input type="email" class="form-control form-control-lg" placeholder="Usuario"
-                    formControlName="usuario" />
-                </div>
+          <h2 class="fw mb-2 text-uppercase">{{tipo}}</h2>
+          <div class="mb-md-5 mt-md-4 pb-5">
+            <div class="spinner-border" *ngIf="loading"></div>
+            <!-- Form -->
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" *ngIf="!loading">
 
-                <div class="form-outline form-white mb-4">
-                  <input type="email" class="form-control form-control-lg" placeholder="Correo Electrónico"
-                    formControlName="email" />
-                </div>
+              <div class="form-outline form-white mb-4">
+                <input type="email" class="form-control form-control-lg" placeholder="Usuario"
+                  formControlName="usuario" />
+              </div>
 
-                <div class="form-outline form-white mb-4">
-                  <input type="password" class="form-control form-control-lg" placeholder="Contraseña"
-                    formControlName="password" />
-                </div>
+              <div class="form-outline form-white mb-4">
+                <input type="email" class="form-control form-control-lg" placeholder="Correo Electrónico"
+                  formControlName="email" />
+              </div>
 
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                  <input (click)="cambioTipo('cliente')" type="radio" class="btn-check" name="btnradio" id="btnradio1"
-                    autocomplete="off" [checked]="tipo === 'cliente'">
-                  <label class="btn btncolor1" for="btnradio1">Cliente</label>
-                  <input (click)="cambioTipo('empresa')" type="radio" class="btn-check" name="btnradio" id="btnradio2"
-                    autocomplete="off" [checked]="tipo === 'empresa'">
-                  <label class="btn btncolor1" for="btnradio2">Empresa</label>
-                </div>
-                <br>
-                <br>
+              <div class="form-outline form-white mb-4">
+                <input type="password" class="form-control form-control-lg" placeholder="Contraseña"
+                  formControlName="password" />
+              </div>
 
-                <button class="button fs-5" type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+              <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input (click)="cambioTipo('cliente')" type="radio" class="btn-check" name="btnradio" id="btnradio1"
+                  autocomplete="off" [checked]="tipo === 'cliente'">
+                <label class="btn btncolor1" for="btnradio1">Cliente</label>
+                <input (click)="cambioTipo('empresa')" type="radio" class="btn-check" name="btnradio" id="btnradio2"
+                  autocomplete="off" [checked]="tipo === 'empresa'">
+                <label class="btn btncolor1" for="btnradio2">Empresa</label>
+              </div>
+              <br>
+              <br>
 
-              </form>
+              <button class="button fs-5" type="submit" [disabled]="registerForm.invalid">Registrarse</button>
 
-              <!-- Validation errors -->
-              <ul class="alert alert-danger mt-3"
-                *ngIf="registerForm.invalid && (registerForm.dirty || registerForm.touched)">
+            </form>
 
-                <p class="m-1 p-0 " *ngIf="registerForm.get('usuario')?.errors?.['required']">
-                  Introduce el usuario.
-                </p>
-                <p class="m-1 p-0 " *ngIf="registerForm.get('email')?.errors?.['email']">
-                  Sintaxis Email no correcta.
-                </p>
-                <p class="m-1 p-0 " *ngIf="registerForm.get('email')?.errors?.['required']">
-                  Introduce el Email.
-                </p>
-                <p class="m-1 p-0 " *ngIf="registerForm.get('password')?.errors?.['required']">
-                  Introduce la contraseña.
-                </p>
-              </ul>
+            <!-- Validation errors -->
+            <ul class="alert alert-danger mt-3"
+              *ngIf="registerForm.invalid && (registerForm.dirty || registerForm.touched)">
 
-              <!-- fallo register -->
-              <ul class="alert alert-danger mt-3" *ngIf="fail">
-                <p class="my-1 p-0 ">
-                  Error al registrarse.
-                </p>
-              </ul>
-            </div>
+              <p class="m-1 p-0 " *ngIf="registerForm.get('usuario')?.errors?.['required']">
+                Introduce el usuario.
+              </p>
+              <p class="m-1 p-0 " *ngIf="registerForm.get('email')?.errors?.['email']">
+                Sintaxis Email no correcta.
+              </p>
+              <p class="m-1 p-0 " *ngIf="registerForm.get('email')?.errors?.['required']">
+                Introduce el Email.
+              </p>
+              <p class="m-1 p-0 " *ngIf="registerForm.get('password')?.errors?.['required']">
+                Introduce la contraseña.
+              </p>
+            </ul>
+
+            <!-- fallo register -->
+            <ul class="alert alert-danger mt-3" *ngIf="fail">
+              <p class="my-1 p-0 ">
+                Error al registrarse.
+              </p>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </section>

@@ -20,18 +20,18 @@ export class NuevoReservaComponent implements OnInit {
   loading: boolean = true;
 
 
-    /**
-   * codigo_empresa fecha_entrada fecha_salida importe_reserva
-   */
-     formGroupAddReserva = new FormGroup({
-      hotel: new FormControl('', Validators.required),
-      cliente: new FormControl('', Validators.required),
-      codigo_empresa: new FormControl('', Validators.required),
-      fecha_entrada: new FormControl('', Validators.required),
-      fecha_salida: new FormControl('', Validators.required),
-      importe_reserva: new FormControl('', Validators.required),
+  /**
+ * codigo fecha_entrada fecha_salida importe_reserva
+ */
+  formGroupAddReserva = new FormGroup({
+    hotel: new FormControl('', Validators.required),
+    cliente: new FormControl('', Validators.required),
+    codigo: new FormControl('', Validators.required),
+    fecha_entrada: new FormControl('', Validators.required),
+    fecha_salida: new FormControl('', Validators.required),
+    importe_reserva: new FormControl('', Validators.required),
 
-    })
+  })
 
   constructor(private reservaService: ReservaService, private hotelService: HotelService, private clienteService: ClienteService) { }
 
@@ -41,8 +41,9 @@ export class NuevoReservaComponent implements OnInit {
         this.listaHotel = v; console.log(v);
         this.loading = false
       },
-      error: (e) => {console.log(e),
-      this.loading = false
+      error: (e) => {
+        console.log(e),
+          this.loading = false
       },
       complete: () => "reservas list endpoint complete"
 
@@ -53,8 +54,9 @@ export class NuevoReservaComponent implements OnInit {
         this.listaClientes = v; console.log(v);
         this.loading = false
       },
-      error: (e) => {console.log(e),
-      this.loading = false
+      error: (e) => {
+        console.log(e),
+          this.loading = false
       },
       complete: () => "clientes list endpoint complete"
 
@@ -64,8 +66,22 @@ export class NuevoReservaComponent implements OnInit {
 
   submit() {
     console.log(this.formGroupAddReserva.value);
+    console.log(this.formGroupAddReserva.get('hotel')?.value);
 
-    this.reservaService.create(this.formGroupAddReserva.value).subscribe({
+    console.log({
+      ...this.formGroupAddReserva.value,
+      hotel: { id: this.formGroupAddReserva.get('hotel')?.value },
+      cliente: { id: this.formGroupAddReserva.get('cliente')?.value }
+    });
+
+
+    this.reservaService.create(
+      {
+        ...this.formGroupAddReserva.value,
+        hotel: { id: this.formGroupAddReserva.get('hotel')?.value },
+        cliente: { id: this.formGroupAddReserva.get('cliente')?.value }
+      }
+    ).subscribe({
       next: v => {
         this.message = "Registo añadido con éxito.";
         setTimeout(() => this.message = undefined, 4000);
