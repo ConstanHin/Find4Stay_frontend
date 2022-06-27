@@ -9,7 +9,7 @@
        console.log( lat, lon)
       marker = L.marker ([lat, lon]).addTo(Map)
      })
-     setTimeout(updateMap, 1)
+     setTimeout(updateMap, 100)
  }
  updateMap()
 
@@ -19,7 +19,7 @@
    map.flyTo(location, 18);
 })
 let layer = L.geoJSON(null, {});
-$.getJSON("http://localhost:3000/api/layers/alojamiento",  function (data)  {
+$.getJSON("API",  function (data)  {
  layer.addData(data);
 });
 
