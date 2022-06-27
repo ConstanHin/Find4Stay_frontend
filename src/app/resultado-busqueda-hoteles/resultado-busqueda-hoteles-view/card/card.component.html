@@ -6,11 +6,11 @@
   </div>
   <div class="col-md text-tarjeta">
     <div>
-      <h1>H10 Marina Barcelona</h1>
-      <p>Hotel 4 estrellas</p>
+      <h1>{{hotel.nombre}}</h1>
+      <p>{{hotel.categoria | numberToStars}}</p>
     </div>
     <div>
-      <p class="text-end">160€</p>
+      <p class="text-end">{{hotel.precio | currency:'EUR':'symbol':'1.0-2' : 'es'}}</p>
       <button class="btn shadow-sm"> Reservar </button>
     </div>
   </div>

@@ -52,7 +52,13 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
   //Get by nombre
   getByNombre(nombre: any): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}?nombre_like=${nombre}`).pipe(
-
+      catchError(this.handleError)
+    )
+  }
+  //Get by ciudad
+  getByCiudad(ciudad: string): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/ciudad/${ciudad}`).pipe(
+      catchError(this.handleError)
     )
   }
 
