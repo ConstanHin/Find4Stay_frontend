@@ -8,7 +8,7 @@ import { BuscadorService } from 'src/app/service/buscador.service';
 })
 export class ResultadoBusquedaHotelesViewComponent implements OnInit {
 
-  listHoteles: Hotel[] = [{nombre: "H10 Marina Barcelona", categoria: 3, id:1, poblacion: "Reus", precio: 113,ubicacion:"a"}]
+  listHoteles: Hotel[] = []
   listHotelesRaw: Hotel[] = []
 
   constructor(
