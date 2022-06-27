@@ -35,6 +35,7 @@ map.fitBounds([
   ...coordenadas.map((point) => [point.lat,point.lon] as[number, number])
 ])
 
+
 async function getData(point: { lat: number; nombre: ((layer: L.Layer) => L.Content) | L.Content | L.Popup; }) {
   let marker = null
   const updateMap = async () => {
@@ -47,12 +48,10 @@ async function getData(point: { lat: number; nombre: ((layer: L.Layer) => L.Cont
        .bindPopup(point.nombre)
        .addTo(map);
       }
-    };
+    }
 
   }
 }
-
-
 }
 
 

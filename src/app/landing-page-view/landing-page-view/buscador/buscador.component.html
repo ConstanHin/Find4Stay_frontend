@@ -7,6 +7,7 @@
       <div class="form-group">
 
         <div class="row">
+          <!-- Destino -->
           <div class="col-md-3" [ngClass]="{'col-md-12': secResBusqueda}">
             <label for="entrada"></label>
             <select class="form-control" aria-label="Destino" formControlName="destino"
@@ -21,7 +22,7 @@
             </div>
           </div>
 
-
+          <!-- Nr Personas -->
           <div class="col-md-3" [ngClass]="{'col-md-12': secResBusqueda}">
             <label for="personas"></label>
             <input type="number" class="form-control" placeholder="Numero de personas" formControlName="personas"
@@ -31,7 +32,7 @@
             </div>
           </div>
 
-
+          <!-- Campo fecha entrada - salida -->
           <div class="col" [ngClass]="{'col-md-12': secResBusqueda}">
             <mat-form-field [color]="'accent'" appearance="standard">
               <mat-date-range-input [rangePicker]="picker" [min]="maxDate">
@@ -45,7 +46,7 @@
               <mat-date-range-picker #picker></mat-date-range-picker>
             </mat-form-field>
 
-
+            <!-- Validator errores -->
             <div *ngIf="submitted && f['fecha_entrada'].errors" class="invalid-feedback">
               <div *ngIf="f['fecha_entrada'].errors['required']">CheckIn requerido</div>
             </div>
@@ -54,6 +55,7 @@
               <div *ngIf="f['fecha_salida'].errors['required']">CheckOut requerido</div>
             </div>
           </div>
+
           <!-- botones buscar reset -->
           <div class="col d-flex justify-content-center align-content-center">
             <button class="btn btn-light btn-magenta m-auto me-2" type="submit">Buscar</button>
