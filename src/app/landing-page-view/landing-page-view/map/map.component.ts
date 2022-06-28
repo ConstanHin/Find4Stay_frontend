@@ -28,9 +28,9 @@ export class MapComponent implements OnInit {
     coordenadas.map((point) => {
       L.marker([point.lat, point.lon]).addTo(map).bindPopup(point.nombre);
     });
-    map.fitBounds([
-     ...coordenadas.map((point) => [point.lat, point.lon] as [number, number]),
-   ]);
+  //   map.fitBounds([
+  //    ...coordenadas.map((point) => [point.lat, point.lon] as [number, number]),
+  //  ]);
   }
 }
 
