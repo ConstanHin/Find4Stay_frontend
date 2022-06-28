@@ -23,7 +23,8 @@
       "dom"
     ],
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "strictPropertyInitialization": false
 
   },
   "angularCompilerOptions": {
@@ -32,5 +33,6 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
     "experimentalDecorators": true,
+
   }
 }

@@ -112,7 +112,7 @@ export class BuscadorComponent implements OnInit {
       console.log('destino: ', this.form.value.destino);
 
       this.hotelService.getByCiudad(this.form.value.destino).subscribe({
-        next: (v) => {this.listaHotelesCity = v, this.eventoEnvio.emit(v)},
+        next: (v) => { this.listaHotelesCity = v, this.eventoEnvio.emit(v) },
         error: e => console.log(e)
       });
 

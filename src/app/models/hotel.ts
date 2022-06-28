@@ -5,4 +5,5 @@ export class Hotel {
   poblacion: string = "";
   ubicacion: string = "";
   precio: number = 0;
+  imagenes: string = "";
 }

@@ -1,7 +1,9 @@
 <div class="row hotel-card border rounded p-1 p-md-3 my-3">
   <div class="col-md">
     <div class="img-container">
-      <img class="" src="/assets/images/placeholder_500_300.png" alt="hotel">
+      <img class=""
+        [src]="hotel.imagenes != null ? 'http://localhost:8080' + hotel.imagenes : '/assets/images/placeholder_500_300.png'"
+        alt="hotel">
     </div>
   </div>
   <div class="col-md text-tarjeta">

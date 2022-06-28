@@ -2,8 +2,9 @@
   <div class="row vh100">
     <div class="col-2 p-0">
       <app-barra-lateral (cambiarApartadoEvent)="cambiarApartado($event)"></app-barra-lateral>
+
     </div>
-    <div class="col">
+    <div class="col overflow-auto">
       <app-area-cuenta *ngIf="apartado === 'cuenta'"></app-area-cuenta>
       <app-areaempresa *ngIf="apartado === 'datosempresa'"></app-areaempresa>
       <app-mishoteles *ngIf="apartado === 'mishoteles'"></app-mishoteles>

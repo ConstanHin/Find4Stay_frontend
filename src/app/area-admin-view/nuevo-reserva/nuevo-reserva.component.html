@@ -11,7 +11,7 @@
         <label class="form-label" for="nombre">Hotel</label>
         <select class="form-control bg-light rounded" id="hotel" formControlName="hotel"
           placeholder="Hotel">
-          <option value="hotel.nombre" id="hotel" *ngFor="let hotel of listaHotel">{{hotel.nombre}}</option>
+          <option value="{{hotel.id}}" id="hotel" *ngFor="let hotel of listaHotel">{{hotel.nombre}}</option>
         </select>
       </div>
     </div>
@@ -21,7 +21,7 @@
         <label class="form-label" for="nombre">Cliente</label>
         <select class="form-control bg-light rounded" id="cliente" formControlName="cliente"
           placeholder="Cliente">
-          <option value="cliente.nombre" id="cliente" *ngFor="let cliente of listaClientes">{{cliente.nombre}}</option>
+          <option value="{{cliente.id}}" id="cliente" *ngFor="let cliente of listaClientes">{{cliente.nombre}}</option>
         </select>
       </div>
     </div>
@@ -29,8 +29,8 @@
     <div class="mb-2 row justify-content-between">
       <div class="col">
         <label class="form-label" for="nombre">Codigo</label>
-        <input class="form-control bg-light rounded" id="codigo_empresa" formControlName="codigo_empresa" type="text"
-          placeholder="Codigo empresa">
+        <input class="form-control bg-light rounded" id="codigo" formControlName="codigo" type="text"
+          placeholder="Codigo">
       </div>
     </div>
     <div class="mb-2 row justify-content-between">

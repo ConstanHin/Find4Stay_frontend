@@ -1,0 +1,77 @@
+<!-- tarjeta hotel -->
+<div class="p-3 m-2 my-md-2 mx-md-5 border rounded shadow-sm overflow-hidden">
+  <!-- imagen -->
+  <div class="img-hotel rounded">
+    <!-- añadir prefijo del servidor a la imagen-->
+    <img
+      [src]="hotel.imagenes != null ? 'http://localhost:8080' + hotel.imagenes : '../../../assets/images/placeholder_500_300.png'"
+      class="img-fluid rounded" alt="img">
+  </div>
+  <!-- info texto -->
+  <div class="m-2 ps-2 border-start">
+    <div class="row">
+      <div class="col-sm-2">
+        <label class="">Nombre:</label>
+      </div>
+      <div class="col">
+        <span>{{hotel.nombre}}
+        </span>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <label class="">Categoria:</label>
+        </div>
+        <div class="col">
+          <span>{{hotel.categoria | numberToStars}}
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <label class="">Población:</label>
+        </div>
+        <div class="col">
+          <span>{{hotel.poblacion}}
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <label class="">Ubicación:</label>
+        </div>
+        <div class="col">
+          <span>{{hotel.ubicacion}}
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <label class=""> Precio:</label>
+        </div>
+        <div class="col">
+          <span>{{hotel.precio}}
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- botones -->
+  <div class="row my-3 justify-content-between">
+    <!-- btn añadir foto-->
+    <form [formGroup]="uploadForm"  (ngSubmit)="onSubmit()">
+
+      <div class="col">
+        <button type="submit" class="btn btn-primary me-0">Añadir foto</button>
+        <input class="ms-2" type="file" name="profile" (change)="onFileSelect($event)">
+      </div>
+    </form>
+
+  </div>
+
+</div>

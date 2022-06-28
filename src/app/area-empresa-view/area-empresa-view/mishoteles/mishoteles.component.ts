@@ -3,6 +3,7 @@ import { EmpresaService } from 'src/app/service/empresa.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HotelService } from 'src/app/service/hotel.service';
 import { Empresa } from 'src/app/models/empresa';
+import { Hotel } from 'src/app/models/hotel';
 
 @Component({
   selector: 'app-mishoteles',
@@ -13,11 +14,13 @@ export class MishotelesComponent implements OnInit {
 
   id?: any;
   email?: any;
-  data: any = {"id":""};
-  datohoteles: any = {"nombre": "", "categoria": "", "ubicacion": "", "poblacion":"", "precio": ""};
+  data: any = { "id": "" };
+  // datohoteles: any = {"nombre": "", "categoria": "", "ubicacion": "", "poblacion":"", "precio": ""};
   message: string | undefined;
   errorMessage: string | undefined;
   listaEmpresas: Empresa[] = []
+  listaHoteles: Hotel[] = []
+  seccion: string = 'verHotel';
 
   loading: boolean = true;
 
@@ -33,24 +36,20 @@ export class MishotelesComponent implements OnInit {
   constructor(private empresaService: EmpresaService, private hotelService: HotelService) { }
 
   ngOnInit(): void {
+    this.llamarEndpoint()
+  }
+
+  llamarEndpoint() {
     this.empresaService.getempresaauth().subscribe(
-      hoteles => { this.datohoteles = hoteles
-        console.log(hoteles)
+      empresaAuth => {
+        this.listaHoteles = empresaAuth.hotel
+        console.log("hoteles:", empresaAuth.hotel)
       }
     );
+  }
 
-    this.empresaService.list().subscribe({
-      next: (v) => {
-        this.listaEmpresas = v; console.log(v);
-        this.loading = false
-      },
-      error: (e) => {
-        console.log(e),
-          this.loading = false
-      },
-      complete: () => "empresas list endpoint complete"
-
-    })
+  updateView() {
+    this.llamarEndpoint()
   }
 
   submit() {
@@ -67,6 +66,16 @@ export class MishotelesComponent implements OnInit {
       }
 
     })
+  }
+
+  /**
+   * Cambiar componentes de la seccion
+   */
+  cambiarSeccion(seccion: string) {
+    this.seccion = seccion;
+    if(seccion === 'verHotel') {
+      this.llamarEndpoint();
+    }
   }
 
 }
