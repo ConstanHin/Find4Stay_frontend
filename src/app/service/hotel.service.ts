@@ -10,8 +10,7 @@ import { environment } from 'src/environments/environment.prod';
 export class HotelService {
 
   apiUrl: string = environment.SERVER_URL + "/api/hoteles";
-  // headers = new HttpHeaders().set('Content-Type', 'multipart/*; charset=utf-8; boundary="------abc"');
-  // headers = new HttpHeaders().set('Content-Type', 'multipart/form-data; boundary=""');
+
   headers = new HttpHeaders();
 
 

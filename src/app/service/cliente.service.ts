@@ -2,13 +2,14 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
 
-  apiUrl: string = "http://localhost:8080/api/clientes";
+  apiUrl: string = environment.SERVER_URL + "/api/clientes";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 

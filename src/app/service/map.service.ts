@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import L, { Map, tileLayer } from 'leaflet';
+import L, { tileLayer } from 'leaflet';
 import { coordCiudadesHoteles, coordenadasCiudades } from '../landing-page-view/landing-page-view/map/Coordenadas/coords';
 
 @Injectable({

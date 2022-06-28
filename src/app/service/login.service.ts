@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 
-const baseUrl = "http://localhost:8080/"
+const baseUrl = environment.SERVER_URL
 
 export interface User {
   username: string,
