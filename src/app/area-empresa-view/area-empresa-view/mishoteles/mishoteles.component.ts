@@ -29,7 +29,7 @@ export class MishotelesComponent implements OnInit {
     categoria: new FormControl('', Validators.required),
     poblacion: new FormControl('',),
     ubicacion: new FormControl('',),
-    importe: new FormControl('', Validators.required),
+    precio: new FormControl('', Validators.required),
 
 
   })

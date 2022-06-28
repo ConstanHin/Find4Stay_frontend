@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Hotel } from 'src/app/models/hotel';
 import { HotelService } from 'src/app/service/hotel.service';
 import { Output, EventEmitter } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-tarjeta-hotel',
@@ -14,6 +15,7 @@ export class TarjetaHotelComponent implements OnInit {
 
   @Input() hotel: Hotel = new Hotel();
   disabled: boolean = true;
+  serverUrl: string = environment.SERVER_URL;
 
   @Output() actualizar = new EventEmitter<any>();
 

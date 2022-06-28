@@ -4,7 +4,7 @@
   <div class="img-hotel rounded">
     <!-- añadir prefijo del servidor a la imagen-->
     <img
-      [src]="hotel.imagenes != null ? 'http://localhost:8080' + hotel.imagenes : '../../../assets/images/placeholder_500_300.png'"
+      [src]="hotel.imagenes != null ? serverUrl + hotel.imagenes : '../../../assets/images/placeholder_500_300.png'"
       class="img-fluid rounded" alt="img">
   </div>
   <!-- info texto -->
@@ -53,7 +53,7 @@
           <label class=""> Precio:</label>
         </div>
         <div class="col">
-          <span>{{hotel.precio}}
+          <span>{{hotel.precio | currency:'EUR':'symbol':'1.0-2' : 'es'}}
           </span>
         </div>
       </div>

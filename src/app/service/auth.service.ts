@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 const AUTH_API = environment.SERVER_URL;
 
@@ -30,7 +30,7 @@ export class AuthService {
    * @returns
    */
   login(username: string, password: string): Observable<any> {
-    return this.httpCliente.post(AUTH_API + 'login', {
+    return this.httpCliente.post(AUTH_API + '/login', {
       username: username,
       password: password
     });
@@ -54,7 +54,7 @@ export class AuthService {
    * @returns
    */
   register(username: string, password: string, email: string): Observable<any> {
-    return this.httpCliente.post(AUTH_API + 'signup', {
+    return this.httpCliente.post(AUTH_API + '/signup', {
       username: username,
       password: password,
       email: email

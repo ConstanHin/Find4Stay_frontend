@@ -18,7 +18,7 @@ export class NuevoHotelComponent implements OnInit {
   loading: boolean = true;
 
   /**
-   * nombre categoria poblacion ubicacion importe
+   * nombre categoria poblacion ubicacion precio
    */
   formGroupAddHotel = new FormGroup({
     id_empresa: new FormControl('', Validators.required),
@@ -27,7 +27,7 @@ export class NuevoHotelComponent implements OnInit {
     categoria: new FormControl('', Validators.required),
     poblacion: new FormControl('',),
     ubicacion: new FormControl('',),
-    importe: new FormControl('', Validators.required),
+    precio: new FormControl('', Validators.required),
 
 
   })

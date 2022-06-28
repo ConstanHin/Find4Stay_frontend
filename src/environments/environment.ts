@@ -3,11 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 
-// export const SERVER_URL = "http://localhost:8080";
-// export const urlServidorRemoto = "https://find4stay-api.herokuapp.com"
+// dev const SERVER_URL = "http://localhost:8080";
+// prod urlServidorRemoto = "https://find4stay-api.herokuapp.com"
 
 export const environment = {
-  production: false
+  production: false,
+    SERVER_URL: "http://localhost:8080",
 };
 
 /*
