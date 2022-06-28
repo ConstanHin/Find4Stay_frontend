@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MapService } from 'src/app/service/map.service';
+
 import { RedirectMessageService } from 'src/app/service/redirect-message.service';
 
 
@@ -13,14 +13,13 @@ export class LandingPageViewComponent implements OnInit {
 
 
   constructor(
-    private mapService: MapService
    ) { }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(){
-    this.mapService.updateMap();
+
 
   }
 
