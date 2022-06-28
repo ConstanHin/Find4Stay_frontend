@@ -36,7 +36,7 @@ f.titulo {
 
 h5 {
   margin-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .table>div:nth-child(even) {
@@ -47,9 +47,52 @@ h5 {
   width: 50px;
   text-align: center;
 }
+
 .td-btn {
   width: 4em;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/*
+editable form
+*/
+
+.transparent-border-2px {
+  border: 1px solid transparent;
+  padding: 5px;
+}
+
+.editable-form-field {
+  background-color: aliceblue;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+/*
+botones editar
+*/
+
+.btn-labeled {
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.btn-label {
+  position: relative;
+  left: -12px;
+  display: inline-block;
+  padding: 0px 5px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px 0 0 3px;
+}

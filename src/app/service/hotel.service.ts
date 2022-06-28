@@ -2,14 +2,17 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotelService {
 
-apiUrl: string = "http://localhost:8080/api/hoteles";
-headers = new HttpHeaders().set('Content-Type', 'application/json');
+  apiUrl: string = environment.SERVER_URL + "/api/hoteles";
+
+  headers = new HttpHeaders();
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -21,8 +24,8 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
   }
 
 
-   // Get one by id
-   getItem(id: any): Observable<any> {
+  // Get one by id
+  getItem(id: any): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}/${id}`).pipe(
       catchError(this.handleError)
     );
@@ -34,9 +37,15 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
       catchError(this.handleError)
     );
   }
+  // Create new hotel by auth
+  createByAuth(data: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}/auth`, data).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Update
-  update(id:any, data:any): Observable<any> {
+  update(id: any, data: any): Observable<any> {
     return this.httpClient.put(this.apiUrl + `/${id}`, data).pipe(
       catchError(this.handleError)
     );
@@ -52,14 +61,27 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
   //Get by nombre
   getByNombre(nombre: any): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}?nombre_like=${nombre}`).pipe(
-
+      catchError(this.handleError)
+    )
+  }
+  //Get by ciudad
+  getByCiudad(ciudad: string): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/ciudad/${ciudad}`).pipe(
+      catchError(this.handleError)
     )
   }
 
   //Get by cuenta
   getByCuenta(cuenta: any): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}?cuenta_like=${cuenta}`).pipe(
+      catchError(this.handleError)
+    )
+  }
 
+  //Subir foto hotel
+  subirFotoHotel(id: number, file: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}/file/add/${id}`, file, {headers: this.headers}).pipe(
+      catchError(this.handleError)
     )
   }
 

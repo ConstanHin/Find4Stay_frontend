@@ -1,36 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import * as L from 'leaflet';
+import { Map, tileLayer } from 'leaflet';
+import {coordenadas} from './Coordenadas/coords';
 
-@Injectable({
-  providedIn: 'root'
-})
+
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css']
+  styleUrls: ['./map.component.css'],
 })
 export class MapComponent implements OnInit {
-  city: any;
-  number= 0;
 
   ngOnInit(): void {
-  }
-  constructor(){
-    this.city = sessionStorage.getItem('ciudadKey');// agafem el valor de ciudadkey
-
+    this.ngAfterViewInit();
   }
 
-changeCity(ciudad : string){
-  this.city = ciudad;
-  console.log(this.city);
-  sessionStorage.setItem('ciudadKey',this.city); //a ciudadKey li donem un valor
-  this.refreshPage();
+  ngAfterViewInit(): void {
 
+    const map = new Map('map').setView([41.15612, 1.10687], 14);
+    tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      minZoom: 5,
+      attribution:'<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    coordenadas.map((point) => {
+      L.marker([point.lat, point.lon]).addTo(map).bindPopup(point.nombre);
+    });
+  //   map.fitBounds([
+  //    ...coordenadas.map((point) => [point.lat, point.lon] as [number, number]),
+  //  ]);
+  }
 }
 
-refreshPage() {
-  window.location.reload();
- }
 
-}
+
+

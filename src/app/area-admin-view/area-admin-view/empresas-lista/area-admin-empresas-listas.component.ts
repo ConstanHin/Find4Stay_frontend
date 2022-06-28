@@ -9,9 +9,11 @@ import { EmpresaService } from 'src/app/service/empresa.service';
 })
 export class AreaAdminEmpresasListasComponent implements OnInit {
 
+  loading: boolean = true;
+
   @Output() cambiarApartadoEvent = new EventEmitter<string>();
   listaEmpresas: Empresa[] = [
-    {id: 1,codigo_empresa:"ab123", nombre: "KH"},
+    /* {id: 1,codigo_empresa:"ab123", nombre: "KH"},
     {id: 2,codigo_empresa:"ab123", nombre: "KH"},
     {id: 3,codigo_empresa:"ab123", nombre: "KH"},
     {id: 4,codigo_empresa:"ab123", nombre: "KH"},
@@ -21,7 +23,7 @@ export class AreaAdminEmpresasListasComponent implements OnInit {
     {id: 8,codigo_empresa:"ab123", nombre: "KH"},
     {id: 9,codigo_empresa:"ab123", nombre: "KH"},
     {id: 10,codigo_empresa:"ab123", nombre: "KH"},
-    {id: 11,codigo_empresa:"ab123", nombre: "KH"},
+    {id: 11,codigo_empresa:"ab123", nombre: "KH"}, */
   ]
   page: number = 1;
 
@@ -30,10 +32,13 @@ export class AreaAdminEmpresasListasComponent implements OnInit {
   ngOnInit(): void {
     this.empresaService.list().subscribe(arrayEmpresas => {
       console.log(arrayEmpresas);
-
       this.listaEmpresas = arrayEmpresas;
     })
+    this.loading = false;
   }
+
+
+
 
   cambiarApartado(apartado: string) {
     this.cambiarApartadoEvent.emit(apartado)
@@ -41,6 +46,19 @@ export class AreaAdminEmpresasListasComponent implements OnInit {
 
   setEmpresa(empresa: Empresa) {
     console.log(empresa);
+
+  }
+
+  deleteEmpresa(id: number, arrayIndex: number) {
+
+    this.empresaService.delete(id).subscribe({
+      next: v => {
+        console.log("eliminado con éxito", v);
+        // Eliminarlo del array para mostrar los cambios
+        this.listaEmpresas.splice(arrayIndex, 1)
+      },
+      error: e => console.log(e)
+    })
 
   }
 

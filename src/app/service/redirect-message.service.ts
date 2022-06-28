@@ -13,7 +13,7 @@ export class RedirectMessageService {
     observer.next(this.message);
     setTimeout(() => {
       observer.next(this.message = undefined)
-    }, 2500);
+    }, 5000);
   })
 
   constructor() { }

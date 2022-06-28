@@ -1,0 +1,82 @@
+
+<div class="container">
+  <h5>Añadir datos nuevo Hotel</h5>
+
+  <form [formGroup]="formGroupAddHotel">
+
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="nombre">Empresa</label>
+        <select class="form-control bg-light rounded" id="empresa" formControlName="id_empresa"
+          placeholder="Empresa">
+          <option value={{empresa.id}} id="empresa" *ngFor="let empresa of listaEmpresas">{{empresa.nombre}}</option>
+        </select>
+      </div>
+    </div>
+    <!-- Hotel -->
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="nombre">Nombre</label>
+        <input class="form-control bg-light rounded" id="nombre" formControlName="nombre" type="text"
+          placeholder="Nombre">
+      </div>
+    </div>
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="categoria">Categoria</label>
+        <input class="form-control bg-light rounded" id="categoria" formControlName="categoria" type="number"
+          placeholder="Categoria">
+      </div>
+    </div>
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="poblacion">Población</label>
+        <input class="form-control bg-light rounded" id="poblacion" formControlName="poblacion" type="text" placeholder="Población">
+      </div>
+    </div>
+
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="ubicacion">Ubicación</label>
+        <input class="form-control bg-light rounded" id="ubicacion" formControlName="ubicacion" type="text" placeholder="Latitud + Longitud">
+      </div>
+    </div>
+
+    <div class="mb-2 row justify-content-between">
+      <div class="col">
+        <label class="form-label" for="importe">Importe</label>
+        <input class="form-control bg-light rounded" id="importe" formControlName="importe" type="number" placeholder="Importe">
+      </div>
+    </div>
+
+
+    <!-- Validation errors -->
+    <!-- <ul class="alert alert-danger mt-3"
+      *ngIf="formGroupAddCliente.invalid && (formGroupAddCliente.dirty || formGroupAddCliente.touched)">
+      <p class="m-1 p-0 ">
+        Campos requeridos.
+      </p>
+
+    </ul> -->
+    <!-- Validation errors -->
+    <ul class="alert alert-success mt-3" *ngIf="message">
+      <p class="m-1 p-0 ">
+        {{message}}
+      </p>
+    </ul>
+    <ul class="alert alert-danger mt-3" *ngIf="errorMessage">
+      <p class="m-1 p-0 ">
+        {{errorMessage}}
+      </p>
+    </ul>
+
+    <div class="row my-4">
+      <div class="col">
+        <button [disabled]="!formGroupAddHotel.valid" class="btn btn-success" (click)="submit()">Enviar</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+

@@ -1,105 +1,100 @@
 <div class="container">
-  <h5>Mis hoteles</h5>
+  <h5>Mis hoteles
+    <span *ngIf="seccion === 'verHotel'">> Lista Hoteles</span>
+    <span *ngIf="seccion === 'addHotel'">> Añadir Hotel</span>
+  </h5>
+  <!-- botones para cambiar de componente -->
+  <!-- añadir nuevo hotel -->
+  <div class="row mx-4 border-bottom pb-3">
+    <div class="col">
+      <button class="btn btn-primary mx-2" (click)="cambiarSeccion('verHotel')">Ver hoteles</button>
+      <button class="btn btn-primary mx-2" (click)="cambiarSeccion('addHotel')">Añadir hotel</button>
+    </div>
+  </div>
 
 
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Nombre:</label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputNombre" placeholder="NH Reus" >
-      </div>
+  <!-- Componente 1-->
+  <div *ngIf="seccion === 'verHotel'">
+
+    <!-- mensaje si no hay hoteles -->
+    <div class="row justify-content-center" *ngIf="!listaHoteles.length">
+      <p class="col col-md-4 alert alert-secondary text-center">No se ha encontrado resultados.</p>
     </div>
 
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Categoria:</label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputCategoria" placeholder="⭐⭐⭐⭐" >
-      </div>
+    <!-- tarjetas hoteles -->
+    <div class="row justify-content-evenly">
+      <app-tarjeta-hotel (actualizar)="updateView()" [hotel]="hotel" class="col-12 col-md-6 my-3"
+        *ngFor="let hotel of listaHoteles">
+      </app-tarjeta-hotel>
     </div>
 
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Población: </label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputPoblacion" placeholder="Reus" >
-      </div>
-    </div>
-
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Ubicación: </label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputUbicacion" placeholder="Av. Marià Fortuny, 85" >
-      </div>
-    </div>
+  </div>
 
 
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Precio: </label>
+  <!-- Componente 2-->
+
+  <!-- FORMULARIO -->
+  <div class="container" *ngIf="seccion === 'addHotel'">
+    <h5>Añadir un nuevo Hotel</h5>
+    <form [formGroup]="formGroupAddHotel">
+      <!-- Hotel -->
+      <div class="mb-2 row justify-content-between">
+        <div class="col">
+          <label class="form-label" for="nombre">Nombre</label>
+          <input class="form-control bg-light rounded" id="nombre" formControlName="nombre" type="text"
+            placeholder="Nombre">
+        </div>
       </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputPrecio" placeholder="120.00 €" >
+      <div class="mb-2 row justify-content-between">
+        <div class="col">
+          <label class="form-label" for="categoria">Categoria</label>
+          <input class="form-control bg-light rounded" id="categoria" formControlName="categoria" type="number"
+            placeholder="Categoria">
+        </div>
       </div>
-    </div>
+      <div class="mb-2 row justify-content-between">
+        <div class="col">
+          <label class="form-label" for="poblacion">Población</label>
+          <input class="form-control bg-light rounded" id="poblacion" formControlName="poblacion" type="text"
+            placeholder="Población">
+        </div>
+      </div>
+
+      <div class="mb-2 row justify-content-between">
+        <div class="col">
+          <label class="form-label" for="ubicacion">Ubicación</label>
+          <input class="form-control bg-light rounded" id="ubicacion" formControlName="ubicacion" type="text"
+            placeholder="Latitud + Longitud">
+        </div>
+      </div>
+
+      <div class="mb-2 row justify-content-between">
+        <div class="col">
+          <label class="form-label" for="importe">Importe</label>
+          <input class="form-control bg-light rounded" id="importe" formControlName="importe" type="number"
+            placeholder="Importe">
+        </div>
+      </div>
 
 
+      <ul class="alert alert-success mt-3" *ngIf="message">
+        <p class="m-1 p-0 ">
+          {{message}}
+        </p>
+      </ul>
+      <ul class="alert alert-danger mt-3" *ngIf="errorMessage">
+        <p class="m-1 p-0 ">
+          {{errorMessage}}
+        </p>
+      </ul>
 
-    <hr>
+      <div class="row my-4">
+        <div class="col">
+          <button [disabled]="!formGroupAddHotel.valid" class="btn btn-success" (click)="submit()">Enviar</button>
+        </div>
+      </div>
 
-
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Nombre:</label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputNombre" placeholder="Catalonia Port" >
-      </div>
-    </div>
-
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Categoria:</label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputCategoria" placeholder="⭐⭐⭐⭐" >
-      </div>
-    </div>
-
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Población: </label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputPoblacion" placeholder="Barcelona" >
-      </div>
-    </div>
-
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Ubicación: </label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputUbicacion" placeholder="Ample, 1 (Plaça Duc de Medinaceli) Ciutat Vella" >
-      </div>
-    </div>
-
-
-    <div class="row" >
-      <div class="col-sm-2">
-        <label class="ex1">Precio: </label>
-      </div>
-      <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" id="inputPrecio" placeholder="100.00 €" >
-      </div>
-    </div>
-
-
-    <hr>
+    </form>
+  </div>
 
 </div>

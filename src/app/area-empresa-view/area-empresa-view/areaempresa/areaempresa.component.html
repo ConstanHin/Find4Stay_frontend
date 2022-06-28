@@ -1,16 +1,18 @@
 <div class="container">
   <h5>Datos Empresa</h5>
-  <form class="form">
+
+
+  <form [formGroup]="formEditEmpresa">
     <div class="form-group row">
       <div class="col">
         <label for="ex1" id="ex1">Codigo Empresa</label>
       </div>
       <div class="col">
-        <input type="text" readonly class="form-control-plaintext" placeholder="Codigo Empresa" >
+        <input type="text" readonly class="form-control-plaintext" placeholder="{{datoempresa.codigo_empresa}}" >
       </div>
-      <div class="col-sm align-items-center">
+      <!-- <div class="col-sm align-items-center">
         <label for="ex3"><i class="bi bi-pencil-square"></i> </label>
-      </div>
+      </div> -->
     </div>
 
     <hr>
@@ -20,28 +22,28 @@
         <label for="ex1" id="ex1">Nombre</label>
       </div>
       <div class="col-sm">
-        <input type="text" readonly class="form-control-plaintext" placeholder="Nombre" >
+        <input type="text" readonly class="form-control-plaintext" placeholder="{{datoempresa.nombre}}" >
       </div>
-      <div class="col-sm align-items-center">
+      <!-- <div class="col-sm align-items-center">
         <label for="ex3"><i class="bi bi-pencil-square"></i> </label>
-      </div>
+      </div> -->
     </div>
-
-    <hr>
-
-    <div class="form-group row">
-      <div class="col-sm">
-        <label for="ex1" id="ex1">E-mail</label>
-      </div>
-      <div class="col-sm">
-        <input type="email" readonly class="form-control-plaintext" placeholder="E-mail" >
-      </div>
-      <div class="col-sm align-items-center">
-        <label for="ex3"><i class="bi bi-pencil-square"></i> </label>
-      </div>
-    </div>
-
-    <hr>
-
   </form>
+
+  <div class="row my-4">
+    <div class="col-md"></div>
+    <div class="col-md-2 my-2">
+      <button class="btn btn-warning" *ngIf="disabled" (click)="editar()">Editar</button>
+
+      <button type="button" class="btn btn-labeled btn-danger mb-4 me-2" *ngIf="!disabled" (click)="cancelarCambios()">
+        <span class="btn-label"><i class="bi bi-x text-light"></i></span>Cancelar</button>
+      <button type="button" class="btn btn-labeled btn-success mb-2 me-2" *ngIf="!disabled" (click)="aceptarCambios()"
+        type="submit">
+        <span class="btn-label"><i class="bi bi-check text-light"></i></span>Aceptar</button>
+
+    </div>
+    <!-- Eliminar btn -->
+    <!-- <div class="col-md-2 my-2"><button class="btn btn-danger" (click)="eliminar()">Eliminar</button></div> -->
+  </div>
+
 </div>
