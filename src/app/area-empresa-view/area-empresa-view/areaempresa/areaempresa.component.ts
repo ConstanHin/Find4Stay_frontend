@@ -28,16 +28,11 @@ export class AreaempresaComponent implements OnInit {
   ngOnInit(): void {
 
     this.empresaservice.getempresaauth().subscribe(
-      empresaauth => { this.datoempresa = empresaauth
+      empresaauth => {
+        this.datoempresa = empresaauth
         console.log(empresaauth)
-        this.empresaservice.getItem(this.id).subscribe(
-          datosempresa =>{ this.datoempresa = datosempresa
-            this.formEditEmpresa.value.codigo_empresa = datosempresa.codigo_empresa
-            this.formEditEmpresa.value.nombre = datosempresa.nombre
-            console.log(datosempresa);
-
-          }
-        )
+        this.formEditEmpresa.value.codigo_empresa = empresaauth.codigo_empresa;
+        this.formEditEmpresa.value.codigo_empresa = empresaauth.nombre;
       }
     );
   }
@@ -49,7 +44,7 @@ export class AreaempresaComponent implements OnInit {
   aceptarCambios() {
     // guardar los cambios
     // enviar un request put a la api para hacer el update
-    this.empresaservice.update(this.id,
+    this.empresaservice.update(this.datoempresa.id,
       {
         "codigo_empresa": this.formEditEmpresa.value.codigo_empresa,
         "nombre": this.formEditEmpresa.value.nombre,
