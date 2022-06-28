@@ -6,6 +6,7 @@ import { SeguridadComponent } from './area-empresa-view/seguridad/seguridad.comp
 import { MishotelesComponent } from './area-empresa-view/mishoteles/mishoteles.component';
 import { AreaModule } from '../area/area.module';
 import { ComunModule } from '../comun/module/comun/comun.module';
+import { TarjetaHotelComponent } from './tarjeta-hotel/tarjeta-hotel.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ComunModule } from '../comun/module/comun/comun.module';
     AreaempresaComponent,
     SeguridadComponent,
     MishotelesComponent,
+    TarjetaHotelComponent,
   ],
   imports: [
     CommonModule,

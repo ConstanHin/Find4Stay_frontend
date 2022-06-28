@@ -8,8 +8,9 @@ import { catchError } from 'rxjs/operators';
 })
 export class HotelService {
 
-apiUrl: string = "http://localhost:8080/api/hoteles";
-headers = new HttpHeaders().set('Content-Type', 'application/json');
+  apiUrl: string = "http://localhost:8080/api/hoteles";
+  headers = new HttpHeaders().set('Content-Type', 'multipart/form-data; charset=utf-8; boundary="---"');
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -21,8 +22,8 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
   }
 
 
-   // Get one by id
-   getItem(id: any): Observable<any> {
+  // Get one by id
+  getItem(id: any): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}/${id}`).pipe(
       catchError(this.handleError)
     );
@@ -42,7 +43,7 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
   }
 
   // Update
-  update(id:any, data:any): Observable<any> {
+  update(id: any, data: any): Observable<any> {
     return this.httpClient.put(this.apiUrl + `/${id}`, data).pipe(
       catchError(this.handleError)
     );
@@ -71,7 +72,14 @@ headers = new HttpHeaders().set('Content-Type', 'application/json');
   //Get by cuenta
   getByCuenta(cuenta: any): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}?cuenta_like=${cuenta}`).pipe(
+      catchError(this.handleError)
+    )
+  }
 
+  //Subir foto hotel
+  subirFotoHotel(id: number, file: any): Observable<any> {
+    return this.httpClient.post(`${this.apiUrl}/file/add/${id}`, file, {headers: this.headers}).pipe(
+      catchError(this.handleError)
     )
   }
 

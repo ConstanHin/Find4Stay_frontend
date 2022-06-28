@@ -20,6 +20,7 @@ export class MishotelesComponent implements OnInit {
   errorMessage: string | undefined;
   listaEmpresas: Empresa[] = []
   listaHoteles: Hotel[] = []
+  seccion: string = 'verHotel';
 
   loading: boolean = true;
 
@@ -70,6 +71,13 @@ export class MishotelesComponent implements OnInit {
       }
 
     })
+  }
+
+  /**
+   * Cambiar componentes de la seccion
+   */
+  cambiarSeccion(seccion: string) {
+    this.seccion = seccion;
   }
 
 }
