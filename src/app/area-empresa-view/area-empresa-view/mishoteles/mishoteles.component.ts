@@ -14,7 +14,7 @@ export class MishotelesComponent implements OnInit {
 
   id?: any;
   email?: any;
-  data: any = {"id":""};
+  data: any = { "id": "" };
   // datohoteles: any = {"nombre": "", "categoria": "", "ubicacion": "", "poblacion":"", "precio": ""};
   message: string | undefined;
   errorMessage: string | undefined;
@@ -36,29 +36,20 @@ export class MishotelesComponent implements OnInit {
   constructor(private empresaService: EmpresaService, private hotelService: HotelService) { }
 
   ngOnInit(): void {
+    this.llamarEndpoint()
+  }
+
+  llamarEndpoint() {
     this.empresaService.getempresaauth().subscribe(
       empresaAuth => {
         this.listaHoteles = empresaAuth.hotel
         console.log("hoteles:", empresaAuth.hotel)
       }
     );
-
-    // this.empresaService.list().subscribe({
-    //   next: (v) => {
-    //     this.listaEmpresas = v; console.log(v);
-    //     this.loading = false
-    //   },
-    //   error: (e) => {
-    //     console.log(e),
-    //       this.loading = false
-    //   },
-    //   complete: () => "empresas list endpoint complete"
-
-    // })
   }
 
   updateView() {
-    this.ngOnInit()
+    this.llamarEndpoint()
   }
 
   submit() {
@@ -82,6 +73,9 @@ export class MishotelesComponent implements OnInit {
    */
   cambiarSeccion(seccion: string) {
     this.seccion = seccion;
+    if(seccion === 'verHotel') {
+      this.llamarEndpoint();
+    }
   }
 
 }
