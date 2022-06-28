@@ -64,22 +64,14 @@
   <!-- botones -->
   <div class="row my-3 justify-content-between">
     <!-- btn añadir foto-->
-    <form [formGroup]="uploadForm"  (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <form [formGroup]="uploadForm"  (ngSubmit)="onSubmit()">
 
       <div class="col">
         <button type="submit" class="btn btn-primary me-0">Añadir foto</button>
         <input class="ms-2" type="file" name="profile" (change)="onFileSelect($event)">
       </div>
     </form>
-    <!-- Edit buttons, confirmar cancelar-->
-    <!-- <div class="col">
-      <button class="btn btn-warning" *ngIf="disabled" (click)="editar()">Editar</button>
-      <button type="button" class="btn btn-labeled btn-danger mb-4 me-2" *ngIf="!disabled" (click)="cancelarCambios()">
-        <span class="btn-label"><i class="bi bi-x text-light"></i></span>Cancelar</button>
-      <button type="button" class="btn btn-labeled btn-success mb-2 me-2" *ngIf="!disabled" (click)="aceptarCambios()"
-        type="submit">
-        <span class="btn-label"><i class="bi bi-check text-light"></i></span>Aceptar</button>
-    </div> -->
+
   </div>
 
 </div>

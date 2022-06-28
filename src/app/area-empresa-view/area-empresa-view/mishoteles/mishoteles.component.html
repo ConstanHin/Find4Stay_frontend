@@ -1,8 +1,8 @@
 <div class="container">
   <h5>Mis hoteles
-     <span *ngIf="seccion === 'verHotel'">> Lista Hoteles</span>
-     <span *ngIf="seccion === 'addHotel'">> Añadir Hotel</span>
-    </h5>
+    <span *ngIf="seccion === 'verHotel'">> Lista Hoteles</span>
+    <span *ngIf="seccion === 'addHotel'">> Añadir Hotel</span>
+  </h5>
   <!-- botones para cambiar de componente -->
   <!-- añadir nuevo hotel -->
   <div class="row mx-4 border-bottom pb-3">
@@ -23,7 +23,8 @@
 
     <!-- tarjetas hoteles -->
     <div class="row justify-content-evenly">
-      <app-tarjeta-hotel [hotel]="hotel" class="col-12 col-md-6 my-3" *ngFor="let hotel of listaHoteles">
+      <app-tarjeta-hotel (actualizar)="updateView()" [hotel]="hotel" class="col-12 col-md-6 my-3"
+        *ngFor="let hotel of listaHoteles">
       </app-tarjeta-hotel>
     </div>
 

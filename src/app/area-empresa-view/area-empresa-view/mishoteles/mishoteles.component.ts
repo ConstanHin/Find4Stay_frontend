@@ -57,6 +57,10 @@ export class MishotelesComponent implements OnInit {
     // })
   }
 
+  updateView() {
+    this.ngOnInit()
+  }
+
   submit() {
     console.log(this.formGroupAddHotel.value);
 

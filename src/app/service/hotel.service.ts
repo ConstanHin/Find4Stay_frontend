@@ -2,14 +2,17 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotelService {
 
-  apiUrl: string = "http://localhost:8080/api/hoteles";
-  headers = new HttpHeaders().set('Content-Type', 'multipart/form-data; charset=utf-8; boundary="---"');
+  apiUrl: string = environment.SERVER_URL + "/api/hoteles";
+  // headers = new HttpHeaders().set('Content-Type', 'multipart/*; charset=utf-8; boundary="------abc"');
+  // headers = new HttpHeaders().set('Content-Type', 'multipart/form-data; boundary=""');
+  headers = new HttpHeaders();
 
 
   constructor(private httpClient: HttpClient) { }

@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Hotel } from 'src/app/models/hotel';
 import { HotelService } from 'src/app/service/hotel.service';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tarjeta-hotel',
@@ -14,11 +15,9 @@ export class TarjetaHotelComponent implements OnInit {
   @Input() hotel: Hotel = new Hotel();
   disabled: boolean = true;
 
-  // form
-  // form: FormGroup;
-  // formImagen = new FormGroup({
-  //   file: new FormControl()
-  // })
+  @Output() actualizar = new EventEmitter<any>();
+
+
   uploadForm : FormGroup = new FormGroup({
     profile: new FormControl(new FormData, Validators.required)
   });
@@ -26,10 +25,13 @@ export class TarjetaHotelComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private hotelService: HotelService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
 
   ) {}
 
+  actualizarPadre() {
+    this.actualizar.emit('');
+  }
 
 
   ngOnInit() {
@@ -58,34 +60,6 @@ export class TarjetaHotelComponent implements OnInit {
 
   }
 
-  aceptarCambios() {
-    // guardar los cambios
-    // enviar un request put a la api para hacer el update
-    // this.clienteService.update(
-    //   this.cliente?.id,
-    //   this.formDetallesCliente.value
-    // ).subscribe(
-    //   {
-    //     next: v => {
-    //       console.log(v);
-
-    //       this.formDetallesCliente.reset;
-    //       //Mostrar mensaje éxito
-    //       this.mostrarMensaje("Se han modificado los datos.")
-
-    //     },
-    //     error: e => {
-    //       console.log(e);
-    //       //Mostrar mensaje fallo
-    //       this.mostrarMensaje("Error.")
-    //     }
-    //   }
-
-    // );
-    // TODO: spinner feedaback mientras carga
-    this.disabled = !this.disabled;
-  }
-
   onSubmit() {
 
     const formData = new FormData();
@@ -99,9 +73,13 @@ export class TarjetaHotelComponent implements OnInit {
 
 
 
-    this.hotelService.subirFotoHotel(this.hotel.id, formData.get('file')).subscribe(
+    this.hotelService.subirFotoHotel(this.hotel.id, formData).subscribe(
       {
-        next: (v) => console.log(v),
+        next: (v) => {
+          console.log(v, "vvv");
+          this.actualizarPadre()
+
+        },
         error: (e) => console.log("ERROR", e),
 
       }
