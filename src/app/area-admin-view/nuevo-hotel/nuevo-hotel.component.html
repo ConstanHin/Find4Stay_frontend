@@ -28,12 +28,19 @@
           placeholder="Categoria">
       </div>
     </div>
-    <div class="mb-2 row justify-content-between">
+    <!-- <div class="mb-2 row justify-content-between">
       <div class="col">
         <label class="form-label" for="poblacion">Población</label>
         <input class="form-control bg-light rounded" id="poblacion" formControlName="poblacion" type="text" placeholder="Población">
       </div>
-    </div>
+    </div> -->
+    <select formControlName="poblacion" name="poblacion" id="poblacion">
+
+        <option value="reus">Reus</option>
+        <option value="tarragona">Tarragona</option>
+        <option value="barcelona">Barcelona</option>
+
+    </select>
 
     <div class="mb-2 row justify-content-between">
       <div class="col">
@@ -44,8 +51,8 @@
 
     <div class="mb-2 row justify-content-between">
       <div class="col">
-        <label class="form-label" for="importe">Importe</label>
-        <input class="form-control bg-light rounded" id="importe" formControlName="importe" type="number" placeholder="Importe">
+        <label class="form-label" for="precio">Importe</label>
+        <input class="form-control bg-light rounded" id="precio" formControlName="precio" type="number" placeholder="Importe">
       </div>
     </div>
 

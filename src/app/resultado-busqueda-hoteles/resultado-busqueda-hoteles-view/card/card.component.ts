@@ -1,5 +1,6 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { Hotel } from 'src/app/models/hotel';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-card',
@@ -9,6 +10,7 @@ import { Hotel } from 'src/app/models/hotel';
 export class CardComponent implements OnInit {
 
   @Input() hotel: Hotel = new Hotel();
+  serverUrl: string = environment.SERVER_URL;
 
   constructor() { }
 
